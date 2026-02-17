@@ -385,3 +385,32 @@ blockquote{
   .gallery{grid-template-columns:1fr}
   .gallery img{height:240px}
 }
+/* Relocation page layout fix */
+
+.page-hero {
+  padding: 90px 20px 60px;
+}
+
+.page-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 50px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.06);
+}
+
+.subtle {
+  text-align: center;
+}
