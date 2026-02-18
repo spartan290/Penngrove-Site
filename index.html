@@ -1,224 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Penngrove Real Estate | Boutique Representation Grounded in Community</title>
-<meta name="description" content="Boutique real estate representation grounded in community. Rooted in Penngrove and serving clients across Sonoma County.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penngrove Real Estate | Boutique Representation Rooted in Penngrove</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <style>
+    /* Homepage upgrades */
+    .nav-container { align-items: center; }
+    .nav-logo {
+      height: 34px;
+      width: auto;
+      display: block;
+      opacity: .95;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .hero-lux {
+      min-height: 78vh;
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 140px 20px 70px;
+    }
+    .hero-inner {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-kicker {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px;
+      color: rgba(255,255,255,.85);
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 54px;
+      line-height: 1.06;
+      color: #fff;
+      margin: 0 0 16px;
+      max-width: 820px;
+    }
+    .hero-sub {
+      font-size: 18px;
+      line-height: 1.75;
+      color: rgba(255,255,255,.86);
+      margin: 0 0 26px;
+      max-width: 720px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .section { padding: 70px 20px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .lux-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .lux-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 14px 45px rgba(0,0,0,.06);
+    }
+    .lux-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+    .lux-card p {
+      margin: 0;
+      line-height: 1.75;
+      opacity: .92;
+    }
+
+    .featured-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+    .featured-img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 18px 55px rgba(0,0,0,.08);
+      display: block;
+    }
+    .featured-panel {
+      background: #fff;
+      border-radius: 18px;
+      padding: 36px;
+      box-shadow: 0 16px 55px rgba(0,0,0,.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-panel h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+    .featured-panel p {
+      margin: 0 0 14px;
+      line-height: 1.75;
+      opacity: .92;
+    }
+    .featured-meta {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      opacity: .7;
+      margin-bottom: 12px;
+    }
+    .featured-price {
+      font-size: 18px;
+      margin: 10px 0 18px;
+    }
+
+    .testimonials-band {
+      padding: 70px 20px 90px;
+      background: linear-gradient(to bottom, rgba(0,0,0,.02), rgba(0,0,0,.00));
+    }
+    .testimonial-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 18px;
+      padding: 42px 34px;
+      box-shadow: 0 16px 55px rgba(0,0,0,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial-title {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin: 0 0 14px;
+      text-align: center;
+    }
+    .testimonial-quote {
+      margin: 0;
+      line-height: 1.9;
+      font-size: 16px;
+      opacity: .92;
+      text-align: center;
+    }
+    .testimonial-source {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .65;
+    }
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.18);
+    }
+    .dot.active { background: rgba(0,0,0,.55); }
+
+    @media (max-width: 980px) {
+      .hero-title { font-size: 42px; }
+      .lux-grid { grid-template-columns: 1fr; }
+      .featured-wrap { grid-template-columns: 1fr; }
+      .featured-img { height: 320px; }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav class="nav">
-  <div class="nav-container">
-    <a class="brand" href="index.html" aria-label="Penngrove Real Estate Home">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">
-        <strong>Penngrove Real Estate</strong>
-        <span>Sonoma County</span>
-      </span>
-    </a>
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="logo">Penngrove Real Estate</div>
 
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <div class="nav-right">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="relocation.html">Relocation</a></li>
+          <li><a href="contact.html" class="consult-btn">Private Consultation</a></li>
+        </ul>
 
-    <ul id="nav-menu" class="nav-menu">
-      <li><a href="about.html">About</a></li>
-      <li><a href="properties.html">Properties</a></li>
-      <li><a href="relocation.html">Relocation</a></li>
-      <li><a href="contact.html" class="pill">Private Consultation</a></li>
-    </ul>
-  </div>
-</nav>
-
-
-<header class="hero" style="background-image:url('images/sonoma-hero.jpg')">
-  <div class="hero-scrim"></div>
-  <div class="container hero-inner">
-    <div class="hero-card">
-      <p class="kicker">Penngrove Real Estate</p>
-      <h1>Boutique real estate representation, grounded in community.</h1>
-      <p class="lead">Rooted in Penngrove. Representing distinctive properties throughout Sonoma County.</p>
-      <div class="hero-actions">
-        <a class="btn" href="contact.html">Schedule a Private Consultation</a>
-        <a class="btn btn-ghost" href="properties.html">Explore Featured Properties</a>
-      </div>
-      <div class="hero-meta">
-        <div><strong>Local</strong><span>Penngrove based</span></div>
-        <div><strong>Measured</strong><span>Strategy over noise</span></div>
-        <div><strong>Personal</strong><span>No handoffs</span></div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main>
-  <section class="section">
-    <div class="container split">
-      <div class="portrait">
-        <img src="images/headshot.jpg" alt="Aaron Loewenthal, Broker at Penngrove Real Estate">
-      </div>
-      <div>
-        <h2>Meet Aaron</h2>
-        <p>
-          Real estate is personal. Where you live shapes your routines, your relationships, and your long-term plans.
-          I approach every sale and purchase with clear communication, thoughtful strategy, and steady guidance.
-        </p>
-        <p>
-          As the owner of Penngrove Real Estate and a resident of the community I serve, my work is built on relationships,
-          local perspective, and representation that protects your interests from start to finish.
-        </p>
-        <div class="actions">
-          <a class="btn" href="about.html">Read my story</a>
-          <a class="btn btn-ghost" href="contact.html">Start the conversation</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <h2>Featured offering</h2>
-        <p>One property. Presented with intention.</p>
-      </div>
-
-      <article class="feature">
-        <a class="feature-media" href="property-166-davis.html" aria-label="View 166 Davis Lane details">
-          <img src="images/davis-hero.jpg" alt="166 Davis Lane twilight exterior">
+        <a href="index.html" aria-label="Penngrove Real Estate home">
+          <img class="nav-logo" src="images/logo.png" alt="Penngrove Real Estate logo">
         </a>
-        <div class="feature-body">
-          <div class="feature-top">
-            <h3>166 Davis Lane, Penngrove</h3>
-            <div class="price">$1,650,000</div>
-          </div>
-          <p>
-            Approximately 6.8 acres with views, privacy, and meaningful future potential. A substantial shop and a prepared
-            building pad create the opportunity to expand or build your dream home.
-          </p>
-          <ul class="bullets">
-            <li>3 bed, 2 bath</li>
-            <li>1,183 sq ft</li>
-            <li>6.8 acres</li>
-            <li>Large shop</li>
-            <li>Building pad ready</li>
-          </ul>
-          <div class="actions">
-            <a class="btn" href="property-166-davis.html">View property</a>
-            <a class="btn btn-ghost" href="properties.html">See all featured</a>
-          </div>
-        </div>
-      </article>
+      </div>
     </div>
-  </section>
+  </nav>
+
+  <header class="hero-lux">
+    <div class="hero-inner">
+      <div class="hero-kicker">Boutique representation | Sonoma County</div>
+      <h1 class="hero-title">Rooted in Penngrove. Built on relationships.</h1>
+      <p class="hero-sub">
+        A quieter, more personal approach to buying and selling distinctive properties.
+        Clear strategy, steady guidance, and local insight from first conversation to closing.
+      </p>
+      <div class="hero-actions">
+        <a href="contact.html" class="primary-btn">Schedule a Private Consultation</a>
+        <a href="properties.html" class="secondary-btn">Explore Featured Properties</a>
+      </div>
+    </div>
+  </header>
 
   <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Relocating to Sonoma County?</h2>
-        <p>Download the Local Insider Relocation Guide and start with clarity.</p>
-      </div>
-
-      <div class="relocation-grid">
-        <div class="relocation-copy">
+    <div class="section-inner">
+      <div class="lux-grid">
+        <div class="lux-card">
+          <h3>Local perspective</h3>
           <p>
-            This guide was created to help buyers understand town-by-town lifestyle differences, pricing reality, and the
-            decisions that matter most when making a move.
+            I live in Penngrove and work here daily. Clients get real insight on micro locations, value drivers, and what matters long term.
           </p>
-          <div class="mini-links">
-            <a href="relocation.html" class="text-link">Go to the Relocation page</a>
-            <a href="assets/sonoma-county-relocation-guide.pdf" target="_blank" rel="noopener" class="text-link">Preview the PDF</a>
-          </div>
         </div>
-        <div class="relocation-form">
-          
-<iframe
-  title="Relocation Guide Form"
-  class="jotform"
-  src="https://form.jotform.com/260344744061048"
-  frameborder="0"
-  scrolling="no"
-  loading="lazy"
-></iframe>
-
-          <p class="fineprint">Tip: In Jotform, set the thank-you page to include the PDF link so it feels instant.</p>
+        <div class="lux-card">
+          <h3>Thoughtful strategy</h3>
+          <p>
+            Pricing, positioning, and negotiation are handled with care. The goal is clarity and confidence, not chaos and pressure.
+          </p>
+        </div>
+        <div class="lux-card">
+          <h3>High touch service</h3>
+          <p>
+            Fewer clients, deeper service. You are working with the broker and owner, not a handoff chain.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container quote">
-      <blockquote>
-        “Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one.
-        He has a deep understanding of the local market, especially in and around Penngrove. His guidance and responsiveness
-        made the entire process smooth and far less stressful than we expected.”
-      </blockquote>
-      <div class="quote-attrib">Penngrove Client</div>
-    </div>
-  </section>
-
-  <section class="section cta">
-    <div class="container cta-inner">
-      <div>
-        <h2>Let’s begin with a conversation.</h2>
-        <p>Whether you are buying, selling, or relocating, I’ll help you move forward with clarity.</p>
-      </div>
-      <div class="actions">
-        <a class="btn btn-light" href="contact.html">Schedule a Private Consultation</a>
-        <a class="btn btn-light-ghost" href="tel:+17074776427">Call (707) 477-6427</a>
+  <section class="section" style="padding-top: 10px;">
+    <div class="section-inner">
+      <div class="featured-wrap">
+        <img class="featured-img" src="images/davis-hero.jpg" alt="166 Davis Lane, Penngrove">
+        <div class="featured-panel">
+          <div class="featured-meta">Featured property</div>
+          <h2>166 Davis Lane, Penngrove</h2>
+          <p>
+            Approximately 6.8 acres with wide-open views, a strong sense of privacy, and room to create something lasting.
+            A substantial shop and a prepared building pad offer the option to expand or build a true dream property.
+          </p>
+          <div class="featured-price"><strong>$1,650,000</strong></div>
+          <a href="properties.html" class="primary-btn">View Property Details</a>
+        </div>
       </div>
     </div>
   </section>
-</main>
 
+  <section class="testimonials-band">
+    <div class="testimonial-box">
+      <div class="testimonial-title">Client testimonials</div>
 
-<footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <div class="footer-title">Penngrove Real Estate</div>
-      <div class="footer-contact">Aaron Loewenthal<br>
-Broker, Penngrove Real Estate<br>
-DRE 01932466<br>
-<a href="tel:+17074776427">(707) 477-6427</a><br>
-<a href="mailto:aaron@penngroverealestate.com">aaron@penngroverealestate.com</a></div>
+      <p class="testimonial-quote" id="t-quote">
+        Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. He has a deep understanding of the local market, especially in and around Penngrove. His knowledge, guidance, and responsiveness made the entire process smooth and far less stressful than we expected.
+      </p>
+      <div class="testimonial-source" id="t-source">Google Review</div>
+
+      <div class="dots" id="t-dots" aria-label="Testimonial navigation"></div>
     </div>
+  </section>
 
-    <div>
-      <div class="footer-title">Links</div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Penngrove Real Estate</div>
+
       <div class="footer-links">
         <a href="about.html">About</a>
         <a href="properties.html">Properties</a>
-        <a href="relocation.html">Relocation Guide</a>
+        <a href="relocation.html">Relocation</a>
         <a href="contact.html">Contact</a>
       </div>
-    </div>
 
-    <div>
-      <div class="footer-title">Follow</div>
-      <div class="footer-links">
-        
-<a href="https://instagram.com/penngroverealestate" target="_blank" rel="noopener">Instagram</a>
-<a href="https://www.facebook.com/aaron.loewenthal" target="_blank" rel="noopener">Facebook</a>
-<a href="https://www.youtube.com/@Penngroverealestate" target="_blank" rel="noopener">YouTube</a>
-
+      <div class="footer-meta">
+        Aaron Loewenthal, Penngrove Real Estate, Broker, DRE 01932466, (707) 477-6427, aaron@penngroverealestate.com
       </div>
     </div>
-  </div>
+  </footer>
 
-  <div class="container footer-bottom">
-    <span>© 2026 Penngrove Real Estate</span>
-    <span class="sep">·</span>
-    <a href="assets/penngrove-real-estate-logo.pdf" target="_blank" rel="noopener">Logo</a>
-    <span class="sep">·</span>
-    <a href="assets/sonoma-county-relocation-guide.pdf" target="_blank" rel="noopener">Relocation Guide PDF</a>
-  </div>
-</footer>
-<script src="js/script.js"></script>
+  <script>
+    // Rotating testimonials
+    const testimonials = [
+      {
+        quote: "Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. He has a deep understanding of the local market, especially in and around Penngrove. His knowledge, guidance, and responsiveness made the entire process smooth and far less stressful than we expected.",
+        source: "Google Review"
+      },
+      {
+        quote: "I’ve had the pleasure of working with Aaron for over 12 years, and I can honestly say there’s no one else I’d rather have in my corner when it comes to real estate. His work ethic, attention to detail, and deep understanding of the market have been consistent from day one.",
+        source: "Google Review"
+      },
+      {
+        quote: "Penngrove Real Estate is very easy to work with and they really know the Sonoma County market. Friendly service and good advice. They handled both my sale and purchase and made the process feel simple.",
+        source: "Google Review"
+      },
+      {
+        quote: "I had an outstanding experience working with Aaron. Professional, knowledgeable, and genuinely cared about finding the right home. Honest, straightforward, and treated me like a neighbor, not just a client.",
+        source: "Google Review"
+      }
+    ];
+
+    const q = document.getElementById("t-quote");
+    const s = document.getElementById("t-source");
+    const dotsWrap = document.getElementById("t-dots");
+
+    let idx = 0;
+    let timer = null;
+
+    function renderDots() {
+      dotsWrap.innerHTML = "";
+      testimonials.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === idx ? " active" : "");
+        d.addEventListener("click", () => {
+          idx = i;
+          update();
+          restart();
+        });
+        dotsWrap.appendChild(d);
+      });
+    }
+
+    function update() {
+      q.textContent = testimonials[idx].quote;
+      s.textContent = testimonials[idx].source;
+      renderDots();
+    }
+
+    function next() {
+      idx = (idx + 1) % testimonials.length;
+      update();
+    }
+
+    function restart() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(next, 6500);
+    }
+
+    update();
+    restart();
+  </script>
 
 </body>
 </html>
