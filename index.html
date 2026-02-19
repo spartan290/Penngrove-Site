@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Penngrove Real Estate</title>
+
+  <title>Penngrove Real Estate | Rooted in Penngrove</title>
+
+  <!-- Keep your shared stylesheet so footer matches other pages -->
+  <link rel="stylesheet" href="css/styles.css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -11,101 +15,111 @@
     :root{
       --max: 1200px;
       --pad: 20px;
-      --shadow: 0 22px 70px rgba(0,0,0,.06);
-      --text: #1f1f1f;
-      --muted: rgba(0,0,0,.70);
+      --softShadow: 0 22px 70px rgba(0,0,0,.06);
     }
 
-    *{ box-sizing:border-box; }
+    *{ box-sizing: border-box; }
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background:#fff;
     }
-    a{ color:inherit; text-decoration:none; }
 
-    /* FORCE OVERRIDES (this is what removes the mystery white box) */
-    nav, header, .nav, .nav-inner, .brand, .brand *{
+    /* NAV (transparent over hero) */
+    .nav{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      z-index:50;
       background: transparent !important;
       box-shadow: none !important;
     }
 
-    /* NAV OVER HERO */
-    .nav{
-      position:absolute;
-      top:0; left:0; right:0;
-      z-index:50;
-    }
-    .nav-inner{
+    .nav-container{
       max-width: var(--max);
       margin: 0 auto;
       padding: 26px var(--pad);
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 22px;
+      gap: 18px;
+      background: transparent !important;
     }
 
+    /* Logo: off-white look at 0.85 opacity, no background */
     .brand{
       display:flex;
       align-items:center;
-      padding:0 !important;
-      border:0 !important;
       line-height:0;
+      background: transparent !important;
     }
 
-    /* BIG LOGO (forced white) */
     .brand img{
-      height: 92px;
-      width:auto;
+      height: 96px;
+      width: auto;
       display:block;
 
-      /* turn your dark logo into white without editing the file */
-      filter: brightness(0) invert(1);
+      /* makes your dark logo render as a soft off-white */
+      filter: brightness(0) invert(1) sepia(10%) saturate(60%);
+      opacity: .85;
 
-      /* keeps it readable on any photo */
-      filter: brightness(0) invert(1) drop-shadow(0 10px 18px rgba(0,0,0,.35));
+      /* helps it read on any photo */
+      filter: brightness(0) invert(1) sepia(10%) saturate(60%) drop-shadow(0 10px 18px rgba(0,0,0,.30));
     }
 
     .nav-links{
+      list-style:none;
       margin:0;
       padding:0;
-      list-style:none;
       display:flex;
       align-items:center;
-      gap: 30px;
+      gap: 28px;
+      background: transparent !important;
     }
+
     .nav-links a{
       color: rgba(255,255,255,.92);
-      font-weight: 400;
-      letter-spacing: .02em;
+      text-decoration:none;
+      font-weight:400;
+      letter-spacing:.02em;
     }
-    .nav-links a:hover{ color:#fff; }
-    .nav-links .btn{
+
+    .nav-links a:hover{
+      color:#fff;
+    }
+
+    .consult-btn{
       border: 1px solid rgba(255,255,255,.55);
       padding: 10px 16px;
       border-radius: 999px;
       color:#fff;
     }
 
-    /* HERO FULL BLEED */
+    /* HERO */
     .hero{
-      min-height: 96vh;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,.20), rgba(0,0,0,.58)),
-        url("images/hero.jpg");
+      min-height: 100vh;
+      width:100%;
+
+      /* IMPORTANT: this path must match your repo exactly */
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.60)),
+        url("./images/hero.jpg");
+
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+
       display:flex;
       align-items:flex-end;
     }
+
     .hero-inner{
       width:100%;
       max-width: var(--max);
-      margin:0 auto;
+      margin: 0 auto;
       padding: 0 var(--pad) 86px;
     }
+
     .kicker{
       text-transform: uppercase;
       letter-spacing: .14em;
@@ -113,96 +127,115 @@
       color: rgba(255,255,255,.82);
       margin-bottom: 14px;
     }
-    h1{
+
+    .hero h1{
       font-family: "Playfair Display", serif;
-      font-weight: 600;
+      font-weight:600;
       font-size: 62px;
-      line-height: 1.06;
+      line-height:1.06;
       color:#fff;
       margin: 0 0 16px;
-      max-width: 900px;
+      max-width: 920px;
     }
-    .sub{
+
+    .hero p{
       font-size: 19px;
       line-height: 1.75;
       color: rgba(255,255,255,.86);
       max-width: 720px;
       margin: 0 0 26px;
     }
+
     .hero-actions{
       display:flex;
+      flex-wrap:wrap;
       gap: 14px;
-      flex-wrap: wrap;
     }
-    .primary{
+
+    .primary-btn-lite{
       background:#fff;
       color:#111;
       padding: 12px 18px;
       border-radius: 999px;
-      font-weight: 500;
+      font-weight:500;
+      text-decoration:none;
       display:inline-block;
     }
-    .secondary{
+
+    .secondary-btn-lite{
       border: 1px solid rgba(255,255,255,.55);
       color:#fff;
       padding: 12px 18px;
       border-radius: 999px;
-      font-weight: 500;
+      font-weight:500;
+      text-decoration:none;
       display:inline-block;
     }
 
-    /* SECTIONS */
-    .section{ padding: 86px var(--pad); }
-    .container{ max-width: var(--max); margin: 0 auto; }
+    /* Content sections */
+    .section{
+      padding: 86px var(--pad);
+      background:#fff;
+    }
+
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
 
     .cards{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      margin-top: 16px;
+      margin-top: 10px;
     }
+
     .card{
-      background: #fff;
+      background:#fff;
       border-radius: 18px;
       padding: 30px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--softShadow);
     }
+
     .card h3{
       font-family: "Playfair Display", serif;
       font-size: 22px;
       margin: 0 0 10px;
     }
+
     .card p{
       margin:0;
       line-height: 1.75;
-      color: var(--muted);
+      color: rgba(0,0,0,.70);
     }
 
-    /* FEATURED */
     .featured{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
       gap: 22px;
       align-items: stretch;
-      margin-top: 18px;
+      margin-top: 14px;
     }
+
     .featured img{
       width:100%;
       height: 460px;
       object-fit: cover;
       border-radius: 18px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--softShadow);
       display:block;
     }
+
     .featured-panel{
-      background: #fff;
+      background:#fff;
       border-radius: 18px;
       padding: 40px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--softShadow);
       display:flex;
       flex-direction:column;
       justify-content:center;
     }
+
     .meta{
       text-transform: uppercase;
       letter-spacing:.12em;
@@ -210,43 +243,53 @@
       opacity: .65;
       margin-bottom: 12px;
     }
+
     .featured-panel h2{
       font-family:"Playfair Display", serif;
       font-size: 32px;
       margin: 0 0 12px;
     }
+
     .featured-panel p{
       margin: 0 0 16px;
       line-height: 1.75;
-      color: var(--muted);
+      color: rgba(0,0,0,.70);
     }
-    .price{ font-size: 18px; margin: 8px 0 18px; }
 
-    /* TESTIMONIAL ROTATOR */
+    .price{
+      font-size: 18px;
+      margin: 8px 0 18px;
+    }
+
+    /* Testimonials rotator */
     .testimonials{
-      background: #fafafa;
+      background:#fafafa;
       padding: 92px var(--pad) 110px;
     }
+
     .tbox{
       max-width: 860px;
       margin: 0 auto;
-      background: #fff;
+      background:#fff;
       border-radius: 20px;
       padding: 48px 34px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--softShadow);
       text-align:center;
     }
+
     .tbox h3{
       font-family:"Playfair Display", serif;
       font-size: 28px;
       margin: 0 0 18px;
     }
+
     .tquote{
       margin:0;
       font-size: 17px;
       line-height: 1.9;
       color: rgba(0,0,0,.82);
     }
+
     .tsource{
       margin-top: 16px;
       font-size: 12px;
@@ -255,17 +298,11 @@
       opacity: .6;
     }
 
-    footer{
-      padding: 34px var(--pad);
-      text-align:center;
-      color: rgba(0,0,0,.60);
-      font-size: 13px;
-    }
-
+    /* Mobile */
     @media (max-width: 980px){
       .brand img{ height: 70px; }
       .nav-links{ gap: 14px; }
-      h1{ font-size: 42px; }
+      .hero h1{ font-size: 42px; }
       .cards{ grid-template-columns: 1fr; }
       .featured{ grid-template-columns: 1fr; }
       .featured img{ height: 320px; }
@@ -276,16 +313,16 @@
 <body>
 
   <nav class="nav">
-    <div class="nav-inner">
+    <div class="nav-container">
       <a class="brand" href="index.html" aria-label="Home">
-        <img src="images/logo.png" alt="Penngrove Real Estate logo">
+        <img src="./images/logo.png" alt="Penngrove Real Estate">
       </a>
 
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="properties.html">Properties</a></li>
         <li><a href="relocation.html">Relocation</a></li>
-        <li><a class="btn" href="contact.html">Private Consultation</a></li>
+        <li><a href="contact.html" class="consult-btn">Private Consultation</a></li>
       </ul>
     </div>
   </nav>
@@ -294,12 +331,12 @@
     <div class="hero-inner">
       <div class="kicker">Boutique representation | Sonoma County</div>
       <h1>Rooted in Penngrove. Built on relationships.</h1>
-      <p class="sub">
+      <p>
         Calm guidance, intelligent strategy, and a deeply local perspective for buyers and sellers across Sonoma County.
       </p>
       <div class="hero-actions">
-        <a class="primary" href="contact.html">Schedule a Private Consultation</a>
-        <a class="secondary" href="properties.html">Explore Featured Properties</a>
+        <a class="primary-btn-lite" href="contact.html">Schedule a Private Consultation</a>
+        <a class="secondary-btn-lite" href="properties.html">Explore Featured Properties</a>
       </div>
     </div>
   </header>
@@ -326,7 +363,7 @@
   <section class="section" style="padding-top:10px;">
     <div class="container">
       <div class="featured">
-        <img src="images/davis-hero.jpg" alt="166 Davis Lane, Penngrove">
+        <img src="./images/davis-hero.jpg" alt="166 Davis Lane, Penngrove">
 
         <div class="featured-panel">
           <div class="meta">Featured property</div>
@@ -336,7 +373,7 @@
             A substantial shop and a prepared building pad offer the option to create a true estate property.
           </p>
           <div class="price"><strong>$1,650,000</strong></div>
-          <a class="primary" href="properties.html">View Property Details</a>
+          <a class="primary-btn-lite" href="properties.html">View Property Details</a>
         </div>
       </div>
     </div>
@@ -350,8 +387,11 @@
     </div>
   </section>
 
-  <footer>
-    Aaron Loewenthal, Penngrove Real Estate, Broker, DRE 01932466, (707) 477-6427, aaron@penngroverealestate.com
+  <!-- Footer structure matches your other pages -->
+  <footer class="footer">
+    <div class="footer-inner">
+      Aaron Loewenthal, Penngrove Real Estate, Broker, DRE 01932466, (707) 477-6427, aaron@penngroverealestate.com
+    </div>
   </footer>
 
   <script>
@@ -362,10 +402,6 @@
       },
       {
         quote: "I’ve had the pleasure of working with Aaron for over 12 years, and I can honestly say there’s no one else I’d rather have in my corner when it comes to real estate. Honest, hardworking, and always thinking a few steps ahead.",
-        source: "Google Review"
-      },
-      {
-        quote: "I had an outstanding experience working with Aaron. Professional, knowledgeable, and genuinely cared about finding the right home. Honest, straightforward, and treated me like a neighbor, not just a client.",
         source: "Google Review"
       },
       {
