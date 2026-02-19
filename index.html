@@ -1,335 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penngrove Real Estate</title>
 
-<title>Penngrove Real Estate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root{
+      --max: 1200px;
+      --pad: 20px;
+      --shadow: 0 22px 70px rgba(0,0,0,.06);
+      --card: #ffffff;
+      --text: #1f1f1f;
+      --muted: rgba(0,0,0,.70);
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:#fff;
+    }
 
-<style>
+    a{ color:inherit; text-decoration:none; }
 
-/* RESET NAV CONFLICTS */
-.nav,
-.nav-container {
-  background: transparent !important;
-  box-shadow: none !important;
-}
+    /* NAV OVER HERO */
+    .nav{
+      position:absolute;
+      top:0; left:0; right:0;
+      z-index:50;
+    }
+    .nav-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px var(--pad);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 22px;
+    }
 
-/* NAV */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 140px;
+    }
 
-.nav-home {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:999;
-}
+    /* Big logo */
+    .brand img{
+      height: 92px;
+      width:auto;
+      display:block;
 
-.nav-inner {
-  max-width:1200px;
-  margin:auto;
-  padding:28px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+      /* This turns your dark logo into a clean white mark without editing the file */
+      filter: brightness(0) invert(1);
+      opacity: .85;
+    }
 
-.logo-img{
-  height:95px;   /* LARGE */
-  width:auto;
-}
+    .nav-links{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap: 30px;
+    }
+    .nav-links a{
+      color: rgba(255,255,255,.92);
+      font-weight: 400;
+      letter-spacing: .02em;
+    }
+    .nav-links a:hover{
+      color:#fff;
+    }
+    .nav-links .btn{
+      border: 1px solid rgba(255,255,255,.55);
+      padding: 10px 16px;
+      border-radius: 999px;
+      color:#fff;
+    }
 
-/* NAV LINKS */
+    /* HERO FULL BLEED */
+    .hero{
+      min-height: 96vh;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.20), rgba(0,0,0,.58)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      display:flex;
+      align-items:flex-end;
+    }
+    .hero-inner{
+      width:100%;
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 0 var(--pad) 86px;
+    }
+    .kicker{
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px;
+      color: rgba(255,255,255,.82);
+      margin-bottom: 14px;
+    }
+    h1{
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 62px;
+      line-height: 1.06;
+      color:#fff;
+      margin: 0 0 16px;
+      max-width: 900px;
+    }
+    .sub{
+      font-size: 19px;
+      line-height: 1.75;
+      color: rgba(255,255,255,.86);
+      max-width: 720px;
+      margin: 0 0 26px;
+    }
+    .hero-actions{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .primary{
+      background:#fff;
+      color:#111;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .secondary{
+      border: 1px solid rgba(255,255,255,.55);
+      color:#fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
 
-.nav-links{
-  display:flex;
-  gap:34px;
-  list-style:none;
-}
+    /* SECTIONS */
+    .section{
+      padding: 86px var(--pad);
+    }
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
 
-.nav-links a{
-  color:white;
-  text-decoration:none;
-  font-weight:400;
-  letter-spacing:.04em;
-}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .card{
+      background: var(--card);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .card h3{
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+    .card p{
+      margin:0;
+      line-height: 1.75;
+      color: var(--muted);
+    }
 
-.consult-btn{
-  border:1px solid rgba(255,255,255,.6);
-  padding:10px 16px;
-  border-radius:999px;
-}
+    /* FEATURED */
+    .featured{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+    .featured img{
+      width:100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      display:block;
+    }
+    .featured-panel{
+      background: var(--card);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .meta{
+      text-transform: uppercase;
+      letter-spacing:.12em;
+      font-size: 12px;
+      opacity: .65;
+      margin-bottom: 12px;
+    }
+    .featured-panel h2{
+      font-family:"Playfair Display", serif;
+      font-size: 32px;
+      margin: 0 0 12px;
+    }
+    .featured-panel p{
+      margin: 0 0 16px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+    .price{
+      font-size: 18px;
+      margin: 8px 0 18px;
+    }
 
-/* HERO */
+    /* TESTIMONIAL ROTATOR */
+    .testimonials{
+      background: #fafafa;
+      padding: 92px var(--pad) 110px;
+    }
+    .tbox{
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px 34px;
+      box-shadow: var(--shadow);
+      text-align:center;
+    }
+    .tbox h3{
+      font-family:"Playfair Display", serif;
+      font-size: 28px;
+      margin: 0 0 18px;
+    }
+    .tquote{
+      margin:0;
+      font-size: 17px;
+      line-height: 1.9;
+      color: rgba(0,0,0,.82);
+    }
+    .tsource{
+      margin-top: 16px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      opacity: .6;
+    }
 
-.hero{
-  height:96vh;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.55)),
-    url("images/hero.jpg");
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:flex-end;
-}
+    /* Footer */
+    footer{
+      padding: 34px var(--pad);
+      text-align:center;
+      color: rgba(0,0,0,.60);
+      font-size: 13px;
+    }
 
-.hero-content{
-  max-width:900px;
-  margin:auto;
-  padding:0 20px 90px;
-}
-
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:64px;
-  color:white;
-  line-height:1.05;
-  margin-bottom:18px;
-}
-
-.hero p{
-  color:rgba(255,255,255,.85);
-  font-size:20px;
-  line-height:1.7;
-  max-width:650px;
-}
-
-/* FEATURED */
-
-.section{
-  padding:90px 20px;
-}
-
-.container{
-  max-width:1150px;
-  margin:auto;
-}
-
-.featured{
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:28px;
-}
-
-.featured img{
-  width:100%;
-  height:460px;
-  object-fit:cover;
-  border-radius:18px;
-}
-
-.featured-card{
-  background:white;
-  padding:46px;
-  border-radius:18px;
-  box-shadow:0 20px 60px rgba(0,0,0,.06);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.featured-card h2{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  margin-bottom:14px;
-}
-
-.featured-card p{
-  line-height:1.8;
-  margin-bottom:18px;
-}
-
-.price{
-  font-size:20px;
-  margin-bottom:20px;
-}
-
-/* TESTIMONIALS */
-
-.testimonial-wrap{
-  background:#fafafa;
-  padding:100px 20px;
-}
-
-.testimonial-box{
-  max-width:800px;
-  margin:auto;
-  background:white;
-  padding:50px;
-  border-radius:20px;
-  box-shadow:0 20px 70px rgba(0,0,0,.05);
-  text-align:center;
-}
-
-.testimonial-box h3{
-  font-family:'Playfair Display',serif;
-  font-size:28px;
-  margin-bottom:20px;
-}
-
-.quote{
-  font-size:18px;
-  line-height:1.9;
-}
-
-.source{
-  margin-top:16px;
-  font-size:13px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  opacity:.6;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.logo-img{
-  height:70px;
-}
-
-.hero h1{
-  font-size:42px;
-}
-
-.featured{
-  grid-template-columns:1fr;
-}
-
-}
-
-</style>
+    /* Mobile */
+    @media (max-width: 980px){
+      .brand img{ height: 70px; }
+      .nav-links{ gap: 14px; }
+      h1{ font-size: 42px; }
+      .cards{ grid-template-columns: 1fr; }
+      .featured{ grid-template-columns: 1fr; }
+      .featured img{ height: 320px; }
+    }
+  </style>
 </head>
-
 
 <body>
 
-<!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="images/logo.png" alt="Penngrove Real Estate logo">
+      </a>
 
-<nav class="nav-home">
-  <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="properties.html">Properties</a></li>
+        <li><a href="relocation.html">Relocation</a></li>
+        <li><a class="btn" href="contact.html">Private Consultation</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <img src="images/logo.png" class="logo-img">
-
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="properties.html">Properties</a></li>
-      <li><a href="relocation.html">Relocation</a></li>
-      <li><a href="contact.html" class="consult-btn">Private Consultation</a></li>
-    </ul>
-
-  </div>
-</nav>
-
-
-<!-- HERO -->
-
-<header class="hero">
-  <div class="hero-content">
-
-    <h1>Rooted in Penngrove.<br>Built on relationships.</h1>
-
-    <p>
-      Boutique representation for buyers and sellers across Sonoma County.
-      Calm guidance, intelligent strategy, and a deeply local perspective.
-    </p>
-
-  </div>
-</header>
-
-
-<!-- FEATURED -->
-
-<section class="section">
-  <div class="container">
-
-    <div class="featured">
-
-      <img src="images/davis-hero.jpg">
-
-      <div class="featured-card">
-
-        <h2>166 Davis Lane, Penngrove</h2>
-
-        <p>
-        Set on approximately 6.8 acres with sweeping views, privacy, and future potential.
-        A substantial shop and prepared building site offer the opportunity to create a true estate property.
-        </p>
-
-        <div class="price"><strong>$1,650,000</strong></div>
-
-        <a href="properties.html" class="consult-btn" style="color:black;border-color:black;">
-        View Property
-        </a>
-
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">Boutique representation | Sonoma County</div>
+      <h1>Rooted in Penngrove. Built on relationships.</h1>
+      <p class="sub">
+        Calm guidance, intelligent strategy, and a deeply local perspective for buyers and sellers across Sonoma County.
+      </p>
+      <div class="hero-actions">
+        <a class="primary" href="contact.html">Schedule a Private Consultation</a>
+        <a class="secondary" href="properties.html">Explore Featured Properties</a>
       </div>
     </div>
+  </header>
 
-  </div>
-</section>
+  <section class="section">
+    <div class="container">
+      <div class="cards">
+        <div class="card">
+          <h3>Local perspective</h3>
+          <p>Penngrove is home. Real insight on micro locations, value drivers, and what matters long term.</p>
+        </div>
+        <div class="card">
+          <h3>Thoughtful strategy</h3>
+          <p>Pricing, positioning, and negotiation handled with care. Clear decisions, no chaos.</p>
+        </div>
+        <div class="card">
+          <h3>High touch service</h3>
+          <p>Fewer clients, deeper service. You work directly with the broker and owner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="section" style="padding-top:10px;">
+    <div class="container">
+      <div class="featured">
+        <img src="images/davis-hero.jpg" alt="166 Davis Lane, Penngrove">
 
+        <div class="featured-panel">
+          <div class="meta">Featured property</div>
+          <h2>166 Davis Lane, Penngrove</h2>
+          <p>
+            Approximately 6.8 acres with wide-open views, privacy, and future potential.
+            A substantial shop and a prepared building pad offer the option to create a true estate property.
+          </p>
+          <div class="price"><strong>$1,650,000</strong></div>
+          <a class="primary" href="properties.html">View Property Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="tbox">
+      <h3>Client testimonials</h3>
+      <p class="tquote" id="tquote"></p>
+      <div class="tsource" id="tsource"></div>
+    </div>
+  </section>
 
-<section class="testimonial-wrap">
-  <div class="testimonial-box">
+  <footer>
+    Aaron Loewenthal, Penngrove Real Estate, Broker, DRE 01932466, (707) 477-6427, aaron@penngroverealestate.com
+  </footer>
 
-    <h3>Client Testimonials</h3>
+  <script>
+    const testimonials = [
+      {
+        quote: "Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. His knowledge, guidance, and responsiveness made the entire process smooth and far less stressful than we expected.",
+        source: "Google Review"
+      },
+      {
+        quote: "I’ve had the pleasure of working with Aaron for over 12 years, and I can honestly say there’s no one else I’d rather have in my corner when it comes to real estate. Honest, hardworking, and always thinking a few steps ahead.",
+        source: "Google Review"
+      },
+      {
+        quote: "I had an outstanding experience working with Aaron. Professional, knowledgeable, and genuinely cared about finding the right home. Honest, straightforward, and treated me like a neighbor, not just a client.",
+        source: "Google Review"
+      },
+      {
+        quote: "Penngrove Real Estate is very easy to work with and they really know the Sonoma County market. Friendly service and good advice. They handled both my sale and purchase and made the process feel simple.",
+        source: "Google Review"
+      }
+    ];
 
-    <div class="quote" id="quote"></div>
-    <div class="source" id="source"></div>
+    let i = 0;
+    const q = document.getElementById("tquote");
+    const s = document.getElementById("tsource");
 
-  </div>
-</section>
+    function rotate(){
+      q.textContent = testimonials[i].quote;
+      s.textContent = testimonials[i].source;
+      i = (i + 1) % testimonials.length;
+    }
 
-
-
-<footer class="footer">
-<div class="footer-inner">
-Penngrove Real Estate • Aaron Loewenthal, Broker • DRE 01932466
-</div>
-</footer>
-
-
-
-<script>
-
-const testimonials = [
-
-{
-quote:"Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. His knowledge and guidance made the entire process smooth and far less stressful than we expected.",
-source:"Google Review"
-},
-
-{
-quote:"There’s no one else I’d rather have in my corner when it comes to real estate. Honest, hardworking, and always thinking a few steps ahead.",
-source:"Google Review"
-},
-
-{
-quote:"Professional, knowledgeable, and genuinely cared about finding the right home. Aaron treats you like a neighbor, not just a client.",
-source:"Google Review"
-}
-
-];
-
-let i=0;
-
-function rotate(){
-document.getElementById("quote").textContent=testimonials[i].quote;
-document.getElementById("source").textContent=testimonials[i].source;
-i=(i+1)%testimonials.length;
-}
-
-rotate();
-setInterval(rotate,6000);
-
-</script>
+    rotate();
+    setInterval(rotate, 6500);
+  </script>
 
 </body>
 </html>
