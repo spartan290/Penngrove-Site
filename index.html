@@ -3,80 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Penngrove Real Estate</title>
-
-  <!-- Keep shared CSS so the footer matches other pages -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Penngrove Real Estate | Rooted in Penngrove</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --max: 1200px;
-      --pad: 20px;
-      --shadow: 0 22px 70px rgba(0,0,0,.06);
+      --max: 1240px;
+      --gutter: 34px;
+      --radius: 18px;
+      --shadow: 0 22px 70px rgba(0,0,0,.08);
+      --ink: #111111;
+      --muted: rgba(17,17,17,.72);
+      --paper: #ffffff;
+      --stone: #f5f5f5;
+      --offwhite: rgba(255,255,255,.86);
+      --offwhite-strong: rgba(255,255,255,.92);
     }
 
     *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:#111;
-      background:#fff;
+      color: var(--ink);
+      background: var(--paper);
     }
-    a{ text-decoration:none; }
+    a{ color: inherit; text-decoration: none; }
+    img{ display:block; max-width:100%; }
 
-    /* =========================
-       HOMEPAGE NAV (collision-proof)
-       ========================= */
-
-    /* Kill any inherited white backgrounds or filters from styles.css */
-    .home-nav, .home-nav *{
-      background: transparent !important;
-      box-shadow: none !important;
-    }
-    .home-nav img{
-      background: transparent !important;
-      box-shadow: none !important;
-      filter: none !important;
-      border: 0 !important;
-      outline: 0 !important;
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
     }
 
+    /* NAV */
     .home-nav{
       position:absolute;
       top:0; left:0; right:0;
       z-index: 9999;
+      background: transparent;
     }
-
-    .home-nav-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 26px var(--pad);
+    .home-nav .container{
+      padding-top: 26px;
+      padding-bottom: 18px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:18px;
+      gap: 18px;
     }
 
     .home-brand{
       display:flex;
       align-items:center;
       line-height:0;
-      padding:0 !important;
-      margin:0 !important;
     }
-
-    /* Logo: off-white vibe by opacity (no invert) */
     .home-logo{
-      height: 196px;
+      height: 120px;
       width:auto;
-      display:block;
       opacity: .85;
-      padding:0 !important;
-      margin:0 !important;
-      border:0 !important;
-      border-radius:0 !important;
+      background: transparent;
     }
 
     .home-links{
@@ -85,81 +71,67 @@
       padding:0;
       display:flex;
       align-items:center;
-      gap: 28px;
+      gap: 24px;
     }
-
     .home-links a{
-      color: rgba(255,255,255,.92);
+      color: var(--offwhite);
       font-weight: 400;
-      letter-spacing: .02em;
+      letter-spacing: .08em;
+      font-size: 12px;
+      text-transform: uppercase;
     }
-
-    .home-links a:hover{ color:#fff; }
-
+    .home-links a:hover{
+      color: #fff;
+    }
     .home-cta{
       border: 1px solid rgba(255,255,255,.55);
       padding: 10px 16px;
       border-radius: 999px;
-      color:#fff;
+      color: #fff;
     }
 
-    /* =========================
-       HERO
-       ========================= */
-
-    .home-hero{
+    /* HERO */
+    .hero{
       min-height: 100vh;
       width:100%;
-      background-image:
-        linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.62)),
-        url("./images/hero.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.20), rgba(0,0,0,.62)),
+        url("images/hero.jpg") center / cover no-repeat;
       display:flex;
       align-items:flex-end;
     }
-
-    .home-hero-inner{
-      width:100%;
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 var(--pad) 86px;
+    .hero .container{
+      padding-bottom: 96px;
     }
-
-    .home-kicker{
+    .hero-kicker{
+      color: rgba(255,255,255,.78);
       text-transform: uppercase;
-      letter-spacing: .14em;
+      letter-spacing: .16em;
       font-size: 12px;
-      color: rgba(255,255,255,.82);
       margin-bottom: 14px;
     }
-
-    .home-hero h1{
-      font-family:"Playfair Display", serif;
-      font-weight:600;
-      font-size: 62px;
-      line-height: 1.06;
-      color:#fff;
-      margin: 0 0 16px;
-      max-width: 920px;
+    .hero h1{
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 68px;
+      line-height: 1.04;
+      color: #fff;
+      margin: 0 0 14px;
+      max-width: 980px;
     }
-
-    .home-hero p{
-      font-size: 19px;
-      line-height: 1.75;
+    .hero .sub{
       color: rgba(255,255,255,.86);
-      max-width: 720px;
-      margin: 0 0 26px;
+      font-size: 18px;
+      line-height: 1.85;
+      max-width: 760px;
+      margin: 0 0 28px;
     }
-
-    .home-actions{
+    .hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap: 14px;
+      gap: 12px;
     }
-
-    .home-btn-primary{
+    .btn-primary{
       background:#fff;
       color:#111;
       padding: 12px 18px;
@@ -167,8 +139,7 @@
       font-weight: 500;
       display:inline-block;
     }
-
-    .home-btn-secondary{
+    .btn-outline{
       border: 1px solid rgba(255,255,255,.55);
       color:#fff;
       padding: 12px 18px;
@@ -177,236 +148,405 @@
       display:inline-block;
     }
 
-    /* =========================
-       SECTIONS
-       ========================= */
-
+    /* SECTION BASE */
     .section{
-      padding: 86px var(--pad);
-      background:#fff;
+      padding: 92px 0;
     }
-    .container{
-      max-width: var(--max);
-      margin: 0 auto;
+    .section.stone{
+      background: var(--stone);
+    }
+    .kicker{
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 12px;
+      opacity: .7;
+      margin-bottom: 12px;
+    }
+    .title{
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+    .lead{
+      color: var(--muted);
+      line-height: 1.9;
+      margin: 0;
+      max-width: 920px;
+      font-size: 16px;
     }
 
-    .cards{
+    /* MEET PREVIEW */
+    .meet-grid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 10px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 34px;
+      align-items: center;
+      margin-top: 26px;
     }
-
-    .card{
-      background:#fff;
-      border-radius: 18px;
-      padding: 30px;
+    .meet-copy p{
+      color: var(--muted);
+      line-height: 1.9;
+      margin: 0 0 14px;
+      font-size: 16px;
+    }
+    .meet-photo{
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
+      overflow:hidden;
+      background: #e9e9e9;
+      min-height: 440px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: rgba(0,0,0,.35);
+      font-size: 14px;
+      text-align:center;
+      padding: 18px;
     }
 
-    .card h3{
-      font-family:"Playfair Display", serif;
-      font-size: 22px;
-      margin: 0 0 10px;
-    }
-
-    .card p{
-      margin:0;
-      line-height: 1.75;
-      color: rgba(0,0,0,.70);
-    }
-
-    .featured{
+    /* FEATURED PROPERTY */
+    .featured-grid{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap: 22px;
+      gap: 26px;
       align-items: stretch;
-      margin-top: 14px;
+      margin-top: 26px;
     }
-
-    .featured img{
+    .featured-grid img{
       width:100%;
-      height: 460px;
+      height: 500px;
       object-fit: cover;
-      border-radius: 18px;
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
-      display:block;
     }
-
     .featured-panel{
-      background:#fff;
-      border-radius: 18px;
-      padding: 40px;
+      background: #fff;
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
+      padding: 42px;
       display:flex;
       flex-direction:column;
       justify-content:center;
     }
-
-    .meta{
+    .featured-meta{
       text-transform: uppercase;
-      letter-spacing:.12em;
+      letter-spacing: .16em;
+      font-size: 12px;
+      opacity: .65;
+      margin-bottom: 10px;
+    }
+    .featured-panel h3{
+      font-family:"Playfair Display", serif;
+      font-size: 30px;
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+    .featured-panel p{
+      color: var(--muted);
+      line-height: 1.9;
+      margin: 0 0 16px;
+      font-size: 16px;
+    }
+    .price{
+      font-weight: 600;
+      margin: 10px 0 18px;
+      font-size: 18px;
+    }
+
+    /* TESTIMONIALS */
+    .tbox{
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 48px 38px;
+      text-align:center;
+      max-width: 940px;
+      margin: 26px auto 0;
+    }
+    .tlabel{
+      text-transform: uppercase;
+      letter-spacing: .16em;
       font-size: 12px;
       opacity: .65;
       margin-bottom: 12px;
     }
-
-    .featured-panel h2{
-      font-family:"Playfair Display", serif;
-      font-size: 32px;
-      margin: 0 0 12px;
-    }
-
-    .featured-panel p{
-      margin: 0 0 16px;
-      line-height: 1.75;
-      color: rgba(0,0,0,.70);
-    }
-
-    .price{
-      font-size: 18px;
-      margin: 8px 0 18px;
-      font-weight: 600;
-    }
-
-    /* =========================
-       TESTIMONIALS
-       ========================= */
-
-    .testimonials{
-      background:#fafafa;
-      padding: 92px var(--pad) 110px;
-    }
-
-    .tbox{
-      max-width: 860px;
-      margin: 0 auto;
-      background:#fff;
-      border-radius: 20px;
-      padding: 48px 34px;
-      box-shadow: var(--shadow);
-      text-align:center;
-    }
-
-    .tbox h3{
-      font-family:"Playfair Display", serif;
-      font-size: 28px;
-      margin: 0 0 18px;
-    }
-
     .tquote{
-      margin:0;
-      font-size: 17px;
-      line-height: 1.9;
+      font-size: 18px;
+      line-height: 1.95;
+      margin: 0;
       color: rgba(0,0,0,.82);
     }
-
     .tsource{
       margin-top: 16px;
       font-size: 12px;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      letter-spacing: .12em;
       opacity: .6;
     }
 
-    /* Mobile */
+    /* COMMUNITIES GRID */
+    .communities-grid{
+      margin-top: 26px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .community-card{
+      position: relative;
+      border-radius: 16px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      min-height: 180px;
+      background: #dcdcdc;
+    }
+    .community-card img{
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 400ms ease;
+    }
+    .community-card:hover img{
+      transform: scale(1.06);
+    }
+    .community-overlay{
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.10));
+      display:flex;
+      align-items:flex-end;
+      padding: 16px 16px;
+    }
+    .community-name{
+      color: var(--offwhite-strong);
+      font-family:"Playfair Display", serif;
+      font-size: 20px;
+      margin:0;
+    }
+
+    /* CTA */
+    .cta-box{
+      background:#fff;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 52px 42px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items:center;
+      margin-top: 26px;
+    }
+    .cta-box p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#0f0f0f;
+      color: rgba(255,255,255,.85);
+      padding: 28px 0;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* MOBILE */
+    @media (max-width: 1100px){
+      .communities-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 980px){
-      .home-logo{ height: 190px; }
+      :root{ --gutter: 18px; }
+      .home-logo{ height: 88px; }
       .home-links{ gap: 14px; }
-      .home-hero h1{ font-size: 42px; }
-      .cards{ grid-template-columns: 1fr; }
-      .featured{ grid-template-columns: 1fr; }
-      .featured img{ height: 320px; }
+      .home-links a{ font-size: 11px; }
+
+      .hero h1{ font-size: 44px; }
+
+      .meet-grid{ grid-template-columns: 1fr; }
+      .featured-grid{ grid-template-columns: 1fr; }
+      .featured-grid img{ height: 340px; }
+      .communities-grid{ grid-template-columns: repeat(2, 1fr); }
+      .cta-box{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .home-links{ display:none; }
+      .communities-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HOMEPAGE NAV -->
   <nav class="home-nav">
-    <div class="home-nav-inner">
+    <div class="container">
       <a class="home-brand" href="index.html" aria-label="Home">
-        <!-- Cache-proof: new filename + query param -->
-        <img class="home-logo" src="images/logo-white.png?v=1" alt="Penngrove Real Estate">
+        <img class="home-logo" src="images/logo-white.png?v=7" alt="Penngrove Real Estate">
       </a>
 
       <ul class="home-links">
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">Meet Aaron</a></li>
         <li><a href="properties.html">Properties</a></li>
+        <li><a href="communities.html">Communities</a></li>
         <li><a href="relocation.html">Relocation</a></li>
-        <li><a class="home-cta" href="contact.html">Private Consultation</a></li>
+        <li><a class="home-cta" href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="home-hero">
-    <div class="home-hero-inner">
-      <div class="home-kicker">Boutique representation | Sonoma County</div>
-      <h1>Rooted in Penngrove. Built on relationships.</h1>
-      <p>
-        Calm guidance, thoughtful strategy, and a deeply local perspective for buyers and sellers throughout Sonoma County.
+  <header class="hero">
+    <div class="container">
+      <div class="hero-kicker">Boutique representation | Sonoma County</div>
+      <h1>Rooted in Penngrove.</h1>
+      <p class="sub">
+        Relationship-driven representation with calm guidance and thoughtful strategy for buyers and sellers throughout Sonoma County.
       </p>
-      <div class="home-actions">
-        <a class="home-btn-primary" href="contact.html">Schedule a Private Consultation</a>
-        <a class="home-btn-secondary" href="properties.html">Explore Featured Properties</a>
+      <div class="hero-actions">
+        <a class="btn-primary" href="contact.html">Schedule a Private Consultation</a>
+        <a class="btn-outline" href="properties.html">View Featured Properties</a>
       </div>
     </div>
   </header>
 
-  <!-- VALUE CARDS -->
   <section class="section">
     <div class="container">
-      <div class="cards">
-        <div class="card">
-          <h3>Local perspective</h3>
-          <p>Penngrove is home. Real insight on micro locations, value drivers, and what matters long term.</p>
+      <div class="kicker">Meet Aaron</div>
+      <h2 class="title">Local, hands-on, and built for long-term relationships.</h2>
+
+      <div class="meet-grid">
+        <div class="meet-copy">
+          <p>
+            I’m Aaron Loewenthal, broker and owner of Penngrove Real Estate. I live here, I work here, and I keep my business intentionally focused so every client gets real attention and clear guidance.
+          </p>
+          <p>
+            My background spans residential and commercial real estate, with an investment and development perspective that helps clients make smart decisions on value, timing, and future potential.
+          </p>
+          <p>
+            My wife, Kaitlin, owns Hello Penngrove, and our family is deeply rooted in this community. If you are buying, selling, or planning a move, I will help you feel informed, protected, and confident from the first conversation through closing.
+          </p>
+          <a class="btn-primary" href="about.html">Learn More</a>
         </div>
-        <div class="card">
-          <h3>Thoughtful strategy</h3>
-          <p>Pricing, positioning, and negotiation handled with care. Clear decisions, no chaos.</p>
-        </div>
-        <div class="card">
-          <h3>High touch service</h3>
-          <p>Fewer clients, deeper service. You work directly with the broker and owner.</p>
+
+        <div class="meet-photo">
+          Add a “Meet Aaron” photo here later (optional). This block is intentionally neutral so it still looks polished.
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED PROPERTY -->
-  <section class="section" style="padding-top:10px;">
+  <section class="section stone">
     <div class="container">
-      <div class="featured">
+      <div class="kicker">Featured property</div>
+      <h2 class="title">166 Davis Lane, Penngrove</h2>
+
+      <div class="featured-grid">
         <img src="images/davis-hero.jpg" alt="166 Davis Lane, Penngrove">
 
         <div class="featured-panel">
-          <div class="meta">Featured property</div>
-          <h2>166 Davis Lane, Penngrove</h2>
+          <div class="featured-meta">6.8 acres • Views • Privacy • Shop • Building pad</div>
+          <h3>A rare setting with space, seclusion, and future potential.</h3>
           <p>
-            Approximately 6.8 acres with wide-open views, privacy, and long-term potential.
-            A substantial shop and a prepared building pad offer flexibility to create a true estate property.
+            Approximately 6.8 acres with a wide-open feel and a strong sense of privacy. A substantial shop and a prepared building pad create the option to expand or build a long-term estate.
           </p>
           <div class="price">$1,650,000</div>
-          <a class="home-btn-primary" href="properties.html">View Property Details</a>
+          <a class="btn-primary" href="properties.html">View Details</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="tbox">
-      <h3>Client testimonials</h3>
-      <p class="tquote" id="tquote"></p>
-      <div class="tsource" id="tsource"></div>
+  <section class="section">
+    <div class="container">
+      <div class="kicker">Testimonials</div>
+      <h2 class="title">What clients say</h2>
+
+      <div class="tbox">
+        <div class="tlabel">Google reviews</div>
+        <p class="tquote" id="tquote"></p>
+        <div class="tsource" id="tsource"></div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER (same pattern as other pages) -->
-  <footer class="footer">
-    <div class="footer-inner">
+  <section class="section stone">
+    <div class="container">
+      <div class="kicker">Communities</div>
+      <h2 class="title">Explore the towns I serve</h2>
+      <p class="lead">
+        Quick overviews to help you understand the feel of each area. For the full deep dive, grab the relocation guide.
+      </p>
+
+      <div class="communities-grid">
+        <a class="community-card" href="communities/penngrove.html">
+          <img src="images/community-penngrove.jpg" alt="Penngrove">
+          <div class="community-overlay"><p class="community-name">Penngrove</p></div>
+        </a>
+
+        <a class="community-card" href="communities/petaluma.html">
+          <img src="images/community-petaluma.jpg" alt="Petaluma">
+          <div class="community-overlay"><p class="community-name">Petaluma</p></div>
+        </a>
+
+        <a class="community-card" href="communities/santa-rosa.html">
+          <img src="images/community-santarosa.jpg" alt="Santa Rosa">
+          <div class="community-overlay"><p class="community-name">Santa Rosa</p></div>
+        </a>
+
+        <a class="community-card" href="communities/cotati.html">
+          <img src="images/community-cotati.jpg" alt="Cotati">
+          <div class="community-overlay"><p class="community-name">Cotati</p></div>
+        </a>
+
+        <a class="community-card" href="communities/rohnert-park.html">
+          <img src="images/community-rohnertpark.jpg" alt="Rohnert Park">
+          <div class="community-overlay"><p class="community-name">Rohnert Park</p></div>
+        </a>
+
+        <a class="community-card" href="communities/sebastopol.html">
+          <img src="images/community-sebastopol.jpg" alt="Sebastopol">
+          <div class="community-overlay"><p class="community-name">Sebastopol</p></div>
+        </a>
+
+        <a class="community-card" href="communities/sonoma.html">
+          <img src="images/community-sonoma.jpg" alt="Sonoma">
+          <div class="community-overlay"><p class="community-name">Sonoma</p></div>
+        </a>
+
+        <a class="community-card" href="communities/windsor.html">
+          <img src="images/community-windsor.jpg" alt="Windsor">
+          <div class="community-overlay"><p class="community-name">Windsor</p></div>
+        </a>
+
+        <a class="community-card" href="communities/healdsburg.html">
+          <img src="images/community-healdsburg.jpg" alt="Healdsburg">
+          <div class="community-overlay"><p class="community-name">Healdsburg</p></div>
+        </a>
+
+        <a class="community-card" href="communities/napa.html">
+          <img src="images/community-napa.jpg" alt="Napa">
+          <div class="community-overlay"><p class="community-name">Napa</p></div>
+        </a>
+      </div>
+
+      <div class="cta-box">
+        <div>
+          <div class="kicker">Relocation guide</div>
+          <h2 class="title" style="margin-bottom:10px;">Want the full insider version?</h2>
+          <p>
+            Get the relocation guide for clear, practical context on towns, lifestyle differences, and what to consider before you move.
+          </p>
+        </div>
+        <div>
+          <a class="btn-primary" href="relocation.html">Get the Guide</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
       Aaron Loewenthal, Penngrove Real Estate, Broker, DRE 01932466, (707) 477-6427, aaron@penngroverealestate.com
     </div>
   </footer>
@@ -414,15 +554,19 @@
   <script>
     const testimonials = [
       {
-        quote: "Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. His knowledge, guidance, and responsiveness made the entire process smooth and far less stressful than we expected.",
+        quote: "Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. He has a deep understanding of the local market, especially in and around Penngrove. His knowledge, guidance, and responsiveness made the entire process smooth and far less stressful than we expected.",
         source: "Google Review"
       },
       {
-        quote: "I’ve had the pleasure of working with Aaron for over 12 years. Honest, hardworking, and always thinking a few steps ahead.",
+        quote: "I’ve had the pleasure of working with Aaron for over 12 years, and I can honestly say there’s no one else I’d rather have in my corner. Honest, hardworking, and always thinking a few steps ahead.",
         source: "Google Review"
       },
       {
-        quote: "Penngrove Real Estate is very easy to work with and they really know the Sonoma County market. Friendly service and good advice. They handled both my sale and purchase and made the process feel simple.",
+        quote: "Penngrove Real Estate is very easy to work with and they really know the Sonoma County market. Friendly service and good advice. They handled both my sale and purchase.",
+        source: "Google Review"
+      },
+      {
+        quote: "I had an outstanding experience working with Aaron Loewenthal. Professional, knowledgeable, and genuinely cared about finding the right home. Honest, straightforward, and treated me like a neighbor, not just a client.",
         source: "Google Review"
       }
     ];
