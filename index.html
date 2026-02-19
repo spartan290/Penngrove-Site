@@ -1,288 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Penngrove Real Estate</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penngrove Real Estate</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Keep shared CSS so the footer matches other pages -->
+  <link rel="stylesheet" href="css/styles.css" />
 
-<style>
-* { box-sizing: border-box; }
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  color: #111;
-}
+  <style>
+    :root{
+      --max: 1200px;
+      --pad: 20px;
+      --shadow: 0 22px 70px rgba(0,0,0,.06);
+    }
 
-/* ===== NAV ===== */
-.nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:#111;
+      background:#fff;
+    }
+    a{ text-decoration:none; }
 
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 28px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    /* =========================
+       HOMEPAGE NAV (collision-proof)
+       ========================= */
 
-.logo img{
-  height: 95px;
-  width: auto;
-  display: block;
-  background: transparent;
-  opacity: .85;
-}
-}
+    /* Kill any inherited white backgrounds or filters from styles.css */
+    .home-nav, .home-nav *{
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+    .home-nav img{
+      background: transparent !important;
+      box-shadow: none !important;
+      filter: none !important;
+      border: 0 !important;
+      outline: 0 !important;
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
+    .home-nav{
+      position:absolute;
+      top:0; left:0; right:0;
+      z-index: 9999;
+    }
 
-.nav-links a {
-  color: rgba(255,255,255,.92);
-  text-decoration: none;
-  font-weight: 400;
-  letter-spacing: .03em;
-}
+    .home-nav-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px var(--pad);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
 
-.nav-links a:hover {
-  color: white;
-}
+    .home-brand{
+      display:flex;
+      align-items:center;
+      line-height:0;
+      padding:0 !important;
+      margin:0 !important;
+    }
 
-.nav-cta {
-  border: 1px solid rgba(255,255,255,.6);
-  padding: 10px 16px;
-  border-radius: 999px;
-}
+    /* Logo: off-white vibe by opacity (no invert) */
+    .home-logo{
+      height: 96px;
+      width:auto;
+      display:block;
+      opacity: .85;
+      padding:0 !important;
+      margin:0 !important;
+      border:0 !important;
+      border-radius:0 !important;
+    }
 
-/* ===== HERO ===== */
-.hero {
-  height: 100vh;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.6)),
-    url("images/hero.jpg") center / cover no-repeat;
-  display: flex;
-  align-items: flex-end;
-}
+    .home-links{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      align-items:center;
+      gap: 28px;
+    }
 
-.hero-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px 90px;
-}
+    .home-links a{
+      color: rgba(255,255,255,.92);
+      font-weight: 400;
+      letter-spacing: .02em;
+    }
 
-.hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 64px;
-  color: white;
-  margin: 0 0 18px;
-  line-height: 1.1;
-}
+    .home-links a:hover{ color:#fff; }
 
-.hero p {
-  font-size: 19px;
-  color: rgba(255,255,255,.85);
-  max-width: 700px;
-  margin-bottom: 28px;
-}
+    .home-cta{
+      border: 1px solid rgba(255,255,255,.55);
+      padding: 10px 16px;
+      border-radius: 999px;
+      color:#fff;
+    }
 
-.hero-buttons a {
-  text-decoration: none;
-  padding: 12px 18px;
-  border-radius: 999px;
-  margin-right: 14px;
-  font-weight: 500;
-}
+    /* =========================
+       HERO
+       ========================= */
 
-.btn-light {
-  background: white;
-  color: #111;
-}
+    .home-hero{
+      min-height: 100vh;
+      width:100%;
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.62)),
+        url("./images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display:flex;
+      align-items:flex-end;
+    }
 
-.btn-outline {
-  border: 1px solid rgba(255,255,255,.6);
-  color: white;
-}
+    .home-hero-inner{
+      width:100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad) 86px;
+    }
 
-/* ===== FEATURED ===== */
-.section {
-  padding: 90px 24px;
-}
+    .home-kicker{
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px;
+      color: rgba(255,255,255,.82);
+      margin-bottom: 14px;
+    }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .home-hero h1{
+      font-family:"Playfair Display", serif;
+      font-weight:600;
+      font-size: 62px;
+      line-height: 1.06;
+      color:#fff;
+      margin: 0 0 16px;
+      max-width: 920px;
+    }
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 30px;
-  align-items: center;
-}
+    .home-hero p{
+      font-size: 19px;
+      line-height: 1.75;
+      color: rgba(255,255,255,.86);
+      max-width: 720px;
+      margin: 0 0 26px;
+    }
 
-.featured-grid img {
-  width: 100%;
-  border-radius: 18px;
-}
+    .home-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 14px;
+    }
 
-.featured-panel h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 32px;
-  margin-top: 0;
-}
+    .home-btn-primary{
+      background:#fff;
+      color:#111;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 500;
+      display:inline-block;
+    }
 
-.featured-panel p {
-  line-height: 1.7;
-  color: rgba(0,0,0,.7);
-}
+    .home-btn-secondary{
+      border: 1px solid rgba(255,255,255,.55);
+      color:#fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 500;
+      display:inline-block;
+    }
 
-.price {
-  font-weight: 600;
-  margin: 14px 0 20px;
-}
+    /* =========================
+       SECTIONS
+       ========================= */
 
-/* ===== TESTIMONIALS ===== */
-.testimonials {
-  background: #f6f6f6;
-  padding: 100px 24px;
-}
+    .section{
+      padding: 86px var(--pad);
+      background:#fff;
+    }
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
 
-.testimonial-box {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  padding: 50px 40px;
-  border-radius: 20px;
-  text-align: center;
-}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 10px;
+    }
 
-.testimonial-box h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-  margin-top: 0;
-}
+    .card{
+      background:#fff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
 
-.testimonial-text {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
+    .card h3{
+      font-family:"Playfair Display", serif;
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
 
-.testimonial-source {
-  font-size: 12px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  opacity: .6;
-}
+    .card p{
+      margin:0;
+      line-height: 1.75;
+      color: rgba(0,0,0,.70);
+    }
 
-/* ===== FOOTER ===== */
-.footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 14px;
-}
+    .featured{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 14px;
+    }
 
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
-  .hero h1 { font-size: 42px; }
-  .featured-grid { grid-template-columns: 1fr; }
-}
-</style>
+    .featured img{
+      width:100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      display:block;
+    }
+
+    .featured-panel{
+      background:#fff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .meta{
+      text-transform: uppercase;
+      letter-spacing:.12em;
+      font-size: 12px;
+      opacity: .65;
+      margin-bottom: 12px;
+    }
+
+    .featured-panel h2{
+      font-family:"Playfair Display", serif;
+      font-size: 32px;
+      margin: 0 0 12px;
+    }
+
+    .featured-panel p{
+      margin: 0 0 16px;
+      line-height: 1.75;
+      color: rgba(0,0,0,.70);
+    }
+
+    .price{
+      font-size: 18px;
+      margin: 8px 0 18px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       TESTIMONIALS
+       ========================= */
+
+    .testimonials{
+      background:#fafafa;
+      padding: 92px var(--pad) 110px;
+    }
+
+    .tbox{
+      max-width: 860px;
+      margin: 0 auto;
+      background:#fff;
+      border-radius: 20px;
+      padding: 48px 34px;
+      box-shadow: var(--shadow);
+      text-align:center;
+    }
+
+    .tbox h3{
+      font-family:"Playfair Display", serif;
+      font-size: 28px;
+      margin: 0 0 18px;
+    }
+
+    .tquote{
+      margin:0;
+      font-size: 17px;
+      line-height: 1.9;
+      color: rgba(0,0,0,.82);
+    }
+
+    .tsource{
+      margin-top: 16px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      opacity: .6;
+    }
+
+    /* Mobile */
+    @media (max-width: 980px){
+      .home-logo{ height: 70px; }
+      .home-links{ gap: 14px; }
+      .home-hero h1{ font-size: 42px; }
+      .cards{ grid-template-columns: 1fr; }
+      .featured{ grid-template-columns: 1fr; }
+      .featured img{ height: 320px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="logo">
-      <img src="images/logo.png" alt="Penngrove Real Estate">
-    </div>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="properties.html">Properties</a></li>
-      <li><a href="relocation.html">Relocation</a></li>
-      <li><a href="contact.html" class="nav-cta">Private Consultation</a></li>
-    </ul>
-  </div>
-</nav>
+  <!-- HOMEPAGE NAV -->
+  <nav class="home-nav">
+    <div class="home-nav-inner">
+      <a class="home-brand" href="index.html" aria-label="Home">
+        <!-- Cache-proof: new filename + query param -->
+        <img class="home-logo" src="images/logo-white.png?v=1" alt="Penngrove Real Estate">
+      </a>
 
-<header class="hero">
-  <div class="hero-content">
-    <h1>Rooted in Penngrove.<br>Built on relationships.</h1>
-    <p>
-      Calm guidance, thoughtful strategy, and a deeply local perspective for buyers and sellers throughout Sonoma County.
-    </p>
-    <div class="hero-buttons">
-      <a href="contact.html" class="btn-light">Schedule a Consultation</a>
-      <a href="properties.html" class="btn-outline">View Featured Properties</a>
+      <ul class="home-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="properties.html">Properties</a></li>
+        <li><a href="relocation.html">Relocation</a></li>
+        <li><a class="home-cta" href="contact.html">Private Consultation</a></li>
+      </ul>
     </div>
-  </div>
-</header>
+  </nav>
 
-<section class="section">
-  <div class="container">
-    <div class="featured-grid">
-      <img src="images/davis-hero.jpg" alt="166 Davis Lane">
-      <div class="featured-panel">
-        <h2>166 Davis Lane, Penngrove</h2>
-        <p>
-          Approximately 6.8 acres with wide-open views, privacy, and long-term potential.
-          A substantial shop and prepared building site offer flexibility to create a true estate property.
-        </p>
-        <div class="price">$1,650,000</div>
-        <a href="properties.html" class="btn-light">View Property</a>
+  <!-- HERO -->
+  <header class="home-hero">
+    <div class="home-hero-inner">
+      <div class="home-kicker">Boutique representation | Sonoma County</div>
+      <h1>Rooted in Penngrove. Built on relationships.</h1>
+      <p>
+        Calm guidance, thoughtful strategy, and a deeply local perspective for buyers and sellers throughout Sonoma County.
+      </p>
+      <div class="home-actions">
+        <a class="home-btn-primary" href="contact.html">Schedule a Private Consultation</a>
+        <a class="home-btn-secondary" href="properties.html">Explore Featured Properties</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="testimonials">
-  <div class="testimonial-box">
-    <h3>Client Testimonials</h3>
-    <p class="testimonial-text" id="testimonialText"></p>
-    <div class="testimonial-source" id="testimonialSource"></div>
-  </div>
-</section>
+  <!-- VALUE CARDS -->
+  <section class="section">
+    <div class="container">
+      <div class="cards">
+        <div class="card">
+          <h3>Local perspective</h3>
+          <p>Penngrove is home. Real insight on micro locations, value drivers, and what matters long term.</p>
+        </div>
+        <div class="card">
+          <h3>Thoughtful strategy</h3>
+          <p>Pricing, positioning, and negotiation handled with care. Clear decisions, no chaos.</p>
+        </div>
+        <div class="card">
+          <h3>High touch service</h3>
+          <p>Fewer clients, deeper service. You work directly with the broker and owner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer class="footer">
-Aaron Loewenthal | Penngrove Real Estate | Broker | DRE 01932466 | (707) 477-6427 | aaron@penngroverealestate.com
-</footer>
+  <!-- FEATURED PROPERTY -->
+  <section class="section" style="padding-top:10px;">
+    <div class="container">
+      <div class="featured">
+        <img src="images/davis-hero.jpg" alt="166 Davis Lane, Penngrove">
 
-<script>
-const testimonials = [
-  "Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. His knowledge and responsiveness made the process smooth and far less stressful than we expected.",
-  "I’ve worked with Aaron for over 12 years. Honest, hardworking, and always thinking a few steps ahead.",
-  "Penngrove Real Estate is easy to work with and deeply knowledgeable about Sonoma County. Friendly service and great advice."
-];
+        <div class="featured-panel">
+          <div class="meta">Featured property</div>
+          <h2>166 Davis Lane, Penngrove</h2>
+          <p>
+            Approximately 6.8 acres with wide-open views, privacy, and long-term potential.
+            A substantial shop and a prepared building pad offer flexibility to create a true estate property.
+          </p>
+          <div class="price">$1,650,000</div>
+          <a class="home-btn-primary" href="properties.html">View Property Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-let index = 0;
-const text = document.getElementById("testimonialText");
-const source = document.getElementById("testimonialSource");
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="tbox">
+      <h3>Client testimonials</h3>
+      <p class="tquote" id="tquote"></p>
+      <div class="tsource" id="tsource"></div>
+    </div>
+  </section>
 
-function rotateTestimonials(){
-  text.textContent = testimonials[index];
-  source.textContent = "Google Review";
-  index = (index + 1) % testimonials.length;
-}
+  <!-- FOOTER (same pattern as other pages) -->
+  <footer class="footer">
+    <div class="footer-inner">
+      Aaron Loewenthal, Penngrove Real Estate, Broker, DRE 01932466, (707) 477-6427, aaron@penngroverealestate.com
+    </div>
+  </footer>
 
-rotateTestimonials();
-setInterval(rotateTestimonials, 6000);
-</script>
+  <script>
+    const testimonials = [
+      {
+        quote: "Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. His knowledge, guidance, and responsiveness made the entire process smooth and far less stressful than we expected.",
+        source: "Google Review"
+      },
+      {
+        quote: "I’ve had the pleasure of working with Aaron for over 12 years. Honest, hardworking, and always thinking a few steps ahead.",
+        source: "Google Review"
+      },
+      {
+        quote: "Penngrove Real Estate is very easy to work with and they really know the Sonoma County market. Friendly service and good advice. They handled both my sale and purchase and made the process feel simple.",
+        source: "Google Review"
+      }
+    ];
+
+    let i = 0;
+    const q = document.getElementById("tquote");
+    const s = document.getElementById("tsource");
+
+    function rotate(){
+      q.textContent = testimonials[i].quote;
+      s.textContent = testimonials[i].source;
+      i = (i + 1) % testimonials.length;
+    }
+
+    rotate();
+    setInterval(rotate, 6500);
+  </script>
 
 </body>
 </html>
