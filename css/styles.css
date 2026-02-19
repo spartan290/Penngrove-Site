@@ -1,4 +1,25 @@
+/* Kill any inherited white box behind the logo/nav (homepage only) */
+.nav, .nav * {
+  background: transparent !important;
+  box-shadow: none !important;
+}
 
+.brand {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  line-height: 0;
+}
+
+.brand img {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
 :root{
   --ink:#141414;
   --char:#1f1f1f;
