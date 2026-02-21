@@ -1,332 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Penngrove Real Estate</title>
+  <title>Meet Aaron | Penngrove Real Estate</title>
+  <meta name="description" content="Meet Aaron Loewenthal, Broker and owner of Penngrove Real Estate. Relationship driven representation rooted in Penngrove.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    .page-wrap { padding-top: 90px; }
-
-    .about-hero {
-      padding: 70px 20px 40px;
-    }
-    .about-hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 46px;
-      align-items: center;
-    }
-    .about-photo {
-      width: 100%;
-      border-radius: 18px;
-      object-fit: cover;
-      box-shadow: 0 18px 55px rgba(0,0,0,.10);
-    }
-
-    .about-kicker {
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      opacity: .75;
-      margin-bottom: 10px;
-    }
-
-    .about-title {
-      font-family: "Playfair Display", serif;
-      font-size: 44px;
-      line-height: 1.1;
-      margin: 0 0 16px;
-    }
-
-    .about-lede {
-      font-size: 18px;
-      line-height: 1.75;
-      margin: 0 0 18px;
-      opacity: .92;
-    }
-
-    .about-cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .section {
-      padding: 22px 20px 56px;
-    }
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 14px 45px rgba(0,0,0,.06);
-    }
-
-    .card h2, .card h3 {
-      font-family: "Playfair Display", serif;
-      margin: 0 0 12px;
-      font-size: 22px;
-      line-height: 1.2;
-    }
-
-    .card p {
-      margin: 0;
-      line-height: 1.75;
-      opacity: .92;
-    }
-
-    .highlights {
-      margin: 14px 0 0;
-      padding-left: 18px;
-      line-height: 1.85;
-      opacity: .92;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .quote {
-      border-left: 3px solid rgba(0,0,0,.12);
-      padding-left: 16px;
-      font-size: 16px;
-      line-height: 1.8;
-      opacity: .92;
-      margin: 0;
-    }
-
-    .center-cta {
-      text-align: center;
-      padding: 10px 20px 80px;
-    }
-    .center-cta-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 18px;
-      padding: 44px 30px;
-      box-shadow: 0 16px 55px rgba(0,0,0,.06);
-    }
-    .center-cta h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 30px;
-      margin: 0 0 10px;
-    }
-    .center-cta p {
-      margin: 0 auto 18px;
-      max-width: 700px;
-      line-height: 1.75;
-      opacity: .92;
-      font-size: 16px;
-    }
-
-    @media (max-width: 980px) {
-      .about-hero-inner { grid-template-columns: 1fr; }
-      .about-title { font-size: 38px; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .split { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
+<body style="--pageHeroImage: url('/images/community-penngrove.png');">
 
-<body>
+  <div id="site-nav"></div>
 
-  <nav class="nav">
-    <div class="nav-container">
-      <a href="index.html" class="site-logo">
-  <img src="images/logo-white.png" alt="Penngrove Real Estate">
-</a>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="properties.html">Properties</a></li>
-        <li><a href="relocation.html">Relocation</a></li>
-        <li><a href="contact.html" class="consult-btn">Private Consultation</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="page-wrap">
-
-    <section class="about-hero">
-      <div class="about-hero-inner">
-        <img src="images/headshot.jpg" alt="Aaron Loewenthal" class="about-photo" />
-
-        <div>
-          <div class="about-kicker">Broker | Owner | Penngrove Real Estate</div>
-          <h1 class="about-title">Rooted in Penngrove, built on relationships.</h1>
-
-          <p class="about-lede">
-            I’m Aaron Loewenthal, broker and owner of Penngrove Real Estate. I live here, I work here, and my business is intentionally
-            relationship-driven. My job is to bring clarity, steady guidance, and thoughtful strategy from the first conversation through closing.
-          </p>
-
-          <p class="about-lede">
-            Clients work with me because they want representation that feels calm, well-managed, and personal, with local insight that only comes
-            from being deeply connected to the community.
-          </p>
-
-          <div class="about-cta-row">
-            <a href="contact.html" class="primary-btn">Schedule a Private Consultation</a>
-            <a href="properties.html" class="secondary-btn">View Featured Properties</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-inner">
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Experience you can feel</h3>
-            <p>
-              Over a decade in real estate, with a perspective that extends into property strategy, investment thinking, and development potential.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Local roots, real access</h3>
-            <p>
-              Penngrove is home. My wife owns Hello Penngrove, and our family is part of the day-to-day life of this town.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Fewer clients, deeper service</h3>
-            <p>
-              I keep my business intentionally boutique so every client receives attention, responsiveness, and a tailored plan.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-inner">
-
-        <div class="split">
-          <div class="card">
-            <h2>How I approach representation</h2>
-            <p>
-              The best results come from a clear plan, strong positioning, and calm negotiation. I’m not here to create pressure.
-              I’m here to protect your interests and help you make confident decisions.
-            </p>
-
-            <ul class="highlights">
-              <li>Thoughtful pricing and positioning strategies</li>
-              <li>Direct communication and fast follow-through</li>
-              <li>Negotiation built on preparation, not noise</li>
-              <li>Guidance that stays steady from start to finish</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h2>Why Penngrove Real Estate exists</h2>
-            <p>
-              I founded this brokerage to keep things simple and high-touch. Independence means your experience stays personal, discreet, and
-              intentionally managed, not passed through layers.
-            </p>
-
-            <p style="margin-top:14px;">
-              If you’re relocating to Sonoma County, I’m happy to help you compare towns, lifestyle differences, and what actually matters when
-              choosing where to land.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-inner">
-        <div class="card">
-          <h2>A note from clients</h2>
-          <p class="quote">
-            Aaron was fantastic to work with throughout both the selling of our home and the purchase of our new one. He has a deep understanding
-            of the local market, especially in and around Penngrove. His knowledge, guidance, and responsiveness made the entire process smooth and
-            far less stressful than we expected.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="center-cta">
-      <div class="center-cta-inner">
-        <h2>Let’s talk through your goals.</h2>
-        <p>
-          Whether you’re preparing to sell, relocating, or evaluating a property with long-term potential, I’m happy to share a clear plan and honest guidance.
+  <header class="page-hero">
+    <div class="container hero-inner">
+      <div>
+        <p class="kicker" style="color:rgba(255,255,255,.78)">Meet Aaron</p>
+        <h1>Local, relationship driven, and deeply invested in the community.</h1>
+        <p class="lead" style="color:rgba(255,255,255,.82)">
+          Penngrove Real Estate is built on real relationships, straight advice, and a calm process that protects your time and your outcome.
         </p>
-        <a href="contact.html" class="primary-btn">Schedule a Private Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>How I work</h2>
+        <p class="lead">
+          I keep things simple: strong prep, clean strategy, and clear communication. My job is to protect your interests, keep you informed, and make sure every decision is made with the full picture in mind.
+        </p>
+
+        <h2 style="margin-top:30px;">Background</h2>
+        <p>
+          I have spent my career around real estate and development, which means I look at homes through two lenses: how they live today, and how they hold or create value over time. Whether you are buying your next home, selling a legacy property, or trying to understand the best move in a shifting market, I focus on the details that actually matter.
+        </p>
+        <p>
+          Clients work with me because they want straight guidance, not pressure. I am hands on with pricing, positioning, negotiation, and timelines, and I stay involved from the first walkthrough to the final signatures.
+        </p>
+
+        <h2 style="margin-top:30px;">Rooted in Penngrove</h2>
+        <p>
+          My family and I live in Penngrove, and that connection is a big part of how I serve clients. My wife owns Hello Penngrove, and our lives are tied to the same streets, schools, and small businesses that make this town special. I do not just sell homes here. I know the rhythm of the community and the little things that change how a neighborhood feels day to day.
+        </p>
+
+        <h2 style="margin-top:30px;">What you can expect</h2>
+        <p>
+          If you are selling, you will get a clear plan, honest pricing guidance, and marketing that feels elevated and intentional. If you are buying, you will get a strategy that fits the market you are in, with clean communication and strong advocacy when it counts.
+        </p>
+
+        <div style="margin-top:22px;">
+          <a class="btn primary" href="/contact.html">Schedule a 30 Minute Call</a>
+        </div>
       </div>
     </section>
+  </main>
 
-  </div>
+  <div id="site-footer"></div>
 
-  <footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <div class="footer-title">Penngrove Real Estate</div>
-      <div class="footer-contact">Aaron Loewenthal<br>
-Broker, Penngrove Real Estate<br>
-DRE 01932466<br>
-<a href="tel:+17074776427">(707) 477-6427</a><br>
-<a href="mailto:aaron@penngroverealestate.com">aaron@penngroverealestate.com</a></div>
-    </div>
-
-    <div>
-      <div class="footer-title">Links</div>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="properties.html">Properties</a>
-        <a href="relocation.html">Relocation Guide</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-
-    <div>
-      <div class="footer-title">Follow</div>
-      <div class="footer-links">
-        
-<a href="https://instagram.com/penngroverealestate" target="_blank" rel="noopener">Instagram</a>
-<a href="https://www.facebook.com/aaron.loewenthal" target="_blank" rel="noopener">Facebook</a>
-<a href="https://www.youtube.com/@Penngroverealestate" target="_blank" rel="noopener">YouTube</a>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="container footer-bottom">
-    <span>© 2026 Penngrove Real Estate</span>
-    <span class="sep">·</span>
-    <a href="assets/penngrove-real-estate-logo.pdf" target="_blank" rel="noopener">Logo</a>
-    <span class="sep">·</span>
-    <a href="assets/sonoma-county-relocation-guide.pdf" target="_blank" rel="noopener">Relocation Guide PDF</a>
-  </div>
-</footer>
-<script src="js/script.js"></script>
-
+  <script src="/js/include.js"></script>
 </body>
 </html>
