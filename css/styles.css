@@ -1,49 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Featured Properties | Penngrove Real Estate</title>
-  <meta name="description" content="Featured properties represented by Penngrove Real Estate. Curated offerings across Sonoma County.">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-  <div id="site-nav"></div>
-
-  <header class="hero" style="min-height: 46vh; background:
-    linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.60)),
-    url('images/davis-hero.jpg') center/cover no-repeat;">
-    <div class="container hero-inner" style="padding-bottom: 36px;">
-      <div>
-        <p class="kicker" style="color:rgba(255,255,255,.78)">Properties</p>
-        <h1 style="margin-bottom:10px;">Featured properties</h1>
-        <p style="color:rgba(255,255,255,.82); max-width:820px;">
-          Curated offerings presented with a clean, calm experience and clear communication from first showing to close.
-        </p>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="section">
-      <div class="container">
-        <!-- Keep your existing property cards here or tell me and I’ll rewrite them cleanly too -->
-        <p class="lead">Your featured listings will live here. We can add new ones in minutes when you have a new property.</p>
-      </div>
-    </section>
-  </main>
-
-  <div id="site-footer"></div>
-
-  <script src="js/include.js"></script>
-</body>
-</html>
-=======
 :root{
   --max: 1240px;
   --gutter: 34px;
@@ -55,10 +9,7 @@
   --paper: #fff;
   --stone: #f5f5f5;
 
-  --navText: rgba(255,255,255,.88);
-  --navPillBorder: rgba(255,255,255,.30);
-  --navToggleBorder: rgba(255,255,255,.25);
-  --navToggleBg: rgba(255,255,255,.10);
+  --navHeight: 92px;
 }
 
 *{ box-sizing:border-box; }
@@ -97,6 +48,7 @@ h1,h2,h3{
 p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
 .lead{ font-size: 16px; max-width: 900px; }
 
+/* Buttons */
 .btn{
   display:inline-block;
   border-radius:999px;
@@ -118,54 +70,40 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
 }
 .btn.ghost:hover{ background: rgba(255,255,255,.14); }
 
-/* NAV (fixed, non-intrusive, white, no overlap) */
-:root{
-  --navHeight: 92px;
-}
-
+/* NAV (non-sticky, white, sits over hero, does NOT follow scroll) */
 .nav{
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
+  position: absolute;
+  top:0; left:0; right:0;
+  z-index: 20;
   height: var(--navHeight);
-  display: flex;
-  align-items: center;
-  pointer-events: none; /* lets the hero feel clean */
+  display:flex;
+  align-items:center;
+  background: transparent;
 }
 
 .nav-inner{
   max-width: var(--max);
   margin: 0 auto;
   width: 100%;
-  padding: 14px var(--gutter);
+  padding: 18px var(--gutter);
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap: 18px;
-
-  pointer-events: auto; /* re-enable clicks inside nav */
-
-  /* subtle glass bar that does not feel intrusive */
-  background: rgba(10,10,10,.22);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 999px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .site-logo{ display:flex; align-items:center; }
 .site-logo img{
-  height: 64px;
+  height: 72px;
   width:auto;
-  opacity: .92;
+  opacity: .90;
   background: transparent;
 }
 
-/* Menu */
 .nav-toggle{
   display:none;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.18);
   color: rgba(255,255,255,.92);
   border-radius: 999px;
   padding: 10px 14px;
@@ -180,45 +118,49 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
   padding:0;
   display:flex;
   align-items:center;
-  gap: 20px;
+  gap: 22px;
 }
 
 .nav-menu a{
   font-size: 12px;
   letter-spacing: .10em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.88);
+  color: rgba(255,255,255,.92);
   padding: 10px 2px;
 }
 .nav-menu a:hover{ color: rgba(255,255,255,1); }
 
 .nav-menu .pill{
-  border: 1px solid rgba(255,255,255,.22);
+  border: 1px solid rgba(255,255,255,.28);
   border-radius:999px;
   padding: 10px 14px;
   background: rgba(255,255,255,.06);
 }
-.nav-menu .pill:hover{
-  background: rgba(255,255,255,.10);
-}
-}
+.nav-menu .pill:hover{ background: rgba(255,255,255,.10); }
 
 /* HERO */
 .hero{
   min-height: 92vh;
   position: relative;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.55)),
-    url("/images/hero.jpg") center/cover no-repeat;
   display:flex;
-  padding-top: calc(var(--navHeight) + 18px);
+  padding-top: var(--navHeight);
+
+  background-color: #111;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,.20), rgba(0,0,0,.58)),
+    url("/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 .hero .hero-inner{
   width:100%;
   display:flex;
   align-items:flex-end;
   padding-bottom: 74px;
 }
+
 .hero h1{
   color: rgba(255,255,255,.95);
   font-size: 56px;
@@ -231,15 +173,18 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
 .page-hero{
   min-height: 48vh;
   position: relative;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.62)),
-    var(--pageHeroImage) center/cover no-repeat;
   display:flex;
-  padding-top: calc(var(--navHeight) + 18px);
+  padding-top: var(--navHeight);
+
+  background-color: #111;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.62)),
+    var(--pageHeroImage);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.page-hero .hero-inner{
-  padding-bottom: 40px;
-}
+.page-hero .hero-inner{ padding-bottom: 40px; }
 .page-hero h1{ color: rgba(255,255,255,.95); font-size: 44px; }
 .page-hero p{ color: rgba(255,255,255,.82); }
 
@@ -306,7 +251,6 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
   display:flex;
   align-items:flex-end;
   padding: 18px;
-  transition: background 420ms ease;
 }
 .community-name{
   margin:0;
@@ -314,14 +258,8 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
   font-size: 22px;
   color: rgba(255,255,255,.96);
   text-shadow: 0 10px 26px rgba(0,0,0,.35);
-  transform: translateY(0);
-  transition: transform 420ms ease;
 }
 .community-card:hover img{ transform: scale(1.09); }
-.community-card:hover .community-overlay{
-  background: linear-gradient(to top, rgba(0,0,0,.80), rgba(0,0,0,.18) 55%, rgba(0,0,0,0));
-}
-.community-card:hover .community-name{ transform: translateY(-4px); }
 
 /* TESTIMONIALS */
 .testimonial{
@@ -386,27 +324,28 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
 }
 
 /* RESPONSIVE */
+@media (max-width: 1100px){
+  .feature-wrap{ grid-template-columns: 1fr; }
+  .communities-grid{ grid-template-columns: repeat(3,1fr); }
+  .hero h1{ font-size: 46px; }
+  .site-logo img{ height: 68px; }
+}
+
 @media (max-width: 980px){
   :root{
     --gutter: 18px;
     --navHeight: 86px;
   }
 
-  .nav-inner{
-    border-radius: 18px;
-    background: rgba(10,10,10,.28);
-  }
-
-  .site-logo img{ height: 56px; }
-
-  .nav-toggle{ display:inline-block; color: rgba(255,255,255,.92); }
+  .nav-toggle{ display:inline-block; }
+  .site-logo img{ height: 58px; }
 
   .nav-menu{
     position:absolute;
-    top: calc(var(--navHeight) - 6px);
+    top: 70px;
     right: var(--gutter);
     background: rgba(15,15,15,.94);
-    border: 1px solid rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.12);
     border-radius: 16px;
     padding: 12px;
     flex-direction: column;
@@ -415,9 +354,15 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
     width: 240px;
   }
   .nav-menu.open{ display:flex; }
-  .nav-menu a{ color: rgba(255,255,255,.92); }
 
-  /* Give the hero content a little more breathing room on mobile */
+  .communities-grid{ grid-template-columns: repeat(2,1fr); }
+  .footer-grid{ grid-template-columns: 1fr; }
+
   .hero .hero-inner{ padding-bottom: 44px; }
   .hero h1{ font-size: 38px; }
+}
+
+@media (max-width: 560px){
+  .communities-grid{ grid-template-columns: 1fr; }
+  .quote{ min-height: 210px; }
 }
