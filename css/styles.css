@@ -9,7 +9,7 @@
   --paper: #fff;
   --stone: #f5f5f5;
 
-  --navHeight: 92px;
+  --navHeight: 170px;
 }
 
 *{ box-sizing:border-box; }
@@ -85,18 +85,26 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
   max-width: var(--max);
   margin: 0 auto;
   width: 100%;
+
   padding: 18px var(--gutter);
+
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap: 18px;
+
+  justify-content:space-between; /* pushes nav right */
+
+}
+
+/* force menu right side */
+.nav-menu{
+  margin-left:auto;
 }
 
 .site-logo{ display:flex; align-items:center; }
 .site-logo img{
-  height: 72px;
+  height: 220px;
   width:auto;
-  opacity: .90;
+  opacity: .85;
   background: transparent;
 }
 
@@ -338,7 +346,7 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
   }
 
   .nav-toggle{ display:inline-block; }
-  .site-logo img{ height: 58px; }
+  .site-logo img{ height: 95px; }
 
   .nav-menu{
     position:absolute;
