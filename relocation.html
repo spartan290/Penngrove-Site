@@ -1,100 +1,69 @@
-<!-- relocation.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Relocation Guide | Penngrove Real Estate</title>
+  <title>Relocation | Penngrove Real Estate</title>
+  <meta name="description" content="Relocation support for Sonoma County and beyond. Download the relocation guide after you submit your details.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
+<body style="--pageHeroImage: url('/images/community-santarosa.png');">
 
-<body>
+  <div id="site-nav"></div>
 
-  <nav class="nav">
-    <div class="nav-container">
-      <div class="logo">Penngrove Real Estate</div>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="properties.html">Properties</a></li>
-        <li><a href="relocation.html">Relocation</a></li>
-        <li><a href="contact.html" class="consult-btn">Private Consultation</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main class="page">
-    <section class="page-hero">
-      <div class="page-hero-inner">
+  <header class="page-hero">
+    <div class="container hero-inner">
+      <div>
+        <p class="kicker" style="color:rgba(255,255,255,.78)">Relocation</p>
         <h1>Relocation Guide</h1>
-        <p class="lead">
-          Moving to Sonoma County is not just about choosing a house. It is about choosing a lifestyle,
-          a town, a daily rhythm, and the right fit for your family.
-        </p>
-        <p class="lead">
-          This guide was built to help you compare Penngrove, Petaluma, Santa Rosa, Cotati, Rohnert Park,
-          and surrounding areas with clarity and confidence.
+        <p class="lead" style="color:rgba(255,255,255,.82)">
+          A clear breakdown of local communities, lifestyle differences, and how to make smart decisions when you are moving into the area.
         </p>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <section class="content">
-      <div class="content-inner">
-        <div class="card">
-          <h2>Get Instant Access</h2>
-          <p>
-            Fill out the short form below and I will send you the guide right away.
-          </p>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Get the guide</h2>
+        <p class="lead">
+          Fill out the form below and you will be taken to a private download page immediately after submission.
+        </p>
 
-          <div class="form-wrap">
-            <iframe
-              id="JotFormIFrame-260344744061048"
-              title="Relocation Guide"
-              onload="window.parent.scrollTo(0,0)"
-              allowtransparency="true"
-              allow="geolocation; microphone; camera; fullscreen; payment"
-              src="https://form.jotform.com/260344744061048"
-              frameborder="0"
-              style="width:100%; height:950px; border:none;"
-              scrolling="no"
-            ></iframe>
-            <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-            <script>
-              window.jotformEmbedHandler(
-                "iframe[id='JotFormIFrame-260344744061048']",
-                "https://form.jotform.com/"
-              );
-            </script>
-          </div>
+        <div style="margin-top:18px;">
+          <iframe
+            id="JotFormIFrame-260344744061048"
+            title="Relocation Guide"
+            onload="window.parent.scrollTo(0,0)"
+            allowtransparency="true"
+            allow="geolocation; microphone; camera; fullscreen; payment"
+            src="https://form.jotform.com/260344744061048"
+            frameborder="0"
+            style="min-width:100%;max-width:100%;height:700px;border:none;"
+            scrolling="no">
+          </iframe>
+          <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+          <script>
+            window.jotformEmbedHandler("iframe[id='JotFormIFrame-260344744061048']", "https://form.jotform.com/");
+          </script>
         </div>
 
-        <div class="card subtle">
-          <h3>Prefer a quick conversation first?</h3>
-          <p>
-            If you would like to talk through goals, timing, and the best areas for your move,
-            I am happy to set aside time for a private call.
-          </p>
-          <a class="primary-btn" href="contact.html">Schedule a Private Consultation</a>
-        </div>
+        <p style="margin-top:18px;">
+          Important: In Jotform, set the Thank You Page redirect to:
+          <strong>https://penngroverealestate.com/relocation-thank-you.html</strong>
+        </p>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">Penngrove Real Estate</div>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="properties.html">Properties</a>
-        <a href="relocation.html">Relocation</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-meta">
-        Aaron Loewenthal, Penngrove Real Estate, Broker, DRE 01932466, (707) 477-6427, aaron@penngroverealestate.com
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
+  <script src="/js/include.js"></script>
 </body>
 </html>
