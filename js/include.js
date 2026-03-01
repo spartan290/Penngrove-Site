@@ -1,26 +1,20 @@
-async function includeHTML(selector, url) {
-  const el = document.querySelector(selector);
-  if (!el) return;
-  const res = await fetch(url, { cache: "no-store" });
-  el.innerHTML = await res.text();
-}
+<nav class="nav">
+  <div class="nav-inner">
 
-document.addEventListener("DOMContentLoaded", async () => {
-  // Works from root pages and from /communities/* pages
-  const isCommunityPage = window.location.pathname.includes("/communities/");
-  const base = isCommunityPage ? ".." : ".";
+    <a href="/index.html" class="site-logo">
+      <img src="/images/logo.png" alt="Penngrove Real Estate">
+    </a>
 
-  await includeHTML("#site-nav", `${base}/partials/nav.html`);
-  await includeHTML("#site-footer", `${base}/partials/footer.html`);
+    <button class="nav-toggle" aria-expanded="false">
+      Menu
+    </button>
 
-  // Mobile menu toggle (after nav loads)
-  const toggle = document.querySelector(".nav-toggle");
-  const menu = document.querySelector("#nav-menu");
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      const expanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!expanded));
-      menu.classList.toggle("open");
-    });
-  }
-});
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/properties.html">Featured Properties</a></li>
+      <li><a href="/property-management.html">Property Management</a></li>
+      <li><a href="/contact.html" class="pill">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
