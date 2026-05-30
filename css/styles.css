@@ -393,3 +393,21 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
   .communities-grid{ grid-template-columns: 1fr; }
   .quote{ min-height: 210px; }
 }
+.sales-slide {
+  display: none;
+}
+
+.sales-slide.active {
+  display: block;
+}
+
+.sold-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: .08em;
+}

@@ -33,29 +33,84 @@
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <h2>Featured property</h2>
-      <p class="lead">Current offering presented with strong positioning, clean marketing, and a clear plan from day one.</p>
+<section class="section">
+  <div class="container">
+    <h2>Recent Success Stories</h2>
+    <p class="lead">
+      A selection of properties successfully represented throughout Sonoma County.
+    </p>
 
-      <div class="feature-wrap">
-        <div class="feature-media">
-          <img src="/images/davis-hero.jpg" alt="166 Davis Ln, Penngrove">
-        </div>
+    <div class="sales-carousel">
 
-        <div class="feature-card">
-          <h3>166 Davis Ln, Penngrove</h3>
-          <p>
-            6.8 acres with wide open views and a real sense of privacy. A huge shop and a ready to build pad create rare flexibility for expansion or a long term estate plan.
-          </p>
-          <p class="price">$1,650,000</p>
-          <div style="margin-top:10px;">
-            <a class="btn primary" href="/properties.html">View property details</a>
+      <div class="sales-slide active">
+        <div class="feature-wrap">
+          <div class="feature-media">
+            <img src="/images/macklin.jpg" alt="124 Macklin Dr, Cotati">
+          </div>
+
+          <div class="feature-card">
+            <div class="sold-badge">SOLD</div>
+            <h3>124 Macklin Dr, Cotati</h3>
+            <p>
+              Successfully represented from listing through closing with strategic marketing and strong buyer engagement.
+            </p>
           </div>
         </div>
       </div>
+
+      <div class="sales-slide">
+        <div class="feature-wrap">
+          <div class="feature-media">
+            <img src="/images/davis-hero.jpg" alt="166 Davis Ln, Penngrove">
+          </div>
+
+          <div class="feature-card">
+            <div class="sold-badge">SOLD</div>
+            <h3>166 Davis Ln, Penngrove</h3>
+            <p>
+              Unique country property featuring nearly seven acres, a large shop, and future development potential.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sales-slide">
+        <div class="feature-wrap">
+          <div class="feature-media">
+            <img src="/images/wildflower.jpg" alt="1649 Wildflower Way, Rohnert Park">
+          </div>
+
+          <div class="feature-card">
+            <div class="sold-badge">SOLD</div>
+            <h3>1649 Wildflower Way, Rohnert Park</h3>
+            <p>
+              Successfully marketed and sold in one of Rohnert Park's most desirable neighborhoods.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sales-slide">
+        <div class="feature-wrap">
+          <div class="feature-media">
+            <img src="/images/ronsheimer.jpg" alt="442 Ronsheimer Rd, Penngrove">
+          </div>
+
+          <div class="feature-card">
+            <div class="sold-badge">SOLD</div>
+            <h3>442 Ronsheimer Rd, Penngrove</h3>
+            <p>
+              Local representation backed by market knowledge, strong communication, and skilled negotiation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots" id="salesDots"></div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section stone">
     <div class="container">
@@ -163,5 +218,51 @@
 
     renderDots(); render(); restart();
   </script>
+renderDots(); render(); restart();
+</script>
+
+<script>
+const salesSlides = document.querySelectorAll('.sales-slide');
+const salesDotsWrap = document.getElementById('salesDots');
+
+let salesIndex = 0;
+
+function renderSalesDots() {
+  salesDotsWrap.innerHTML = '';
+
+  salesSlides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === salesIndex ? ' active' : '');
+
+    dot.addEventListener('click', () => {
+      salesIndex = i;
+      renderSales();
+    });
+
+    salesDotsWrap.appendChild(dot);
+  });
+}
+
+function renderSales() {
+  salesSlides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === salesIndex);
+  });
+
+  [...salesDotsWrap.children].forEach((dot, i) => {
+    dot.classList.toggle('active', i === salesIndex);
+  });
+}
+
+function nextSale() {
+  salesIndex = (salesIndex + 1) % salesSlides.length;
+  renderSales();
+}
+
+renderSalesDots();
+renderSales();
+
+setInterval(nextSale, 6000);
+</script>
+
 </body>
 </html>
