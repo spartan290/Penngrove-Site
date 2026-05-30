@@ -411,3 +411,12 @@ p{ margin:0 0 14px; line-height:1.9; color: var(--muted); }
   font-size: 12px;
   letter-spacing: .08em;
 }
+.nav-container{
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
+  padding: 18px 60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
