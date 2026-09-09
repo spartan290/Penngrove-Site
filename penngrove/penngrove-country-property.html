@@ -6,137 +6,388 @@
 
   <title>Penngrove Country Property & Acreage | Local Guide</title>
 
-  <meta name="description" content="A local guide to Penngrove country property and acreage, including usable land, wells, septic systems, workshops, barns, access and rural property values.">
+  <meta name="description" content="Explore Penngrove country property and acreage, including usable land, wells, water systems, septic, barns, workshops, outbuildings, access and rural property values.">
 
   <link rel="canonical" href="https://penngroverealestate.com/penngrove/penngrove-country-property.html">
   <link rel="stylesheet" href="/css/styles.css">
 
   <style>
-    .article-hero {
-      padding: 105px 24px 80px;
-      background: #f3f0e9;
+    /* ---------- HERO ---------- */
+
+    .country-hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #222;
     }
 
-    .article-hero-inner,
-    .article-content {
+    .country-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .country-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.62) 0%,
+          rgba(0,0,0,.34) 42%,
+          rgba(0,0,0,.08) 75%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(0,0,0,.40) 0%,
+          transparent 50%
+        );
+    }
+
+    .country-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 80px 28px;
+      color: #fff;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .19em;
+      font-size: .76rem;
+      margin-bottom: 20px;
+    }
+
+    .country-hero h1 {
+      font-size: clamp(3.4rem, 7vw, 6.8rem);
+      line-height: .95;
+      font-weight: 400;
+      max-width: 800px;
+      margin: 0 0 28px;
+    }
+
+    .country-hero p {
+      font-size: 1.16rem;
+      line-height: 1.7;
+      max-width: 610px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,.6);
+    }
+
+
+    /* ---------- GENERAL ---------- */
+
+    .country-section {
+      padding: 95px 28px;
+    }
+
+    .country-inner {
       max-width: 900px;
       margin: 0 auto;
     }
 
-    .article-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: .78rem;
-      margin-bottom: 18px;
+    .country-wide {
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
-    .article-hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.06;
-      margin: 0 0 25px;
+    .country-section h2 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      font-weight: 400;
+      margin: 0 0 27px;
     }
 
-    .article-lead {
-      font-size: 1.17rem;
-      line-height: 1.75;
-      max-width: 800px;
+    .country-section h3 {
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin: 34px 0 13px;
     }
 
-    .article-content {
-      padding: 75px 24px 90px;
-    }
-
-    .article-content h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin: 55px 0 20px;
-    }
-
-    .article-content h2:first-child {
-      margin-top: 0;
-    }
-
-    .article-content h3 {
-      font-size: 1.4rem;
-      margin: 32px 0 12px;
-    }
-
-    .article-content p {
-      font-size: 1.05rem;
+    .country-section p {
+      font-size: 1.06rem;
       line-height: 1.82;
       margin: 0 0 22px;
     }
 
-    .article-content ul {
-      margin: 0 0 28px 20px;
+    .country-section ul {
+      margin: 10px 0 28px 20px;
       padding: 0;
     }
 
-    .article-content li {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 10px;
+    .country-section li {
+      font-size: 1.04rem;
+      line-height: 1.7;
+      margin-bottom: 9px;
     }
 
-    .article-image {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 38px 0;
-    }
-
-    .property-box {
+    .stone {
       background: #f3f0e9;
-      padding: 35px;
-      margin: 40px 0;
     }
 
-    .property-box h3 {
-      margin-top: 0;
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
     }
 
-    .property-box p:last-child {
+    .split.reverse .split-image {
+      order: 2;
+    }
+
+    .split.reverse .split-copy {
+      order: 1;
+    }
+
+    .split-image img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    /* ---------- FULL BLEED IMAGE ---------- */
+
+    .landscape-feature {
+      position: relative;
+      min-height: 660px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #222;
+    }
+
+    .landscape-feature img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .landscape-feature::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.72) 0%,
+        rgba(0,0,0,.18) 60%,
+        rgba(0,0,0,.03) 100%
+      );
+    }
+
+    .landscape-copy {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 28px;
+      color: #fff;
+    }
+
+    .landscape-copy h2 {
+      color: #fff;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 400;
+      line-height: 1;
+      margin: 0 0 22px;
+      max-width: 650px;
+    }
+
+    .landscape-copy p {
+      color: #fff;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      max-width: 610px;
+      margin: 0 0 18px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.55);
+    }
+
+
+    /* ---------- EDITORIAL CALLOUT ---------- */
+
+    .editorial-callout {
+      padding: 105px 28px;
+      text-align: center;
+    }
+
+    .editorial-callout p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(1.8rem, 3.2vw, 3rem);
+      line-height: 1.4;
+    }
+
+
+    /* ---------- DETAIL GRID ---------- */
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 60px;
+      margin-top: 35px;
+    }
+
+    .detail-item {
+      padding: 28px 0;
+      border-top: 1px solid rgba(0,0,0,.18);
+    }
+
+    .detail-item h3 {
+      margin: 0 0 12px;
+    }
+
+    .detail-item p {
       margin-bottom: 0;
     }
 
-    .article-links {
-      background: #f3f0e9;
-      padding: 35px;
-      margin: 55px 0;
+
+    /* ---------- VALUE SECTION ---------- */
+
+    .value-block {
+      border-top: 1px solid rgba(0,0,0,.18);
+      border-bottom: 1px solid rgba(0,0,0,.18);
+      padding: 45px 0;
+      margin: 45px 0;
     }
 
-    .article-links h2 {
+    .value-block h3 {
       margin-top: 0;
     }
 
-    .article-links a {
+
+    /* ---------- RESOURCES ---------- */
+
+    .resources {
+      background: #f3f0e9;
+      padding: 42px;
+      margin-top: 55px;
+    }
+
+    .resources h2 {
+      margin-top: 0;
+    }
+
+    .resources a {
       display: block;
       margin: 12px 0;
       text-decoration: underline;
       text-underline-offset: 4px;
     }
 
-    .author-box {
-      border-top: 1px solid rgba(0,0,0,.18);
-      margin-top: 60px;
-      padding-top: 35px;
+
+    /* ---------- CTA ---------- */
+
+    .country-cta {
+      padding: 105px 28px;
+      text-align: center;
+      background: #f3f0e9;
     }
 
-    .author-box h2 {
+    .country-cta-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .country-cta h2 {
+      font-size: clamp(2.3rem, 4vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin: 0 0 25px;
+    }
+
+    .country-cta p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .country-button {
+      display: inline-block;
+      padding: 15px 28px;
+      border: 1px solid currentColor;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+    }
+
+
+    /* ---------- AUTHOR ---------- */
+
+    .author {
+      border-top: 1px solid rgba(0,0,0,.18);
+      margin-top: 60px;
+      padding-top: 38px;
+    }
+
+    .author h2 {
       margin-top: 0;
     }
 
-    @media (max-width: 760px) {
-      .article-hero {
-        padding: 75px 20px 60px;
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 800px) {
+
+      .country-hero {
+        min-height: 68vh;
       }
 
-      .article-content {
-        padding: 55px 20px 70px;
+      .country-hero-content {
+        padding: 60px 20px;
       }
 
-      .property-box,
-      .article-links {
-        padding: 25px;
+      .country-section {
+        padding: 65px 20px;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .split.reverse .split-image,
+      .split.reverse .split-copy {
+        order: initial;
+      }
+
+      .split-image img {
+        height: 420px;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .landscape-feature {
+        min-height: 570px;
+      }
+
+      .landscape-copy {
+        padding: 55px 20px;
+      }
+
+      .editorial-callout,
+      .country-cta {
+        padding: 75px 20px;
+      }
+
+      .resources {
+        padding: 28px;
       }
     }
   </style>
@@ -146,7 +397,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Penngrove Country Property and Acreage",
-    "description": "A local guide to acreage, usable land, wells, septic systems, workshops, barns and country property in Penngrove, California.",
+    "description": "A local guide to country property, acreage, usable land, wells, septic systems, barns, workshops and rural living in Penngrove, California.",
     "author": {
       "@type": "Person",
       "name": "Aaron Loewenthal"
@@ -167,398 +418,625 @@
   </script>
 </head>
 
+
 <body>
 
   <div data-include="/partials/nav.html"></div>
 
   <main>
 
-    <section class="article-hero">
-      <div class="article-hero-inner">
 
-        <div class="article-eyebrow">Penngrove Country Living</div>
+    <!-- HERO -->
 
-        <h1>Penngrove Country Property & Acreage</h1>
-
-        <p class="article-lead">
-          Acreage is one of the defining parts of the Penngrove real estate
-          market. But the number of acres on a listing tells only a small part
-          of the story. Usable land, water, septic, access, workshops, barns
-          and the way the property is laid out can matter just as much.
-        </p>
-
-      </div>
-    </section>
-
-    <article class="article-content">
-
-      <h2>Country Property Is a Different Kind of Real Estate</h2>
-
-      <p>
-        Penngrove offers something that becomes increasingly difficult to find
-        as you move through more developed parts of Sonoma County: homes with
-        meaningful land while still being close to Petaluma, Cotati and
-        Rohnert Park.
-      </p>
-
-      <p>
-        Some properties have a few acres surrounding a residence. Others have
-        larger parcels, substantial shops, barns, multiple structures or open
-        areas that can accommodate uses that simply are not practical on a
-        conventional residential lot.
-      </p>
-
-      <p>
-        That flexibility is a major part of the appeal. It also means a country
-        property needs to be understood as a complete system rather than simply
-        a house sitting on a larger lot.
-      </p>
-
-      <h2>Acreage vs. Usable Acreage</h2>
-
-      <p>
-        One of the most important distinctions with country property is the
-        difference between total acreage and usable acreage.
-      </p>
-
-      <p>
-        Two properties can contain the same number of acres and function very
-        differently. Topography, drainage, vegetation, access, existing
-        buildings and the placement of the residence can all affect how much
-        of the land is practical for the owner's intended use.
-      </p>
-
-      <div class="property-box">
-        <h3>The acreage number doesn't tell you everything</h3>
-        <p>
-          Five highly usable acres with good access and a practical layout may
-          have very different utility from five acres dominated by steep
-          terrain or other physical limitations. Buyers and sellers should
-          evaluate how the land actually functions, not just the parcel size.
-        </p>
-      </div>
-
-      <h2>How the Property Is Laid Out</h2>
-
-      <p>
-        The relationship between the home and the rest of the property matters.
-        A well-designed country property may have convenient vehicle access,
-        useful separation between the residence and work areas, adequate
-        parking and logical access to shops or barns.
-      </p>
-
-      <p>
-        Aerial photography is particularly helpful when evaluating this type
-        of real estate because it can reveal relationships that are difficult
-        to understand from ground-level photographs alone.
-      </p>
+    <section class="country-hero">
 
       <img
-        class="article-image"
-        src="/images/166-davis-ln-penngrove-country-property.png"
-        alt="Penngrove country property and acreage"
+        src="/images/penngrove-country-property-aerial.jpg"
+        alt="Aerial view of a Penngrove country property and surrounding acreage"
+      >
+
+      <div class="country-hero-content">
+
+        <div class="eyebrow">Penngrove, California</div>
+
+        <h1>Country Property &amp; Acreage</h1>
+
+        <p>
+          Space, privacy and possibility. Penngrove offers a rare combination
+          of country property, usable land and rural character while remaining
+          close to Petaluma and the rest of Sonoma County.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="country-section">
+
+      <div class="country-inner">
+
+        <div class="eyebrow">Country Living</div>
+
+        <h2>More Than Just a House on a Larger Lot</h2>
+
+        <p>
+          Country property is a different kind of real estate. The residence
+          matters, but so does everything surrounding it.
+        </p>
+
+        <p>
+          Acreage, topography, water, septic, access, barns, workshops,
+          fencing, additional structures and the way the land can actually
+          be used may all influence both the experience of owning the property
+          and its market value.
+        </p>
+
+        <p>
+          That is particularly true in Penngrove, where properties can vary
+          dramatically even when they are located only a short distance from
+          one another.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- HISTORIC LAND -->
+
+    <section class="country-section stone">
+
+      <div class="country-wide split reverse">
+
+        <div class="split-image">
+
+          <img
+            src="/images/penngrove-historic-rock-wall.jpg"
+            alt="Historic stone wall on a Penngrove country property"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="split-copy">
+
+          <div class="eyebrow">History &amp; Character</div>
+
+          <h2>A Deeper Connection to the Land</h2>
+
+          <p>
+            Some Penngrove country properties contain features that have been
+            part of the land for generations.
+          </p>
+
+          <p>
+            Old stone walls, mature trees, established agricultural areas,
+            older barns and other improvements can give a property character
+            that cannot simply be recreated with new construction.
+          </p>
+
+          <p>
+            Features like these may not fit neatly into an automated home
+            valuation, but they can have a meaningful effect on how a property
+            feels and how buyers respond to it.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ACREAGE -->
+
+    <section class="country-section">
+
+      <div class="country-inner">
+
+        <div class="eyebrow">Understanding the Land</div>
+
+        <h2>Acreage and Usable Acreage Are Not the Same Thing</h2>
+
+        <p>
+          The number of acres is only the beginning of the conversation.
+          Five acres of relatively level, accessible land can function very
+          differently from five acres that are steep, heavily wooded or
+          difficult to reach.
+        </p>
+
+        <p>
+          When I evaluate country property, I look at how the land actually
+          works.
+        </p>
+
+        <div class="detail-grid">
+
+          <div class="detail-item">
+            <h3>Topography</h3>
+            <p>
+              Slope can affect access, drainage, usability, views and where
+              improvements can practically be located.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>Access</h3>
+            <p>
+              Driveway location, road condition and the ability to reach
+              different areas of the property can substantially affect utility.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>Layout</h3>
+            <p>
+              A well-designed property can create useful separation between
+              the home, shop, animals, gardens and other improvements.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>Privacy</h3>
+            <p>
+              Trees, neighboring properties, setbacks and the position of the
+              residence can make similar-sized parcels feel completely
+              different.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WATER IMAGE + INFRASTRUCTURE -->
+
+    <section class="country-section stone">
+
+      <div class="country-wide split">
+
+        <div class="split-image">
+
+          <img
+            src="/images/penngrove-country-water-system.jpg"
+            alt="Water storage tank and outdoor stone shower on a Penngrove country property"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="split-copy">
+
+          <div class="eyebrow">Rural Infrastructure</div>
+
+          <h2>The Systems Behind Country Living</h2>
+
+          <p>
+            Country properties often rely on systems that buyers of
+            conventional neighborhood homes may rarely have to think about.
+          </p>
+
+          <h3>Private Wells &amp; Water</h3>
+
+          <p>
+            A private well may be the property's primary water source.
+            Production, storage, treatment equipment and the overall condition
+            of the system are important considerations.
+          </p>
+
+          <p>
+            Some properties also have water-storage tanks or other equipment
+            that becomes part of the property's infrastructure.
+          </p>
+
+          <h3>Septic Systems</h3>
+
+          <p>
+            Many Penngrove country properties use private septic systems.
+            Buyers should understand the location, type, condition and
+            available documentation for the system serving the property.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EDITORIAL QUOTE -->
+
+    <section class="editorial-callout">
+
+      <p>
+        The value of a country property is often found in the relationship
+        between the house, the land and everything that makes the acreage
+        useful.
+      </p>
+
+    </section>
+
+
+    <!-- FULL BLEED VIEW -->
+
+    <section class="landscape-feature">
+
+      <img
+        src="/images/penngrove-acreage-view.jpg"
+        alt="Deck overlooking acreage and countryside in Penngrove California"
         loading="lazy"
       >
 
-      <h2>Workshops Can Be a Major Part of the Property</h2>
+      <div class="landscape-copy">
 
-      <p>
-        Large shops are one of the features I see buyers specifically search
-        for in Penngrove. For the right person, a substantial workshop can be
-        nearly as important as the residence.
-      </p>
+        <div class="eyebrow">Views &amp; Open Space</div>
 
-      <p>
-        Buyers may want room for vehicles, equipment, storage, hobbies or a
-        dedicated workspace. A shop that is well located and easy to access
-        can therefore materially change the appeal of a property.
-      </p>
+        <h2>Room to Breathe</h2>
 
-      <p>
-        When evaluating a shop, useful characteristics may include its size,
-        ceiling height, door configuration, vehicle access, electrical service
-        and general condition.
-      </p>
-
-      <h2>Barns and Other Outbuildings</h2>
-
-      <p>
-        Country properties may also include barns, detached garages, storage
-        buildings and other structures. These can add significant utility, but
-        their value depends heavily on condition and usefulness.
-      </p>
-
-      <p>
-        An existing building should not automatically be assumed to have a
-        particular legal or permitted use. When that use matters to a buyer,
-        available property records and permits should be investigated.
-      </p>
-
-      <h2>Private Wells</h2>
-
-      <p>
-        Many rural properties rely on a private well. That means the property
-        owner is responsible for a water system that would normally be handled
-        by a public utility in a conventional neighborhood.
-      </p>
-
-      <p>
-        A well system can involve the well itself, pumps, pressure equipment,
-        storage tanks, filtration or treatment equipment and distribution
-        lines throughout the property.
-      </p>
-
-      <p>
-        When evaluating a property, information about water production,
-        quality and the condition of the equipment can be important. The needs
-        of a household may also be different from the needs of a property
-        where water is intended for landscaping, animals or other uses.
-      </p>
-
-      <h2>Septic Systems</h2>
-
-      <p>
-        Septic systems are another common component of country living. Unlike
-        a home connected to a public sewer, the wastewater system exists on
-        the property itself.
-      </p>
-
-      <p>
-        Its condition, location and configuration can matter both for the
-        current use of the property and for certain future plans.
-      </p>
-
-      <p>
-        Buyers should understand what serves the property and review the
-        available information rather than treating the septic system as an
-        invisible component of the house.
-      </p>
-
-      <h2>Access, Roads and Driveways</h2>
-
-      <p>
-        Access can be easy to overlook during a showing, but it can have a
-        significant effect on country property.
-      </p>
-
-      <p>
-        Long driveways, shared access, private roads, gates and the ability to
-        maneuver larger vehicles or equipment may all matter depending on how
-        the property will be used.
-      </p>
-
-      <p>
-        Maintenance responsibilities should also be understood when access is
-        shared with neighboring properties.
-      </p>
-
-      <h2>Drainage and Topography</h2>
-
-      <p>
-        Country property should be considered through more than one season.
-        The way water moves across land during Sonoma County's wet months may
-        not be obvious during a dry summer showing.
-      </p>
-
-      <p>
-        Drainage patterns, slopes and low areas can influence the usability of
-        land and the maintenance required over time.
-      </p>
-
-      <p>
-        This does not mean that every rural property has drainage problems.
-        It means that the physical characteristics of the land deserve the
-        same attention as the interior of the residence.
-      </p>
-
-      <h2>Fencing, Animals and Rural Uses</h2>
-
-      <p>
-        Some buyers are drawn to acreage because they want space for animals
-        or other rural uses. Existing fencing, gates, shelters and usable
-        pasture areas can make a property more attractive for those buyers.
-      </p>
-
-      <p>
-        However, the existence of acreage should not be treated as automatic
-        approval for any particular use. Zoning and other applicable
-        requirements should be investigated when a specific use is important
-        to the purchase.
-      </p>
-
-      <h2>Additional Homes and Units</h2>
-
-      <p>
-        Some country properties include more than one residential structure.
-        Depending on the property, that might be a second residence, guest
-        house, accessory dwelling unit or another type of improved space.
-      </p>
-
-      <p>
-        These improvements can have substantial value for extended family,
-        rental income or flexibility. They can also make the property more
-        complicated to evaluate.
-      </p>
-
-      <p>
-        Buyers and sellers should distinguish between the physical existence
-        of a structure and what available records establish about its status
-        and permitted use.
-      </p>
-
-      <h2>Utilities on Larger Properties</h2>
-
-      <p>
-        Larger parcels can have more complicated utility infrastructure than
-        conventional residential lots. Electrical service may extend to
-        multiple buildings. Water may be distributed across significant
-        distances. Propane may be used instead of natural gas.
-      </p>
-
-      <p>
-        Understanding these systems can be particularly important when a
-        property includes substantial shops or multiple structures.
-      </p>
-
-      <h2>Maintenance Is Part of Country Living</h2>
-
-      <p>
-        More property generally means more responsibility. Driveways,
-        vegetation, fencing, drainage, wells, septic systems and outbuildings
-        all require varying levels of maintenance.
-      </p>
-
-      <p>
-        For many Penngrove property owners, that tradeoff is worthwhile
-        because the land provides privacy, space and flexibility that cannot
-        be duplicated on a conventional lot.
-      </p>
-
-      <p>
-        Buyers should nevertheless consider the amount of property they
-        realistically want to maintain rather than assuming that more acreage
-        is always better.
-      </p>
-
-      <h2>Valuing Penngrove Country Property</h2>
-
-      <p>
-        Country-property valuation is one of the areas where Penngrove can be
-        particularly challenging.
-      </p>
-
-      <p>
-        The house remains important, but so do the land, setting, shop,
-        outbuildings, additional units and overall utility of the property.
-        Recent sales may share some of those characteristics without matching
-        all of them.
-      </p>
-
-      <p>
-        This means evaluating a country property often requires looking beyond
-        the closest sale and beyond a simple price-per-square-foot calculation.
-      </p>
-
-      <div class="property-box">
-        <h3>What can influence country-property value?</h3>
         <p>
-          Residence size and condition, usable acreage, privacy, location,
-          workshops, barns, additional residential structures, access,
-          infrastructure and the overall usefulness of the property can all
-          affect how buyers perceive value.
+          One of the primary reasons buyers search for country property in
+          Penngrove is the setting itself.
         </p>
+
+        <p>
+          Open land, privacy, views and distance from neighboring homes can
+          become just as important as the square footage inside the house.
+        </p>
+
+        <p>
+          These qualities are also why acreage cannot be valued by a simple
+          price-per-acre formula. The experience of the land matters.
+        </p>
+
       </div>
 
-      <h2>Why Penngrove Appeals to Country-Property Buyers</h2>
+    </section>
 
-      <p>
-        Penngrove offers an unusual combination. Buyers can find acreage and a
-        rural setting while remaining close to Petaluma, Cotati and Rohnert
-        Park.
-      </p>
 
-      <p>
-        That proximity is one reason the area appeals to people who want more
-        room without feeling completely removed from the surrounding Sonoma
-        County communities.
-      </p>
+    <!-- BARNS -->
 
-      <p>
-        Inventory is naturally limited, particularly when a buyer needs a
-        specific combination of acreage, location, shop space or additional
-        structures. Understanding the local market can therefore be important
-        when the right property becomes available.
-      </p>
+    <section class="country-section stone">
 
-      <h2>Experience With Penngrove Country Property</h2>
+      <div class="country-wide split reverse">
 
-      <p>
-        I live in Penngrove and own Penngrove Real Estate. Country properties
-        and acreage are a significant part of my work in the local market.
-      </p>
+        <div class="split-image">
 
-      <p>
-        My role with these properties is not simply to focus on the residence.
-        Whether representing a buyer or seller, I look at the land,
-        improvements, infrastructure and characteristics that make the entire
-        property valuable.
-      </p>
+          <img
+            src="/images/penngrove-country-barn.jpg"
+            alt="Red barn on a Penngrove country property"
+            loading="lazy"
+          >
 
-      <section class="article-links">
+        </div>
 
-        <h2>More Penngrove Real Estate Resources</h2>
+        <div class="split-copy">
 
-        <a href="/penngrove/penngrove-real-estate-guide.html">
-          Penngrove Real Estate Market Guide
-        </a>
+          <div class="eyebrow">Barns, Shops &amp; Outbuildings</div>
 
-        <a href="/penngrove/buying-a-home-in-penngrove.html">
-          Buying a Home in Penngrove
-        </a>
+          <h2>More Than Just a House</h2>
 
-        <a href="/penngrove/selling-a-home-in-penngrove.html">
-          Selling a Home in Penngrove
-        </a>
+          <p>
+            A barn, workshop or substantial outbuilding can be a major part of
+            the appeal of a Penngrove property.
+          </p>
 
-        <a href="/penngrove/penngrove-home-values.html">
-          Penngrove Home Values
-        </a>
+          <p>
+            Buyers may want space for equipment, vehicles, storage, animals,
+            hobbies or other uses. The size, condition, access and utility of
+            those buildings can materially affect how buyers view the
+            property.
+          </p>
 
-        <a href="/penngrove/living-in-penngrove.html">
-          Living in Penngrove
-        </a>
+          <p>
+            When evaluating an outbuilding, it is useful to understand not
+            only its square footage but how it functions as part of the entire
+            property.
+          </p>
 
-        <a href="/penngrove/">
-          View All Penngrove Resources
-        </a>
+        </div>
 
-      </section>
+      </div>
 
-      <section class="author-box">
+    </section>
 
-        <h2>Looking for Country Property in Penngrove?</h2>
+
+    <!-- ADDITIONAL STRUCTURES -->
+
+    <section class="country-section">
+
+      <div class="country-inner">
+
+        <div class="eyebrow">Property Improvements</div>
+
+        <h2>Additional Homes and Structures</h2>
 
         <p>
-          Whether you are looking to buy acreage in Penngrove or considering
-          selling a country property, you can contact me directly to discuss
-          the property and the local market.
+          Some Penngrove country properties contain more than one residential
+          structure. Others may include detached offices, studios, storage
+          buildings or older improvements that have evolved with the property
+          over time.
         </p>
 
         <p>
-          Aaron Loewenthal<br>
-          Penngrove Real Estate<br>
-          Broker | DRE 01932466<br>
-          (707) 477-6427<br>
-          aaron@penngroverealestate.com
+          These structures can add substantial flexibility, but buyers and
+          sellers should understand what is actually documented for the
+          property rather than making assumptions based only on how a
+          structure is currently being used.
+        </p>
+
+        <h3>Fencing and Animals</h3>
+
+        <p>
+          Buyers looking for country property often have specific plans for
+          the land. Horses, livestock, gardens or other rural uses can make
+          fencing, gates, pasture areas and access particularly important.
         </p>
 
         <p>
-          <a href="/contact.html">Contact Aaron about Penngrove country property</a>
+          The existence of acreage does not automatically mean every intended
+          use will work on every property, so the physical characteristics of
+          the land and applicable rules should be investigated as part of the
+          purchase.
         </p>
 
-      </section>
+      </div>
 
-    </article>
+    </section>
+
+
+    <!-- ACCESS -->
+
+    <section class="country-section stone">
+
+      <div class="country-inner">
+
+        <div class="eyebrow">Everyday Ownership</div>
+
+        <h2>Roads, Drainage, Utilities and Maintenance</h2>
+
+        <p>
+          Country living offers space and privacy, but larger properties also
+          come with additional responsibilities.
+        </p>
+
+        <div class="detail-grid">
+
+          <div class="detail-item">
+            <h3>Roads &amp; Driveways</h3>
+            <p>
+              Longer driveways and private roads may require ongoing
+              maintenance and can affect access to different parts of the
+              property.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>Drainage</h3>
+            <p>
+              How water moves across the property matters, particularly on
+              larger parcels with slopes, low areas or multiple improvements.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>Utilities</h3>
+            <p>
+              Larger properties may have utility infrastructure serving
+              multiple buildings, wells, pumps, shops or other improvements.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>Land Maintenance</h3>
+            <p>
+              Vegetation management, fencing, trees and acreage maintenance
+              become part of the normal rhythm of owning rural property.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VALUE -->
+
+    <section class="country-section">
+
+      <div class="country-inner">
+
+        <div class="eyebrow">Market Value</div>
+
+        <h2>How Penngrove Country Property Is Valued</h2>
+
+        <p>
+          Country properties can be difficult to compare because there may be
+          relatively few recent sales with the same combination of residence,
+          acreage and improvements.
+        </p>
+
+        <div class="value-block">
+
+          <h3>The nearest sale is not always the best comparable.</h3>
+
+          <p>
+            A nearby home on a conventional parcel may be less useful than a
+            somewhat more distant property with similar acreage, a comparable
+            residence and similar improvements.
+          </p>
+
+        </div>
+
+        <p>
+          When evaluating value, I look at the entire property:
+        </p>
+
+        <ul>
+          <li>The residence and its condition</li>
+          <li>Total acreage and usable acreage</li>
+          <li>Topography and setting</li>
+          <li>Privacy and views</li>
+          <li>Workshops, barns and garages</li>
+          <li>Additional residential structures</li>
+          <li>Water and septic infrastructure</li>
+          <li>Access and overall property utility</li>
+        </ul>
+
+        <p>
+          This is also why automated online valuations can struggle with
+          unique rural properties. An algorithm may recognize acreage and
+          square footage but have difficulty understanding how the individual
+          features work together.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY PENNGROVE -->
+
+    <section class="country-section stone">
+
+      <div class="country-inner">
+
+        <div class="eyebrow">Why Penngrove</div>
+
+        <h2>Country Living Without Being Far Away</h2>
+
+        <p>
+          Penngrove's location is one of the reasons its country properties
+          are so appealing.
+        </p>
+
+        <p>
+          The area offers rural roads, acreage and open space while remaining
+          close to Petaluma, Cotati, Rohnert Park and Highway 101.
+        </p>
+
+        <p>
+          That makes it possible to have a property with land, privacy,
+          outbuildings and a genuinely rural feeling without being far removed
+          from the services and communities of central Sonoma County.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section class="country-section">
+
+      <div class="country-inner">
+
+        <div class="eyebrow">Local Experience</div>
+
+        <h2>Working With Penngrove Country Property</h2>
+
+        <p>
+          I live in Penngrove and regularly work with the types of properties
+          that make this area different: acreage, workshops, multiple
+          structures, private infrastructure and properties where the land is
+          a major part of the value.
+        </p>
+
+        <p>
+          That local experience matters because evaluating a country property
+          requires more than knowing the square footage of the house.
+        </p>
+
+        <p>
+          Whether you are buying or selling, the goal is to understand the
+          property as a whole and recognize which characteristics will matter
+          most to the market.
+        </p>
+
+
+        <div class="resources">
+
+          <h2>More Penngrove Real Estate Resources</h2>
+
+          <a href="/penngrove/buying-a-home-in-penngrove.html">
+            Buying a Home in Penngrove
+          </a>
+
+          <a href="/penngrove/selling-a-home-in-penngrove.html">
+            Selling a Home in Penngrove
+          </a>
+
+          <a href="/penngrove/penngrove-home-values.html">
+            Penngrove Home Values
+          </a>
+
+          <a href="/penngrove/living-in-penngrove.html">
+            Living in Penngrove
+          </a>
+
+          <a href="/penngrove/penngrove-real-estate-guide.html">
+            Penngrove Real Estate Market Guide
+          </a>
+
+          <a href="/penngrove/">
+            View All Penngrove Resources
+          </a>
+
+        </div>
+
+
+        <div class="author">
+
+          <h2>Penngrove Country Property Broker</h2>
+
+          <p>
+            Aaron Loewenthal<br>
+            Penngrove Real Estate<br>
+            Broker | DRE 01932466<br>
+            11790 Main Street Suite C, Penngrove CA 94951<br>
+            (707) 477-6427<br>
+            aaron@penngroverealestate.com
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+
+    <section class="country-cta">
+
+      <div class="country-cta-inner">
+
+        <div class="eyebrow">Rooted in Penngrove</div>
+
+        <h2>Buying or Selling a Penngrove Country Property?</h2>
+
+        <p>
+          If you are considering buying acreage in Penngrove or want to
+          understand the market value of a country property you already own,
+          contact me directly.
+        </p>
+
+        <a class="country-button" href="/contact.html">
+          Talk With Aaron
+        </a>
+
+      </div>
+
+    </section>
+
 
   </main>
 
