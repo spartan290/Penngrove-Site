@@ -6,103 +6,246 @@
 
   <title>Selling a Home in Penngrove CA | Local Seller's Guide</title>
 
-  <meta name="description" content="A local guide to selling a home or country property in Penngrove, California, including pricing, preparation, marketing, acreage and unique property features.">
+  <meta name="description" content="A local guide to selling a home or country property in Penngrove, California, including pricing, preparation, photography, marketing, acreage, unique features and property value.">
 
   <link rel="canonical" href="https://penngroverealestate.com/penngrove/selling-a-home-in-penngrove.html">
   <link rel="stylesheet" href="/css/styles.css">
 
   <style>
-    .article-hero {
-      padding: 105px 24px 80px;
-      background: #f3f0e9;
+    .seller-hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #222;
     }
 
-    .article-hero-inner,
-    .article-content {
+    .seller-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .seller-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.62) 0%,
+          rgba(0,0,0,.28) 45%,
+          rgba(0,0,0,.03) 78%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(0,0,0,.40) 0%,
+          transparent 55%
+        );
+    }
+
+    .seller-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 80px 28px;
+      color: #fff;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .19em;
+      font-size: .76rem;
+      margin-bottom: 20px;
+    }
+
+    .seller-hero h1 {
+      font-size: clamp(3.3rem, 7vw, 6.6rem);
+      line-height: .96;
+      font-weight: 400;
+      max-width: 850px;
+      margin: 0 0 28px;
+    }
+
+    .seller-hero p {
+      font-size: 1.16rem;
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,.7);
+    }
+
+    .seller-section {
+      padding: 95px 28px;
+    }
+
+    .seller-inner {
       max-width: 900px;
       margin: 0 auto;
     }
 
-    .article-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: .78rem;
-      margin-bottom: 18px;
+    .seller-wide {
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
-    .article-hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.06;
-      margin: 0 0 25px;
+    .seller-section h2 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      font-weight: 400;
+      margin: 0 0 27px;
     }
 
-    .article-lead {
-      font-size: 1.17rem;
-      line-height: 1.75;
-      max-width: 800px;
+    .seller-section h3 {
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin: 34px 0 13px;
     }
 
-    .article-content {
-      padding: 75px 24px 90px;
-    }
-
-    .article-content h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin: 55px 0 20px;
-    }
-
-    .article-content h2:first-child {
-      margin-top: 0;
-    }
-
-    .article-content h3 {
-      font-size: 1.4rem;
-      margin: 32px 0 12px;
-    }
-
-    .article-content p {
-      font-size: 1.05rem;
+    .seller-section p {
+      font-size: 1.06rem;
       line-height: 1.82;
       margin: 0 0 22px;
     }
 
-    .article-content ul {
-      margin: 0 0 28px 20px;
+    .seller-section ul {
+      margin: 10px 0 28px 20px;
       padding: 0;
     }
 
-    .article-content li {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 10px;
+    .seller-section li {
+      font-size: 1.04rem;
+      line-height: 1.7;
+      margin-bottom: 9px;
     }
 
-    .article-image {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 38px 0;
-    }
-
-    .seller-box {
+    .stone {
       background: #f3f0e9;
-      padding: 35px;
-      margin: 40px 0;
     }
 
-    .seller-box h3 {
-      margin-top: 0;
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
     }
 
-    .seller-box p:last-child {
+    .split.reverse .split-image {
+      order: 2;
+    }
+
+    .split.reverse .split-copy {
+      order: 1;
+    }
+
+    .split-image img {
+      width: 100%;
+      height: 570px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .editorial-callout {
+      padding: 110px 28px;
+      text-align: center;
+    }
+
+    .editorial-callout p {
+      max-width: 930px;
+      margin: 0 auto;
+      font-size: clamp(1.8rem, 3.2vw, 3rem);
+      line-height: 1.4;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 60px;
+      margin-top: 35px;
+    }
+
+    .detail-item {
+      padding: 28px 0;
+      border-top: 1px solid rgba(0,0,0,.18);
+    }
+
+    .detail-item h3 {
+      margin: 0 0 12px;
+    }
+
+    .detail-item p {
       margin-bottom: 0;
+    }
+
+    .feature-image {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #222;
+    }
+
+    .feature-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.72) 0%,
+        rgba(0,0,0,.16) 58%,
+        rgba(0,0,0,.02) 100%
+      );
+    }
+
+    .feature-copy {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 28px;
+      color: #fff;
+    }
+
+    .feature-copy h2 {
+      color: #fff;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 400;
+      line-height: 1;
+      max-width: 760px;
+      margin: 0 0 22px;
+    }
+
+    .feature-copy p {
+      color: #fff;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      max-width: 620px;
+      margin: 0 0 18px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.6);
     }
 
     .before-after {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin: 38px 0;
+      gap: 22px;
+      margin: 45px 0 70px;
     }
 
     .before-after figure {
@@ -110,60 +253,150 @@
     }
 
     .before-after img {
-      width: 100%;
-      height: auto;
       display: block;
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
     }
 
     .before-after figcaption {
-      font-size: .9rem;
-      margin-top: 8px;
-      line-height: 1.5;
+      padding-top: 12px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .72rem;
     }
 
-    .article-links {
-      background: #f3f0e9;
-      padding: 35px;
-      margin: 55px 0;
+    .case-heading {
+      margin-top: 60px;
     }
 
-    .article-links h2 {
+    .value-block {
+      border-top: 1px solid rgba(0,0,0,.18);
+      border-bottom: 1px solid rgba(0,0,0,.18);
+      padding: 42px 0;
+      margin: 45px 0;
+    }
+
+    .value-block h3 {
       margin-top: 0;
     }
 
-    .article-links a {
+    .resources {
+      background: #f3f0e9;
+      padding: 42px;
+      margin-top: 55px;
+    }
+
+    .resources h2 {
+      margin-top: 0;
+    }
+
+    .resources a {
       display: block;
       margin: 12px 0;
       text-decoration: underline;
       text-underline-offset: 4px;
     }
 
-    .author-box {
+    .author {
       border-top: 1px solid rgba(0,0,0,.18);
       margin-top: 60px;
-      padding-top: 35px;
+      padding-top: 38px;
     }
 
-    .author-box h2 {
+    .author h2 {
       margin-top: 0;
     }
 
-    @media (max-width: 760px) {
-      .article-hero {
-        padding: 75px 20px 60px;
+    .seller-cta {
+      padding: 110px 28px;
+      text-align: center;
+      background: #f3f0e9;
+    }
+
+    .seller-cta-inner {
+      max-width: 790px;
+      margin: 0 auto;
+    }
+
+    .seller-cta h2 {
+      font-size: clamp(2.3rem, 4vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin: 0 0 25px;
+    }
+
+    .seller-cta p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .seller-button {
+      display: inline-block;
+      padding: 15px 28px;
+      border: 1px solid currentColor;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+    }
+
+    @media (max-width: 800px) {
+      .seller-hero {
+        min-height: 68vh;
       }
 
-      .article-content {
-        padding: 55px 20px 70px;
+      .seller-hero-content {
+        padding: 60px 20px;
       }
 
-      .seller-box,
-      .article-links {
-        padding: 25px;
+      .seller-section {
+        padding: 65px 20px;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .split.reverse .split-image,
+      .split.reverse .split-copy {
+        order: initial;
+      }
+
+      .split-image img {
+        height: 420px;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-image {
+        min-height: 570px;
+      }
+
+      .feature-copy {
+        padding: 55px 20px;
       }
 
       .before-after {
         grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .before-after img {
+        height: auto;
+      }
+
+      .editorial-callout,
+      .seller-cta {
+        padding: 75px 20px;
+      }
+
+      .resources {
+        padding: 28px;
       }
     }
   </style>
@@ -173,7 +406,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Selling a Home in Penngrove, California",
-    "description": "A local seller's guide to preparing, pricing and marketing homes and country properties in Penngrove, California.",
+    "description": "A local seller's guide to pricing, preparing and marketing homes and country properties in Penngrove, California.",
     "author": {
       "@type": "Person",
       "name": "Aaron Loewenthal"
@@ -200,395 +433,653 @@
 
   <main>
 
-    <section class="article-hero">
-      <div class="article-hero-inner">
+    <!-- HERO -->
 
-        <div class="article-eyebrow">Penngrove Seller Resources</div>
+    <section class="seller-hero">
 
-        <h1>Selling a Home in Penngrove</h1>
+      <img
+        src="/images/penngrove-seller-twilight-home.jpg"
+        alt="Professionally photographed home at twilight"
+      >
 
-        <p class="article-lead">
-          Selling property in Penngrove is often about much more than the
-          house itself. Land, location, workshops, additional structures,
-          improvements and the overall usability of a property can all
-          influence value and determine how the property should be marketed.
+      <div class="seller-hero-content">
+
+        <div class="eyebrow">Selling in Penngrove</div>
+
+        <h1>Present the Property. Tell the Story.</h1>
+
+        <p>
+          Selling a Penngrove home is about more than putting it on the market.
+          Pricing, preparation, photography and positioning all work together
+          to show buyers why your property is different.
         </p>
 
       </div>
+
     </section>
 
-    <article class="article-content">
 
-      <h2>Selling in a Small and Diverse Market</h2>
+    <!-- INTRO -->
 
-      <p>
-        Penngrove does not have thousands of nearly identical homes producing
-        a constant stream of easy comparable sales. That is particularly true
-        when selling acreage or a unique country property.
-      </p>
+    <section class="seller-section">
 
-      <p>
-        A seller may own a home that has no recent sale nearby with the same
-        combination of lot size, improvements, shop space, setting and usable
-        land. This makes the initial pricing and positioning of the property
-        especially important.
-      </p>
+      <div class="seller-inner">
 
-      <p>
-        The goal should not simply be to put a property on the market. The
-        goal is to understand what makes it valuable, identify the buyers most
-        likely to appreciate those characteristics and present the property
-        accordingly.
-      </p>
+        <div class="eyebrow">A Local Seller's Guide</div>
 
-      <h2>Start With the Property, Not Just the House</h2>
+        <h2>Every Penngrove Property Has a Different Story</h2>
 
-      <p>
-        When I evaluate a Penngrove property for sale, I want to understand
-        the entire property before determining how it should be positioned.
-      </p>
-
-      <p>
-        Depending on the property, that can include:
-      </p>
-
-      <ul>
-        <li>The residence and its condition</li>
-        <li>Lot size and usable acreage</li>
-        <li>Location within Penngrove</li>
-        <li>Privacy and setting</li>
-        <li>Workshops, barns and detached garages</li>
-        <li>Additional residential structures</li>
-        <li>Parking and vehicle access</li>
-        <li>Well and septic systems</li>
-        <li>Improvements to the land</li>
-        <li>Potential uses that may appeal to buyers</li>
-      </ul>
-
-      <p>
-        Those characteristics help determine which sales are actually useful
-        when evaluating the property and which buyers are most likely to see
-        its value.
-      </p>
-
-      <h2>Pricing a Penngrove Property</h2>
-
-      <p>
-        Pricing is one of the most important decisions a seller makes. With a
-        conventional home, recent nearby sales may provide a relatively clear
-        range. With unique Penngrove property, the analysis can require more
-        judgment.
-      </p>
-
-      <p>
-        The closest sale geographically is not always the best comparable.
-        Sometimes a property farther away may share more meaningful
-        characteristics with the subject property.
-      </p>
-
-      <div class="seller-box">
-        <h3>Price per square foot is only one piece of the analysis</h3>
         <p>
-          If one property includes substantial usable acreage, a large shop
-          and valuable improvements while another does not, comparing only
-          the square footage of the residences can produce a misleading
-          conclusion.
+          Penngrove is not a market where every home can be evaluated or
+          marketed the same way.
         </p>
-      </div>
 
-      <p>
-        Pricing should consider the house, land, improvements, location,
-        condition and current competition. It should also account for how
-        buyers are likely to compare the property with the alternatives
-        available to them.
-      </p>
+        <p>
+          One property may be a home close to downtown. Another may include
+          several acres, a shop, an additional residence, mature landscaping,
+          a barn, views or unusual architectural features.
+        </p>
 
-      <h2>Preparing a Home Before It Goes on the Market</h2>
+        <p>
+          The job when selling is to identify what makes the property
+          valuable, prepare it appropriately and make those characteristics
+          easy for buyers to understand.
+        </p>
 
-      <p>
-        Sellers often ask how much work they should do before listing. There
-        is no universal answer.
-      </p>
-
-      <p>
-        Some properties benefit significantly from paint, flooring, repairs,
-        landscaping or other improvements. With other properties, spending
-        heavily on renovations immediately before a sale may not produce an
-        adequate return.
-      </p>
-
-      <p>
-        I prefer to evaluate potential improvements based on what they are
-        likely to accomplish in the actual sale. The question is not simply
-        whether an improvement makes the property nicer. The question is
-        whether it improves presentation, reduces buyer objections or
-        increases the property's likely sale price enough to justify the cost.
-      </p>
-
-      <h2>Strategic Improvements Can Change Presentation</h2>
-
-      <p>
-        The right work before a sale can materially change how buyers
-        experience a property. Kitchens, living areas, flooring, paint,
-        lighting and landscaping are often among the first things buyers
-        notice.
-      </p>
-
-      <p>
-        Below is an example of the kind of before-and-after transformation
-        that can help illustrate the difference thoughtful preparation can
-        make.
-      </p>
-
-      <div class="before-after">
-
-        <figure>
-          <img
-            src="/images/cotati-home-before-kitchen.jpeg"
-            alt="Kitchen before preparation for a home sale"
-            loading="lazy"
-          >
-          <figcaption>Kitchen before improvements</figcaption>
-        </figure>
-
-        <figure>
-          <img
-            src="/images/cotati-home-after-kitchen.jpeg"
-            alt="Kitchen after preparation for a home sale"
-            loading="lazy"
-          >
-          <figcaption>Kitchen after improvements</figcaption>
-        </figure>
+        <p>
+          That begins well before the listing goes live.
+        </p>
 
       </div>
 
-      <div class="before-after">
+    </section>
 
-        <figure>
+
+    <!-- KITCHEN -->
+
+    <section class="seller-section stone">
+
+      <div class="seller-wide split reverse">
+
+        <div class="split-image">
+
           <img
-            src="/images/cotati-home-before-living-room.jpeg"
-            alt="Living room before preparation for a home sale"
+            src="/images/penngrove-seller-feature-kitchen.jpg"
+            alt="Custom kitchen with exposed wood beams and open living space"
             loading="lazy"
           >
-          <figcaption>Living area before improvements</figcaption>
-        </figure>
 
-        <figure>
-          <img
-            src="/images/cotati-home-after-living-room.jpeg"
-            alt="Living room after preparation for a home sale"
-            loading="lazy"
-          >
-          <figcaption>Living area after improvements</figcaption>
-        </figure>
+        </div>
+
+        <div class="split-copy">
+
+          <div class="eyebrow">Positioning</div>
+
+          <h2>Find the Features Buyers Will Remember</h2>
+
+          <p>
+            Not every room deserves equal attention in the marketing.
+          </p>
+
+          <p>
+            A dramatic kitchen, exposed beams, an unusual floor plan, a
+            beautiful outdoor setting or a substantial workshop may be the
+            feature that causes a buyer to remember one property after seeing
+            several others.
+          </p>
+
+          <p>
+            Good marketing identifies those moments and builds the
+            presentation around them.
+          </p>
+
+          <p>
+            The goal is not simply to document the house. It is to communicate
+            what makes living there different.
+          </p>
+
+        </div>
 
       </div>
 
-      <p>
-        Not every Penngrove property needs this level of work. In many cases,
-        cleaning, decluttering, addressing deferred maintenance and improving
-        exterior presentation may be the better strategy.
-      </p>
+    </section>
 
-      <h2>Marketing More Than Bedrooms and Bathrooms</h2>
 
-      <p>
-        Unique properties need marketing that explains why they are unique.
-        A three-bedroom house on acreage with a substantial workshop should
-        not be marketed as though it is simply another three-bedroom house.
-      </p>
+    <!-- CALLOUT -->
+
+    <section class="editorial-callout">
 
       <p>
-        Photography, video, aerial imagery and written marketing should help a
-        buyer understand the entire property. With acreage, that may mean
-        showing the relationship between the residence, land, shop,
-        outbuildings, access and surrounding setting.
+        A listing should not feel like an inventory of rooms. It should help a
+        buyer understand why the property is worth choosing.
       </p>
 
-      <p>
-        The objective is to make the property's important features obvious
-        before a buyer ever arrives for a showing.
-      </p>
+    </section>
 
-      <h2>Photography and Aerial Imagery</h2>
 
-      <p>
-        Professional photography is important for most properties, but aerial
-        imagery can be especially useful for Penngrove country property.
-      </p>
+    <!-- PRICING -->
 
-      <p>
-        Ground-level photographs may show a beautiful home without explaining
-        how the property actually lays out. Aerial photography can provide
-        context for acreage, buildings, access and the relationship between
-        different areas of the property.
-      </p>
+    <section class="seller-section stone">
 
-      <h2>Shops and Outbuildings Should Be Marketed Properly</h2>
+      <div class="seller-inner">
 
-      <p>
-        A large workshop can be a major reason someone chooses one property
-        over another. Buyers may be searching specifically for space for
-        vehicles, equipment, hobbies, storage or work.
-      </p>
+        <div class="eyebrow">Pricing Strategy</div>
 
-      <p>
-        When a property has a significant shop, barn or detached building, it
-        should not be treated as an afterthought in the marketing.
-      </p>
-
-      <p>
-        Dimensions, access, doors, power and the overall usefulness of the
-        structure can be important information for potential buyers.
-      </p>
-
-      <h2>Property Records and Additional Structures</h2>
-
-      <p>
-        Penngrove properties sometimes have long histories and may include
-        additions, second units, shops or other structures constructed at
-        different times.
-      </p>
-
-      <p>
-        Before marketing a property, it can be useful to understand what
-        records are available and how the property's improvements are
-        represented. Sellers should avoid making assumptions about the legal
-        or permitted status of a structure simply because it has existed for
-        many years.
-      </p>
-
-      <p>
-        Identifying these issues before the property is deep into escrow can
-        help reduce surprises later in the transaction.
-      </p>
-
-      <h2>Disclosures and Due Diligence</h2>
-
-      <p>
-        California residential transactions involve extensive disclosure
-        obligations. Country property can add another layer because buyers may
-        have questions regarding wells, septic systems, drainage, roads,
-        additional structures and other property-specific conditions.
-      </p>
-
-      <p>
-        Good preparation can make the transaction smoother. Gathering
-        available information and addressing known questions early gives
-        buyers a clearer picture of what they are purchasing.
-      </p>
-
-      <h2>Should You Sell Off Market?</h2>
-
-      <p>
-        Not every property has to be publicly marketed in the same way.
-        Depending on a seller's priorities, an off-market transaction can
-        sometimes make sense.
-      </p>
-
-      <p>
-        Privacy, timing, convenience and the existence of a qualified buyer
-        may all influence that decision. On the other hand, broad market
-        exposure can create competition and may be important when maximizing
-        price is the seller's primary objective.
-      </p>
-
-      <p>
-        I have handled both publicly marketed and off-market Penngrove
-        transactions. The right approach depends on the property and the
-        seller's goals rather than a one-size-fits-all rule.
-      </p>
-
-      <h2>Negotiating the Entire Transaction</h2>
-
-      <p>
-        Sale price is important, but it is not the only term that matters.
-        Financing, contingencies, inspections, closing timing and the buyer's
-        overall ability to perform can affect the strength of an offer.
-      </p>
-
-      <p>
-        This becomes especially important with unique property because a
-        seller may receive offers from buyers with very different financing
-        structures or investigation requirements.
-      </p>
-
-      <h2>Local Experience Matters</h2>
-
-      <p>
-        Penngrove is a small market. Knowing the area, understanding the
-        differences between local properties and recognizing which features
-        buyers value can be particularly useful when there are few obvious
-        comparable sales.
-      </p>
-
-      <p>
-        I live in Penngrove and own Penngrove Real Estate. My work here has
-        included residential homes, acreage, country properties, off-market
-        transactions, investment property and commercial real estate.
-      </p>
-
-      <p>
-        My approach to selling a Penngrove property begins with understanding
-        what makes that particular property different and building the pricing
-        and marketing strategy around it.
-      </p>
-
-      <section class="article-links">
-
-        <h2>More Penngrove Real Estate Resources</h2>
-
-        <a href="/penngrove/penngrove-real-estate-guide.html">
-          Penngrove Real Estate Market Guide
-        </a>
-
-        <a href="/penngrove/buying-a-home-in-penngrove.html">
-          Buying a Home in Penngrove
-        </a>
-
-        <a href="/penngrove/penngrove-country-property.html">
-          Penngrove Country Property
-        </a>
-
-        <a href="/penngrove/penngrove-home-values.html">
-          Penngrove Home Values
-        </a>
-
-        <a href="/penngrove/penngrove-commercial-real-estate.html">
-          Penngrove Commercial Real Estate
-        </a>
-
-        <a href="/penngrove/">
-          View All Penngrove Resources
-        </a>
-
-      </section>
-
-      <section class="author-box">
-
-        <h2>Thinking About Selling in Penngrove?</h2>
+        <h2>Pricing a Penngrove Property Takes More Than Price Per Square Foot</h2>
 
         <p>
-          If you own property in Penngrove and are considering selling, I can
-          help you evaluate the property, discuss potential preparation and
-          develop a pricing and marketing strategy.
+          Pricing can be especially challenging in Penngrove because nearby
+          properties may have very different characteristics.
         </p>
 
         <p>
-          Aaron Loewenthal<br>
-          Penngrove Real Estate<br>
-          Broker | DRE 01932466<br>
-          (707) 477-6427<br>
-          aaron@penngroverealestate.com
+          A house with acreage, a shop, multiple structures or exceptional
+          privacy may not have a nearly identical sale down the road.
+          Conversely, additional acreage does not automatically translate
+          into the same value on every property.
+        </p>
+
+        <div class="detail-grid">
+
+          <div class="detail-item">
+            <h3>The Residence</h3>
+            <p>
+              Size, condition, floor plan, renovations, architecture and
+              overall presentation all contribute to value.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>The Land</h3>
+            <p>
+              Total acreage matters, but usable acreage, privacy, views,
+              topography and access may matter just as much.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>Additional Improvements</h3>
+            <p>
+              Shops, barns, garages, second units and other structures can
+              materially change the property's utility and buyer appeal.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>The Competition</h3>
+            <p>
+              Pricing should also account for what buyers can purchase at the
+              same time your property enters the market.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="value-block">
+
+          <h3>The closest comparable is not always the best comparable.</h3>
+
+          <p>
+            With a unique Penngrove property, a somewhat more distant sale
+            with similar acreage and improvements may tell us more than a
+            nearby home that shares little beyond its location.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PREPARATION -->
+
+    <section class="seller-section">
+
+      <div class="seller-inner">
+
+        <div class="eyebrow">Preparation</div>
+
+        <h2>Decide What Is Worth Doing Before You Sell</h2>
+
+        <p>
+          Sellers do not necessarily need to renovate an entire home before
+          bringing it to market. In many cases, that would be unnecessary.
         </p>
 
         <p>
-          <a href="/contact.html">Contact Aaron about selling your Penngrove property</a>
+          The better question is which improvements are likely to materially
+          improve the way buyers experience the property.
         </p>
 
-      </section>
+        <p>
+          Paint, flooring, landscaping, lighting, repairs, decluttering and
+          selective updates can sometimes have a much greater visual impact
+          than their scope would suggest.
+        </p>
 
-    </article>
+        <p>
+          The strategy should be specific to the property, its condition, its
+          likely buyer and the price range in which it will compete.
+        </p>
+
+
+        <!-- BEFORE / AFTER CASE STUDY -->
+
+        <div class="case-heading">
+          <div class="eyebrow">Preparation Case Study</div>
+          <h2>Presentation Can Change the First Impression</h2>
+        </div>
+
+        <p>
+          These before-and-after examples are from a Cotati property and
+          illustrate the broader point: targeted preparation can completely
+          change the way a buyer experiences a space.
+        </p>
+
+        <div class="before-after">
+
+          <figure>
+            <img
+              src="/images/cotati-home-before-kitchen.jpeg"
+              alt="Kitchen before property preparation"
+              loading="lazy"
+            >
+            <figcaption>Kitchen — Before</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="/images/cotati-home-after-kitchen.jpeg"
+              alt="Kitchen after property preparation"
+              loading="lazy"
+            >
+            <figcaption>Kitchen — After</figcaption>
+          </figure>
+
+        </div>
+
+        <div class="before-after">
+
+          <figure>
+            <img
+              src="/images/cotati-home-before-living-room.jpeg"
+              alt="Living room before property preparation"
+              loading="lazy"
+            >
+            <figcaption>Living Space — Before</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="/images/cotati-home-after-living-room.jpeg"
+              alt="Living room after property preparation"
+              loading="lazy"
+            >
+            <figcaption>Living Space — After</figcaption>
+          </figure>
+
+        </div>
+
+        <p>
+          Preparation is ultimately about return. The goal is not to spend
+          money simply to make a home newer. It is to determine where
+          improvement is likely to make the property more compelling and
+          easier for buyers to understand.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ARCHITECTURE FEATURE -->
+
+    <section class="feature-image">
+
+      <img
+        src="/images/penngrove-seller-architectural-detail.jpg"
+        alt="Unique spiral staircase and architectural details in a home"
+        loading="lazy"
+      >
+
+      <div class="feature-copy">
+
+        <div class="eyebrow">Details Matter</div>
+
+        <h2>Unique Features Need Their Own Moment</h2>
+
+        <p>
+          A custom staircase, loft, historic detail or unusual architectural
+          element can be one of the most memorable parts of a property.
+        </p>
+
+        <p>
+          Those features should not disappear as photograph number 34 in an
+          online gallery. When something is distinctive, the marketing should
+          give buyers a reason to stop and notice it.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHOTOGRAPHY -->
+
+    <section class="seller-section">
+
+      <div class="seller-inner">
+
+        <div class="eyebrow">Photography &amp; Presentation</div>
+
+        <h2>Professional Photography Is Part of the Pricing Strategy</h2>
+
+        <p>
+          Most buyers will see a property online before they ever experience
+          it in person.
+        </p>
+
+        <p>
+          That means photography is not simply documentation. It is the first
+          showing.
+        </p>
+
+        <p>
+          The opening image, sequence of photographs and way the property is
+          visually presented can determine whether a buyer stops, explores
+          the listing and ultimately schedules a showing.
+        </p>
+
+        <p>
+          For properties where the setting matters, aerial photography can
+          also help buyers understand acreage, privacy, outbuildings and the
+          relationship between the residence and the land in a way ground
+          photography cannot.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- POOLHOUSE -->
+
+    <section class="seller-section stone">
+
+      <div class="seller-wide split">
+
+        <div class="split-image">
+
+          <img
+            src="/images/penngrove-seller-poolhouse.jpg"
+            alt="Custom poolhouse and flexible auxiliary space"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="split-copy">
+
+          <div class="eyebrow">Market the Whole Property</div>
+
+          <h2>Unusual Spaces Can Be Part of the Story</h2>
+
+          <p>
+            Some of the most interesting Penngrove properties include spaces
+            that do not fit neatly into standard real estate categories.
+          </p>
+
+          <p>
+            A poolhouse, workshop, detached office, studio, barn or flexible
+            auxiliary building may be highly valuable to the right buyer.
+          </p>
+
+          <p>
+            The marketing needs to show the space clearly and help buyers
+            understand why it matters without overstating or mischaracterizing
+            its use.
+          </p>
+
+          <p>
+            This is particularly important with country property, where the
+            structures outside the main residence can be a significant part
+            of the reason someone wants to buy it.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROPERTY RECORDS -->
+
+    <section class="seller-section">
+
+      <div class="seller-inner">
+
+        <div class="eyebrow">Before Going to Market</div>
+
+        <h2>Understand What You Are Selling</h2>
+
+        <p>
+          Properties evolve over time. That is especially true with older
+          homes and country properties.
+        </p>
+
+        <p>
+          Sellers may have additional units, converted spaces, workshops,
+          barns, septic improvements or other features that were added by
+          previous owners or developed over many years.
+        </p>
+
+        <p>
+          Before marketing the property, it can be useful to gather available
+          records and understand how the property's major improvements are
+          documented.
+        </p>
+
+        <p>
+          Addressing questions early can make it easier to present the
+          property accurately and reduce surprises once a buyer is in
+          contract.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- DISCLOSURES -->
+
+    <section class="seller-section stone">
+
+      <div class="seller-inner">
+
+        <div class="eyebrow">The Transaction</div>
+
+        <h2>Good Marketing Gets Attention. Good Preparation Gets to Closing.</h2>
+
+        <p>
+          A strong launch is only the beginning of a successful sale.
+        </p>
+
+        <p>
+          Once a buyer is in contract, disclosures, inspections, appraisal,
+          financing, title issues and property-specific due diligence can all
+          become part of the transaction.
+        </p>
+
+        <p>
+          With a more complicated property, being organized before accepting
+          an offer can make a meaningful difference.
+        </p>
+
+        <p>
+          My goal is not simply to generate an offer. It is to structure and
+          manage the transaction so that the seller has the best possible path
+          from preparation to closing.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- OFF MARKET -->
+
+    <section class="seller-section">
+
+      <div class="seller-inner">
+
+        <div class="eyebrow">Selling Strategy</div>
+
+        <h2>Should You Sell Off Market?</h2>
+
+        <p>
+          There are situations where a seller may consider an off-market sale,
+          particularly when privacy, timing or a known buyer is important.
+        </p>
+
+        <p>
+          I have handled an off-market Penngrove transaction representing both
+          the buyer and seller, so I understand why that approach can be
+          attractive in the right circumstances.
+        </p>
+
+        <p>
+          But an off-market sale and a full-market launch are different
+          strategies. The right choice depends on the seller's priorities,
+          property and circumstances.
+        </p>
+
+        <p>
+          If maximizing market exposure is the priority, broad presentation
+          and competition may be preferable. If privacy or a specific
+          opportunity matters more, another approach may make sense.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- LOCAL -->
+
+    <section class="seller-section stone">
+
+      <div class="seller-inner">
+
+        <div class="eyebrow">Local Experience</div>
+
+        <h2>Selling Penngrove Real Estate</h2>
+
+        <p>
+          I live in Penngrove and work with the different types of properties
+          that make this market unique, including residential homes, acreage,
+          country property, multiple structures and commercial real estate.
+        </p>
+
+        <p>
+          When I prepare a property for sale, I want the marketing to answer
+          the question a buyer is really asking:
+        </p>
+
+        <div class="value-block">
+
+          <h3>Why this property?</h3>
+
+          <p>
+            Why this house? Why this land? Why this location? Why this price?
+            The stronger and clearer those answers are, the stronger the
+            property's position in the market.
+          </p>
+
+        </div>
+
+        <p>
+          That is the approach I bring to pricing, preparation, photography,
+          marketing, negotiation and the transaction through closing.
+        </p>
+
+
+        <div class="resources">
+
+          <h2>More Penngrove Real Estate Resources</h2>
+
+          <a href="/penngrove/penngrove-home-values.html">
+            Penngrove Home Values
+          </a>
+
+          <a href="/penngrove/penngrove-country-property.html">
+            Penngrove Country Property &amp; Acreage
+          </a>
+
+          <a href="/penngrove/penngrove-real-estate-guide.html">
+            Penngrove Real Estate Market Guide
+          </a>
+
+          <a href="/penngrove/buying-a-home-in-penngrove.html">
+            Buying a Home in Penngrove
+          </a>
+
+          <a href="/penngrove/living-in-penngrove.html">
+            Living in Penngrove
+          </a>
+
+          <a href="/penngrove/">
+            View All Penngrove Resources
+          </a>
+
+        </div>
+
+
+        <div class="author">
+
+          <h2>Sell Your Penngrove Property</h2>
+
+          <p>
+            Aaron Loewenthal<br>
+            Penngrove Real Estate<br>
+            Broker | DRE 01932466<br>
+            11790 Main Street Suite C, Penngrove CA 94951<br>
+            (707) 477-6427<br>
+            aaron@penngroverealestate.com
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="seller-cta">
+
+      <div class="seller-cta-inner">
+
+        <div class="eyebrow">Rooted in Penngrove</div>
+
+        <h2>Thinking About Selling Your Penngrove Property?</h2>
+
+        <p>
+          Before deciding on a price or making improvements, let's look at the
+          property together. I can help you evaluate the market, identify what
+          is worth preparing and build a strategy around the characteristics
+          that make your property different.
+        </p>
+
+        <a class="seller-button" href="/contact.html">
+          Talk With Aaron
+        </a>
+
+      </div>
+
+    </section>
 
   </main>
 
