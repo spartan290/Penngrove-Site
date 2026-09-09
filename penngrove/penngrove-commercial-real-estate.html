@@ -4,150 +4,407 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Penngrove Commercial Real Estate | Local Broker</title>
+  <title>Penngrove Commercial Real Estate | Local Property Guide</title>
 
-  <meta name="description" content="A local guide to commercial real estate in Penngrove, California, including Main Street properties, investment property, leasing, tenants, income and property valuation.">
+  <meta name="description" content="A local guide to Penngrove commercial real estate, including Main Street properties, owner-user buildings, investment property, leases, parking, access, valuation and commercial sales.">
 
   <link rel="canonical" href="https://penngroverealestate.com/penngrove/penngrove-commercial-real-estate.html">
   <link rel="stylesheet" href="/css/styles.css">
 
   <style>
-    .article-hero {
-      padding: 105px 24px 80px;
-      background: #f3f0e9;
+    .commercial-hero {
+      position: relative;
+      min-height: 82vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #222;
     }
 
-    .article-hero-inner,
-    .article-content {
+    .commercial-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .commercial-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.67) 0%,
+          rgba(0,0,0,.31) 48%,
+          rgba(0,0,0,.05) 78%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(0,0,0,.44) 0%,
+          transparent 58%
+        );
+    }
+
+    .commercial-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 85px 28px;
+      color: #fff;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .19em;
+      font-size: .76rem;
+      margin-bottom: 20px;
+    }
+
+    .commercial-hero h1 {
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
+      line-height: .96;
+      font-weight: 400;
+      max-width: 930px;
+      margin: 0 0 28px;
+    }
+
+    .commercial-hero p {
+      font-size: 1.17rem;
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,.7);
+    }
+
+    .commercial-section {
+      padding: 100px 28px;
+    }
+
+    .commercial-inner {
       max-width: 900px;
       margin: 0 auto;
     }
 
-    .article-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: .78rem;
-      margin-bottom: 18px;
+    .commercial-wide {
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
-    .article-hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.06;
-      margin: 0 0 25px;
+    .commercial-section h2 {
+      font-size: clamp(2.2rem, 4vw, 3.7rem);
+      line-height: 1.08;
+      font-weight: 400;
+      margin: 0 0 28px;
     }
 
-    .article-lead {
-      font-size: 1.17rem;
-      line-height: 1.75;
-      max-width: 800px;
-    }
-
-    .article-content {
-      padding: 75px 24px 90px;
-    }
-
-    .article-content h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin: 55px 0 20px;
-    }
-
-    .article-content h2:first-child {
-      margin-top: 0;
-    }
-
-    .article-content h3 {
-      font-size: 1.4rem;
+    .commercial-section h3 {
+      font-size: 1.5rem;
+      line-height: 1.3;
       margin: 32px 0 12px;
     }
 
-    .article-content p {
-      font-size: 1.05rem;
+    .commercial-section p {
+      font-size: 1.06rem;
       line-height: 1.82;
       margin: 0 0 22px;
     }
 
-    .article-content ul {
-      margin: 0 0 28px 20px;
-      padding: 0;
-    }
-
-    .article-content li {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 10px;
-    }
-
-    .article-image {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 38px 0;
-    }
-
-    .commercial-box {
+    .stone {
       background: #f3f0e9;
-      padding: 35px;
-      margin: 40px 0;
     }
 
-    .commercial-box h3 {
-      margin-top: 0;
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 68px;
+      align-items: center;
     }
 
-    .commercial-box p:last-child {
+    .split.reverse .split-image {
+      order: 2;
+    }
+
+    .split.reverse .split-copy {
+      order: 1;
+    }
+
+    .split-image img {
+      display: block;
+      width: 100%;
+      height: 570px;
+      object-fit: cover;
+    }
+
+    .editorial-callout {
+      padding: 120px 28px;
+      text-align: center;
+    }
+
+    .editorial-callout p {
+      max-width: 970px;
+      margin: 0 auto;
+      font-size: clamp(1.9rem, 3.4vw, 3.15rem);
+      line-height: 1.38;
+    }
+
+    .commercial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 60px;
+      margin-top: 45px;
+    }
+
+    .commercial-item {
+      padding: 30px 0;
+      border-top: 1px solid rgba(0,0,0,.18);
+    }
+
+    .commercial-item h3 {
+      margin: 0 0 12px;
+    }
+
+    .commercial-item p {
       margin-bottom: 0;
     }
 
-    .transaction-box {
-      border-top: 1px solid rgba(0,0,0,.18);
-      border-bottom: 1px solid rgba(0,0,0,.18);
-      padding: 35px 0;
-      margin: 45px 0;
+    .full-image {
+      position: relative;
+      min-height: 700px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #222;
     }
 
-    .transaction-box h2 {
-      margin-top: 0;
+    .full-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .article-links {
+    .full-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.75) 0%,
+        rgba(0,0,0,.15) 62%,
+        rgba(0,0,0,.02) 100%
+      );
+    }
+
+    .full-image-copy {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 75px 28px;
+      color: #fff;
+    }
+
+    .full-image-copy h2 {
+      color: #fff;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+      font-weight: 400;
+      max-width: 820px;
+      margin: 0 0 24px;
+    }
+
+    .full-image-copy p {
+      color: #fff;
+      max-width: 650px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,.65);
+    }
+
+    .transaction {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 80px 28px;
+    }
+
+    .transaction-heading {
+      max-width: 760px;
+      margin-bottom: 55px;
+    }
+
+    .transaction-heading h2 {
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      line-height: 1.05;
+      font-weight: 400;
+      margin: 0 0 24px;
+    }
+
+    .transaction-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(0,0,0,.2);
+      border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+
+    .transaction-stat {
+      padding: 35px 25px 35px 0;
+    }
+
+    .transaction-stat strong {
+      display: block;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .transaction-stat span {
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .7rem;
+    }
+
+    .resources {
       background: #f3f0e9;
-      padding: 35px;
-      margin: 55px 0;
+      padding: 42px;
+      margin-top: 55px;
     }
 
-    .article-links h2 {
+    .resources h2 {
       margin-top: 0;
     }
 
-    .article-links a {
+    .resources a {
       display: block;
       margin: 12px 0;
       text-decoration: underline;
       text-underline-offset: 4px;
     }
 
-    .author-box {
+    .author {
       border-top: 1px solid rgba(0,0,0,.18);
       margin-top: 60px;
-      padding-top: 35px;
+      padding-top: 38px;
     }
 
-    .author-box h2 {
+    .author h2 {
       margin-top: 0;
     }
 
-    @media (max-width: 760px) {
-      .article-hero {
-        padding: 75px 20px 60px;
+    .commercial-cta {
+      padding: 115px 28px;
+      text-align: center;
+      background: #f3f0e9;
+    }
+
+    .commercial-cta-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .commercial-cta h2 {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      line-height: 1.08;
+      margin: 0 0 25px;
+    }
+
+    .commercial-cta p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 30px;
+    }
+
+    .commercial-button {
+      display: inline-block;
+      padding: 15px 28px;
+      border: 1px solid currentColor;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+    }
+
+    @media (max-width: 800px) {
+      .commercial-hero {
+        min-height: 68vh;
       }
 
-      .article-content {
-        padding: 55px 20px 70px;
+      .commercial-hero-content {
+        padding: 60px 20px;
       }
 
-      .commercial-box,
-      .article-links {
-        padding: 25px;
+      .commercial-section {
+        padding: 68px 20px;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .split.reverse .split-image,
+      .split.reverse .split-copy {
+        order: initial;
+      }
+
+      .split-image img {
+        height: 430px;
+      }
+
+      .commercial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-callout {
+        padding: 80px 20px;
+      }
+
+      .full-image {
+        min-height: 580px;
+      }
+
+      .full-image-copy {
+        padding: 58px 20px;
+      }
+
+      .transaction {
+        padding: 65px 20px;
+      }
+
+      .transaction-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .resources {
+        padding: 28px;
+      }
+
+      .commercial-cta {
+        padding: 80px 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .transaction-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .transaction-stat {
+        border-bottom: 1px solid rgba(0,0,0,.12);
+      }
+
+      .transaction-stat:last-child {
+        border-bottom: 0;
       }
     }
   </style>
@@ -156,8 +413,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Penngrove Commercial Real Estate",
-    "description": "A local guide to commercial real estate, investment property and leasing in Penngrove, California.",
+    "headline": "Penngrove Commercial Real Estate: A Local Property Guide",
+    "description": "A local guide to commercial real estate in Penngrove, California, including owner-user buildings, investment property, leases, parking, access and commercial property valuation.",
     "author": {
       "@type": "Person",
       "name": "Aaron Loewenthal"
@@ -184,409 +441,672 @@
 
   <main>
 
-    <section class="article-hero">
-      <div class="article-hero-inner">
+    <!-- HERO -->
 
-        <div class="article-eyebrow">Penngrove Commercial Property</div>
+    <section class="commercial-hero">
 
-        <h1>Commercial Real Estate in Penngrove</h1>
+      <img
+        src="/images/penngrove-commercial-district-aerial.jpg"
+        alt="Aerial view of the commercial district in Penngrove California"
+      >
 
-        <p class="article-lead">
-          Penngrove has a small and distinctive commercial real estate market.
-          Main Street storefronts, mixed-use buildings, investment properties
-          and other commercial spaces require a different approach from
-          residential real estate, particularly when income, leases, tenants
-          and property expenses are part of the value.
+      <div class="commercial-hero-content">
+
+        <div class="eyebrow">Penngrove Commercial Real Estate</div>
+
+        <h1>Small Town. Limited Inventory. Unique Opportunities.</h1>
+
+        <p>
+          Penngrove's commercial real estate market is small and highly
+          property-specific. Understanding location, building configuration,
+          leases, parking, access and potential use is critical when buying,
+          selling or evaluating commercial property here.
         </p>
 
       </div>
+
     </section>
 
-    <article class="article-content">
 
-      <h2>A Small Commercial Market</h2>
+    <!-- INTRO -->
 
-      <p>
-        Penngrove's commercial district is concentrated primarily around Main
-        Street and the center of town. Unlike larger Sonoma County cities,
-        there is not an enormous supply of commercial inventory changing hands
-        every year.
-      </p>
+    <section class="commercial-section">
 
-      <p>
-        That limited inventory is part of what makes individual properties
-        important. Buildings can differ substantially in size, configuration,
-        parking, tenant mix, income and potential use.
-      </p>
+      <div class="commercial-inner">
 
-      <p>
-        Evaluating commercial real estate here therefore requires looking at
-        the actual property and its economics rather than relying solely on a
-        broad average for the area.
-      </p>
+        <div class="eyebrow">A Local Commercial Market</div>
 
-      <img
-        class="article-image"
-        src="/images/penngrove-commercial-district-aerial.jpg"
-        alt="Commercial real estate and Main Street in Penngrove California"
-        loading="lazy"
-      >
-
-      <h2>Main Street Penngrove</h2>
-
-      <p>
-        Main Street forms the commercial heart of Penngrove. The scale is
-        small, and that is part of the community's identity.
-      </p>
-
-      <p>
-        Commercial properties may include storefronts, office or service
-        space, storage, parking and other configurations. Some buildings may
-        contain multiple tenant spaces rather than a single occupant.
-      </p>
-
-      <p>
-        For an owner or investor, that means the value of the property can be
-        closely connected to how effectively those spaces are configured,
-        leased and managed.
-      </p>
-
-      <h2>Commercial Property Is Valued Differently</h2>
-
-      <p>
-        Residential buyers often focus heavily on comparable home sales.
-        Comparable sales remain relevant in commercial real estate, but income
-        can become a major component of the analysis.
-      </p>
-
-      <p>
-        An investor may evaluate what the property earns after operating
-        expenses and compare that income with the purchase price.
-      </p>
-
-      <div class="commercial-box">
-
-        <h3>Basic capitalization rate</h3>
+        <h2>Commercial Property in Penngrove Is Different</h2>
 
         <p>
-          A capitalization rate, commonly called a cap rate, compares a
-          property's net operating income with its value.
+          Penngrove does not have a large commercial inventory. That is one of
+          the defining characteristics of the market.
         </p>
 
         <p>
-          For example, a property producing $55,000 of annual net operating
-          income at a 5.5% cap rate would indicate a value of approximately
-          $1,000,000.
+          Commercial properties are concentrated around a relatively small
+          area, particularly along and around Main Street. Individual
+          properties can vary substantially in size, configuration, tenancy,
+          parking, access and potential use.
         </p>
 
         <p>
-          This is only one valuation method. Lease terms, condition, location,
-          future expenses, tenant strength and other factors still matter.
+          Because there are fewer transactions than in larger commercial
+          markets, evaluating a Penngrove property often requires looking
+          beyond a simple price-per-square-foot comparison.
+        </p>
+
+        <p>
+          The building itself matters. So does the land, location, current
+          income, lease structure, parking, accessibility and what a future
+          owner or tenant may be able to do with the space.
         </p>
 
       </div>
 
-      <h2>Understanding Net Operating Income</h2>
+    </section>
+
+
+    <!-- STOREFRONTS -->
+
+    <section class="commercial-section stone">
+
+      <div class="commercial-wide split">
+
+        <div class="split-image">
+
+          <img
+            src="/images/9550-main-storefronts.jpg"
+            alt="Commercial storefronts on Main Street in Penngrove"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="split-copy">
+
+          <div class="eyebrow">Main Street Penngrove</div>
+
+          <h2>Location Has to Be Evaluated at a Local Scale</h2>
+
+          <p>
+            In a small downtown, even relatively short distances can change
+            how a commercial property functions.
+          </p>
+
+          <p>
+            Visibility, neighboring businesses, traffic patterns, pedestrian
+            activity, parking and ease of access can all influence how useful
+            a location is to an owner or tenant.
+          </p>
+
+          <p>
+            Main Street commercial property also contributes to the character
+            of Penngrove itself. Many buildings are not interchangeable
+            commercial boxes. Their age, configuration and relationship with
+            the surrounding community can be part of their appeal.
+          </p>
+
+          <p>
+            That makes understanding the property in person particularly
+            important.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CALLOUT -->
+
+    <section class="editorial-callout">
 
       <p>
-        Gross rent is not the same thing as net operating income. A commercial
-        property may have expenses for taxes, insurance, maintenance,
-        utilities, landscaping, management and other operating costs.
+        In a commercial market this small, the question is rarely just
+        “What is the building worth?” It is “What can this particular property
+        do for its next owner?”
       </p>
 
-      <p>
-        The way those expenses are allocated between landlord and tenant also
-        depends on the leases.
-      </p>
+    </section>
 
-      <p>
-        When evaluating an investment property, I want to understand the
-        actual income and expenses rather than simply looking at the total
-        monthly rent.
-      </p>
 
-      <h2>Commercial Leases Matter</h2>
+    <!-- OWNER USER / INVESTOR -->
 
-      <p>
-        The leases can be among the most important documents associated with
-        an occupied commercial property.
-      </p>
+    <section class="commercial-section stone">
 
-      <p>
-        A buyer may want to understand:
-      </p>
+      <div class="commercial-inner">
 
-      <ul>
-        <li>Current base rent</li>
-        <li>Remaining lease term</li>
-        <li>Scheduled rent increases</li>
-        <li>Options to extend</li>
-        <li>Security deposits</li>
-        <li>Responsibility for utilities</li>
-        <li>Responsibility for repairs and maintenance</li>
-        <li>Common-area or operating expenses</li>
-        <li>Tenant reimbursement obligations</li>
-      </ul>
+        <div class="eyebrow">Different Buyers. Different Priorities.</div>
 
-      <p>
-        Two buildings collecting the same amount of rent can have very
-        different economics if their lease structures and expenses are
-        different.
-      </p>
-
-      <h2>Triple-Net and Other Lease Structures</h2>
-
-      <p>
-        Commercial leases can allocate property expenses in different ways.
-        In some arrangements, tenants reimburse the landlord for some or all
-        of the property's taxes, insurance and operating expenses.
-      </p>
-
-      <p>
-        These details can materially affect the owner's net income, so the
-        lease structure should be understood before assigning value based on
-        rental revenue.
-      </p>
-
-      <h2>Tenant Mix and Vacancy</h2>
-
-      <p>
-        A multi-tenant property can reduce dependence on a single tenant, but
-        it also introduces additional leasing and management considerations.
-      </p>
-
-      <p>
-        Buyers may look at lease expiration dates, vacancy, the amount of time
-        needed to re-lease a space and whether current rents appear consistent
-        with the market.
-      </p>
-
-      <p>
-        A vacant space is not automatically negative. In some situations it
-        may create an opportunity to establish a new market rent or allow an
-        owner-user to occupy part of the property. The effect depends on the
-        building and the buyer's strategy.
-      </p>
-
-      <h2>9550 Main Street: A Penngrove Commercial Sale</h2>
-
-      <section class="transaction-box">
-
-        <h2>9550 Main Street, Penngrove</h2>
+        <h2>Owner-User Property vs. Investment Property</h2>
 
         <p>
-          I represented the seller of 9550 Main Street in Penngrove. The
-          commercial property sold in August 2026 for $1,350,490.
+          Two buyers can look at the same Penngrove commercial property and
+          evaluate it very differently.
         </p>
 
-        <p>
-          The property contains approximately 7,780 square feet on roughly
-          half an acre in downtown Penngrove.
-        </p>
+        <div class="commercial-grid">
 
-        <p>
-          The transaction is a good example of why commercial property needs
-          to be evaluated as more than simply a building with a square-footage
-          number. Configuration, tenants, income, expenses, parking and the
-          location of the property all become part of the analysis.
-        </p>
+          <div class="commercial-item">
 
-      </section>
+            <h3>Owner-Users</h3>
+
+            <p>
+              A business owner may focus on whether the building works for the
+              operation: location, layout, parking, storage, loading, customer
+              access, visibility and room for future growth.
+            </p>
+
+          </div>
+
+          <div class="commercial-item">
+
+            <h3>Investors</h3>
+
+            <p>
+              An investor may place greater emphasis on rental income, lease
+              terms, operating expenses, tenant quality, vacancy risk and the
+              property's potential return.
+            </p>
+
+          </div>
+
+          <div class="commercial-item">
+
+            <h3>Hybrid Opportunities</h3>
+
+            <p>
+              Some properties may appeal to an owner who occupies one portion
+              while receiving rental income from another, depending on the
+              building's configuration and permitted uses.
+            </p>
+
+          </div>
+
+          <div class="commercial-item">
+
+            <h3>Future Potential</h3>
+
+            <p>
+              Buyers may also evaluate whether a property can accommodate a
+              different use, improved configuration or future investment,
+              subject to applicable approvals and regulations.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTERIOR -->
+
+    <section class="commercial-section">
+
+      <div class="commercial-wide split reverse">
+
+        <div class="split-image">
+
+          <img
+            src="/images/9550-main-commercial-interior.jpg"
+            alt="Interior commercial space at 9550 Main Street in Penngrove"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="split-copy">
+
+          <div class="eyebrow">Building Configuration</div>
+
+          <h2>How the Space Functions Matters</h2>
+
+          <p>
+            Commercial square footage only tells part of the story.
+          </p>
+
+          <p>
+            A building's layout can determine which businesses can use it,
+            whether spaces can operate independently, how customers and
+            employees move through the property and how efficiently the space
+            can generate income.
+          </p>
+
+          <p>
+            Ceiling height, restrooms, entrances, utility configuration,
+            storage and the relationship between different portions of the
+            building can all affect marketability.
+          </p>
+
+          <p>
+            When comparing commercial properties, usable configuration can be
+            just as important as total building size.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PARKING FULL WIDTH -->
+
+    <section class="full-image">
 
       <img
-        class="article-image"
-        src="/images/9550-main-penngrove-aerial.jpg"
-        alt="9550 Main Street commercial property in Penngrove California"
-        loading="lazy"
-      >
-
-      <h2>Storefront and Tenant Spaces</h2>
-
-      <p>
-        For multi-tenant commercial property, the way individual spaces are
-        configured can affect both rentability and value.
-      </p>
-
-      <p>
-        Street visibility, entrances, windows, interior layout, bathrooms,
-        storage and the ability to separate utilities can all influence how
-        useful a space is to potential tenants.
-      </p>
-
-      <img
-        class="article-image"
-        src="/images/9550-main-storefronts.jpg"
-        alt="Commercial storefronts at 9550 Main Street in Penngrove"
-        loading="lazy"
-      >
-
-      <h2>Parking and Access</h2>
-
-      <p>
-        Parking can be particularly important for businesses that rely on
-        customers visiting the property.
-      </p>
-
-      <p>
-        An investor should consider not only the amount of parking but how it
-        relates to the tenant spaces, access points and likely uses of the
-        building.
-      </p>
-
-      <img
-        class="article-image"
         src="/images/9550-main-parking-commercial.jpg"
-        alt="Parking at a Penngrove commercial property"
+        alt="Commercial property parking and access at 9550 Main Street in Penngrove"
         loading="lazy"
       >
 
-      <h2>Owner-User vs. Investment Property</h2>
+      <div class="full-image-copy">
 
-      <p>
-        Not every commercial buyer is an investor looking only at cap rate.
-        Some buyers want a building for their own business.
-      </p>
+        <div class="eyebrow">Parking &amp; Access</div>
 
-      <p>
-        An owner-user may place more value on location, parking, building
-        configuration, visibility or the ability to occupy a particular space.
-        An investor may focus more heavily on rent, expenses, lease terms and
-        expected return.
-      </p>
+        <h2>The Value Outside the Building</h2>
 
-      <p>
-        Understanding which type of buyer is most likely to purchase a
-        property is an important part of determining how it should be
-        marketed.
-      </p>
+        <p>
+          Parking, vehicle circulation, loading and access can materially
+          affect a commercial property's usefulness. In a small downtown
+          environment, those characteristics may become an important
+          competitive advantage.
+        </p>
 
-      <h2>Commercial Property Management</h2>
+      </div>
 
-      <p>
-        Owning commercial property does not end when the lease is signed.
-        Rent collection, operating expenses, repairs, tenant communication,
-        lease increases and reconciliations can all require ongoing
-        management.
-      </p>
+    </section>
 
-      <p>
-        Because I also work in property management, I tend to evaluate
-        commercial investments from an operational perspective as well as a
-        sales perspective.
-      </p>
 
-      <p>
-        A property that looks attractive on paper should still be examined to
-        understand what it actually costs to operate and how the existing
-        leases function in practice.
-      </p>
+    <!-- LEASES -->
 
-      <h2>Selling Commercial Property in Penngrove</h2>
+    <section class="commercial-section">
 
-      <p>
-        Preparing a commercial property for sale begins with organizing the
-        information a serious buyer will want to evaluate.
-      </p>
+      <div class="commercial-inner">
 
-      <p>
-        Depending on the property, that can include leases, rent schedules,
-        operating expenses, property tax information, insurance, utility
-        costs, maintenance history and information about the building itself.
-      </p>
+        <div class="eyebrow">Income-Producing Property</div>
 
-      <p>
-        Clear financial information makes it easier for a buyer to understand
-        the investment and can reduce uncertainty during due diligence.
-      </p>
+        <h2>The Lease Can Be Part of the Real Estate</h2>
 
-      <h2>Buying Commercial Property in Penngrove</h2>
+        <p>
+          When a commercial property is occupied by tenants, understanding the
+          leases is essential to understanding the investment.
+        </p>
 
-      <p>
-        Buyers should evaluate both the physical property and the financial
-        investment.
-      </p>
+        <p>
+          Buyers may evaluate current rent, remaining lease term, scheduled
+          increases, expense responsibilities, renewal options and other
+          provisions that affect future income.
+        </p>
 
-      <p>
-        That means reviewing the building, leases, tenants, income, expenses,
-        zoning and intended use rather than making a decision based solely on
-        asking price or advertised cap rate.
-      </p>
+        <p>
+          The allocation of operating expenses also matters. A property where
+          tenants reimburse certain expenses can have a very different net
+          operating profile from one where the owner absorbs those costs.
+        </p>
 
-      <p>
-        Commercial real estate can also involve financing considerations that
-        differ substantially from a conventional residential mortgage.
-      </p>
+        <p>
+          For an investment property, gross rent alone does not determine
+          value. The income remaining after applicable operating expenses is
+          what begins to tell the investment story.
+        </p>
 
-      <h2>Local Commercial Real Estate Experience</h2>
+      </div>
 
-      <p>
-        Penngrove Real Estate is based in Penngrove, and commercial property
-        is one of the services I provide in addition to residential sales,
-        country property and property management.
-      </p>
+    </section>
 
-      <p>
-        My experience as both a broker and property manager is useful when
-        evaluating an income-producing property because the analysis extends
-        beyond the sale itself to how the property operates after closing.
-      </p>
 
-      <section class="article-links">
+    <!-- VALUATION -->
 
-        <h2>More Penngrove Real Estate Resources</h2>
+    <section class="commercial-section stone">
 
-        <a href="/penngrove/penngrove-real-estate-guide.html">
-          Penngrove Real Estate Market Guide
-        </a>
+      <div class="commercial-inner">
 
-        <a href="/penngrove/penngrove-home-values.html">
-          Penngrove Home Values
-        </a>
+        <div class="eyebrow">Commercial Property Value</div>
 
-        <a href="/penngrove/selling-a-home-in-penngrove.html">
-          Selling a Home in Penngrove
-        </a>
+        <h2>How Penngrove Commercial Real Estate Is Valued</h2>
 
-        <a href="/penngrove/penngrove-country-property.html">
-          Penngrove Country Property & Acreage
-        </a>
+        <p>
+          Commercial valuation can involve several different approaches
+          depending on the property.
+        </p>
 
-        <a href="/penngrove/buying-a-home-in-penngrove.html">
-          Buying a Home in Penngrove
-        </a>
+        <div class="commercial-grid">
 
-        <a href="/penngrove/">
-          View All Penngrove Resources
-        </a>
+          <div class="commercial-item">
 
-      </section>
+            <h3>Comparable Sales</h3>
 
-      <section class="author-box">
+            <p>
+              Recent sales provide useful evidence, although Penngrove's small
+              commercial market may require considering properties outside the
+              immediate downtown when appropriate.
+            </p>
+
+          </div>
+
+          <div class="commercial-item">
+
+            <h3>Income</h3>
+
+            <p>
+              For income-producing property, buyers may analyze net operating
+              income and the return available at a given purchase price.
+            </p>
+
+          </div>
+
+          <div class="commercial-item">
+
+            <h3>Owner-User Utility</h3>
+
+            <p>
+              An owner-user may place value on characteristics that are
+              particularly difficult to capture through an income approach,
+              such as location or a specialized building configuration.
+            </p>
+
+          </div>
+
+          <div class="commercial-item">
+
+            <h3>Land &amp; Improvements</h3>
+
+            <p>
+              Lot size, parking, access, additional improvements and the
+              relationship between the building and site can influence overall
+              property value.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ROLLUP DOOR -->
+
+    <section class="commercial-section">
+
+      <div class="commercial-wide split">
+
+        <div class="split-image">
+
+          <img
+            src="/images/9550-main-rollup-door.jpg"
+            alt="Commercial roll-up door and service access at a Penngrove commercial property"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="split-copy">
+
+          <div class="eyebrow">Property Utility</div>
+
+          <h2>Small Details Can Define the Buyer Pool</h2>
+
+          <p>
+            Features that might seem secondary in residential real estate can
+            be central to a commercial transaction.
+          </p>
+
+          <p>
+            A roll-up door, loading area, storage configuration or separate
+            entrance may determine whether a property works for a particular
+            business.
+          </p>
+
+          <p>
+            The same applies to parking, visibility, access and how easily
+            different parts of a building can be occupied.
+          </p>
+
+          <p>
+            Understanding those features helps identify the buyers or tenants
+            most likely to see the property's full value.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- USE / DUE DILIGENCE -->
+
+    <section class="commercial-section stone">
+
+      <div class="commercial-inner">
+
+        <div class="eyebrow">Due Diligence</div>
+
+        <h2>Intended Use Should Be Investigated Early</h2>
+
+        <p>
+          A commercial buyer should not assume that because a building exists,
+          every proposed business or future configuration will automatically
+          be allowed.
+        </p>
+
+        <p>
+          Depending on the property and intended use, buyers may need to
+          investigate zoning, permitted uses, building records, accessibility,
+          parking requirements, utilities and other property-specific issues.
+        </p>
+
+        <p>
+          This becomes especially important when a buyer plans to substantially
+          change how a building is used.
+        </p>
+
+        <p>
+          Identifying those questions early gives the buyer an opportunity to
+          complete appropriate due diligence before making long-term plans
+          around the property.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TRANSACTION -->
+
+    <section class="transaction">
+
+      <div class="transaction-heading">
+
+        <div class="eyebrow">Penngrove Commercial Sale</div>
+
+        <h2>9550 Main Street</h2>
+
+        <p>
+          A recent Penngrove commercial transaction provides a real example of
+          the type of property found in this small market. I represented the
+          seller in the sale of 9550 Main Street in Penngrove.
+        </p>
+
+      </div>
+
+      <div class="transaction-stats">
+
+        <div class="transaction-stat">
+          <strong>$1,350,490</strong>
+          <span>Sale Price</span>
+        </div>
+
+        <div class="transaction-stat">
+          <strong>7,780</strong>
+          <span>Approx. Sq. Ft.</span>
+        </div>
+
+        <div class="transaction-stat">
+          <strong>.516</strong>
+          <span>Approx. Acres</span>
+        </div>
+
+        <div class="transaction-stat">
+          <strong>Seller</strong>
+          <span>Representation</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- AERIAL PROPERTY -->
+
+    <section class="full-image">
+
+      <img
+        src="/images/9550-main-penngrove-aerial.jpg"
+        alt="Aerial view of 9550 Main Street commercial property in Penngrove California"
+        loading="lazy"
+      >
+
+      <div class="full-image-copy">
+
+        <div class="eyebrow">9550 Main Street</div>
+
+        <h2>Every Commercial Property Has Its Own Equation</h2>
+
+        <p>
+          Building size, land, parking, access, configuration, tenancy and
+          location all come together differently. That is why understanding
+          the entire property is essential before deciding how to price,
+          market or purchase it.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- LOCAL -->
+
+    <section class="commercial-section">
+
+      <div class="commercial-inner">
+
+        <div class="eyebrow">Local Representation</div>
 
         <h2>Commercial Real Estate in Penngrove</h2>
 
         <p>
-          If you are considering buying, selling or leasing commercial
-          property in Penngrove, contact me directly to discuss the property
-          and your goals.
+          Penngrove's commercial market is small enough that local context can
+          matter significantly.
         </p>
 
         <p>
-          Aaron Loewenthal<br>
-          Penngrove Real Estate<br>
-          Broker | DRE 01932466<br>
-          11790 Main Street Suite C, Penngrove CA 94951<br>
-          (707) 477-6427<br>
-          aaron@penngroverealestate.com
+          I work in Penngrove across residential, country property and
+          commercial real estate, and my office is located on Main Street.
+          That gives me a close view of the properties, businesses and
+          transactions that make up this market.
         </p>
 
         <p>
-          <a href="/contact.html">Contact Aaron about Penngrove commercial real estate</a>
+          Whether the goal is to sell a commercial building, purchase a
+          property for your own business or evaluate an investment, I approach
+          the property by looking at both the real estate and the way the
+          building actually functions.
         </p>
 
-      </section>
 
-    </article>
+        <!-- RESOURCES -->
+
+        <div class="resources">
+
+          <h2>More Penngrove Real Estate Resources</h2>
+
+          <a href="/penngrove/penngrove-real-estate-guide.html">
+            Penngrove Real Estate Market Guide
+          </a>
+
+          <a href="/penngrove/penngrove-home-values.html">
+            Penngrove Home Values
+          </a>
+
+          <a href="/penngrove/selling-a-home-in-penngrove.html">
+            Selling a Home in Penngrove
+          </a>
+
+          <a href="/penngrove/penngrove-country-property.html">
+            Penngrove Country Property &amp; Acreage
+          </a>
+
+          <a href="/penngrove/living-in-penngrove.html">
+            Living in Penngrove
+          </a>
+
+          <a href="/penngrove/">
+            View All Penngrove Resources
+          </a>
+
+        </div>
+
+
+        <!-- AUTHOR -->
+
+        <div class="author">
+
+          <h2>About Aaron Loewenthal</h2>
+
+          <p>
+            Aaron Loewenthal is the broker and owner of Penngrove Real Estate.
+            He works with residential, country and commercial properties in
+            Penngrove and the surrounding Sonoma County market.
+          </p>
+
+          <p>
+            Aaron Loewenthal<br>
+            Penngrove Real Estate<br>
+            Broker | DRE 01932466<br>
+            11790 Main Street Suite C, Penngrove CA 94951<br>
+            (707) 477-6427<br>
+            aaron@penngroverealestate.com
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="commercial-cta">
+
+      <div class="commercial-cta-inner">
+
+        <div class="eyebrow">Rooted in Penngrove</div>
+
+        <h2>Buying or Selling Commercial Property in Penngrove?</h2>
+
+        <p>
+          If you own a Penngrove commercial property or are considering
+          purchasing one, contact me to discuss the building, the local market
+          and the factors that may affect its value and marketability.
+        </p>
+
+        <a class="commercial-button" href="/contact.html">
+          Talk With Aaron
+        </a>
+
+      </div>
+
+    </section>
 
   </main>
 
