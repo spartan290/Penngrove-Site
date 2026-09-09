@@ -4,84 +4,419 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Penngrove Real Estate Guide | Penngrove Real Estate</title>
+  <title>Penngrove Real Estate Guide | Homes, Country Property & Local Market</title>
 
-  <meta name="description" content="A local guide to buying, selling, and owning real estate in Penngrove, California from Aaron Loewenthal, Broker and owner of Penngrove Real Estate.">
+  <meta name="description" content="Explore Penngrove real estate, country properties, home values, buying and selling, living in Penngrove and commercial real estate with local broker Aaron Loewenthal.">
 
+  <link rel="canonical" href="https://penngroverealestate.com/penngrove/">
   <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    .resource-hero {
+      padding: 110px 24px 85px;
+      background: #f3f0e9;
+      text-align: center;
+    }
+
+    .resource-hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .resource-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    .resource-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      margin: 0 0 25px;
+    }
+
+    .resource-hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.75;
+    }
+
+    .resource-section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 85px 24px;
+    }
+
+    .resource-intro {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .resource-intro h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 24px;
+    }
+
+    .resource-intro p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .resource-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .resource-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .resource-heading p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .resource-card {
+      border: 1px solid rgba(0,0,0,0.13);
+      padding: 34px;
+      background: #fff;
+    }
+
+    .resource-card h3 {
+      font-size: 1.45rem;
+      margin: 0 0 14px;
+    }
+
+    .resource-card p {
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .resource-card a {
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .local-section {
+      background: #f3f0e9;
+    }
+
+    .local-inner {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 85px 24px;
+    }
+
+    .local-inner h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 24px;
+    }
+
+    .local-inner p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-block {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 85px 24px;
+      text-align: center;
+    }
+
+    .contact-block h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 20px;
+    }
+
+    .contact-block p {
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 14px 25px;
+      border: 1px solid currentColor;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 760px) {
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-hero {
+        padding: 80px 20px 65px;
+      }
+
+      .resource-section,
+      .local-inner,
+      .contact-block {
+        padding: 65px 20px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Penngrove Real Estate Guide",
+    "url": "https://penngroverealestate.com/penngrove/",
+    "description": "A local resource for Penngrove real estate, country property, home values, buying, selling and living in Penngrove, California.",
+    "about": {
+      "@type": "Place",
+      "name": "Penngrove, California"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Aaron Loewenthal"
+    }
+  }
+  </script>
 </head>
 
 <body>
 
+  <div data-include="/partials/nav.html"></div>
+
   <main>
 
-    <section style="max-width: 1000px; margin: 0 auto; padding: 80px 24px;">
+    <section class="resource-hero">
+      <div class="resource-hero-inner">
+        <div class="resource-eyebrow">Rooted in Penngrove</div>
 
-      <p>Penngrove Real Estate</p>
+        <h1>Penngrove Real Estate Guide</h1>
 
-      <h1>Penngrove Real Estate Guide</h1>
+        <p>
+          Local information about buying, selling, owning and understanding
+          real estate in Penngrove, California, from Aaron Loewenthal,
+          Broker and owner of Penngrove Real Estate.
+        </p>
+      </div>
+    </section>
+
+    <section class="resource-section">
+      <div class="resource-intro">
+
+        <h2>Understanding Real Estate in Penngrove</h2>
+
+        <p>
+          Penngrove is a small Sonoma County community with a real estate
+          market that can be very different from nearby Petaluma, Cotati and
+          Rohnert Park. Homes close to downtown Penngrove can sit only minutes
+          from larger country properties with acreage, workshops, barns and
+          additional structures.
+        </p>
+
+        <p>
+          That variety is part of what makes Penngrove special, but it can
+          also make buying, selling and valuing property here more complicated.
+          Two properties located relatively close to each other may have very
+          different characteristics, uses and values.
+        </p>
+
+        <p>
+          Country properties can introduce additional considerations involving
+          wells, septic systems, usable acreage, access, zoning, outbuildings,
+          utilities and potential future uses. Commercial properties in and
+          around downtown Penngrove present another completely different set
+          of considerations.
+        </p>
+
+        <p>
+          I created this section of the Penngrove Real Estate website as a
+          practical local resource for people who live here, people considering
+          moving here and property owners trying to better understand the
+          Penngrove market.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="resource-section">
+
+      <div class="resource-heading">
+        <h2>Explore Penngrove Real Estate</h2>
+        <p>
+          These resources cover some of the most common questions I encounter
+          while working with buyers, sellers and property owners in Penngrove.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+
+        <article class="resource-card">
+          <h3>Penngrove Real Estate</h3>
+          <p>
+            An in-depth look at the Penngrove housing market, the different
+            types of properties found here and what makes this small Sonoma
+            County market unique.
+          </p>
+          <a href="/penngrove/penngrove-real-estate-guide.html">
+            Read the Penngrove Real Estate Guide
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <h3>Buying a Home in Penngrove</h3>
+          <p>
+            What buyers should understand about homes, acreage, inspections,
+            wells, septic systems, shops, outbuildings and other property
+            characteristics common in Penngrove.
+          </p>
+          <a href="/penngrove/buying-a-home-in-penngrove.html">
+            Buying in Penngrove
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <h3>Selling a Home in Penngrove</h3>
+          <p>
+            How property characteristics, presentation, marketing and local
+            market knowledge can affect the sale of a Penngrove home or
+            country property.
+          </p>
+          <a href="/penngrove/selling-a-home-in-penngrove.html">
+            Selling in Penngrove
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <h3>Penngrove Country Property</h3>
+          <p>
+            A closer look at acreage, wells, septic systems, barns, shops,
+            secondary structures and other considerations involved with
+            Penngrove country property.
+          </p>
+          <a href="/penngrove/penngrove-country-property.html">
+            Explore Country Property
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <h3>Living in Penngrove</h3>
+          <p>
+            Learn more about the community, location and character of
+            Penngrove for people considering making this part of Sonoma
+            County their home.
+          </p>
+          <a href="/penngrove/living-in-penngrove.html">
+            Living in Penngrove
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <h3>Penngrove Home Values</h3>
+          <p>
+            Why acreage, location, improvements, additional structures and
+            property usability can make automated estimates particularly
+            difficult in Penngrove.
+          </p>
+          <a href="/penngrove/penngrove-home-values.html">
+            Understanding Home Values
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <h3>Penngrove Commercial Real Estate</h3>
+          <p>
+            Information about commercial property in Penngrove, including
+            the small downtown commercial district and the factors that can
+            influence local commercial property.
+          </p>
+          <a href="/penngrove/penngrove-commercial-real-estate.html">
+            Commercial Real Estate
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <h3>Real Estate Agents in Penngrove</h3>
+          <p>
+            A local look at selecting a real estate agent for a Penngrove
+            transaction and some of the factors buyers and sellers should
+            consider when choosing representation.
+          </p>
+          <a href="/penngrove/best-real-estate-agents-penngrove.html">
+            Penngrove Real Estate Agents
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="local-section">
+      <div class="local-inner">
+
+        <h2>Local Knowledge Matters in Penngrove</h2>
+
+        <p>
+          Penngrove does not have the volume or uniformity of a large suburban
+          housing market. A conventional home near town, a multi-acre country
+          property and a commercial building on Main Street may all be part of
+          the same small local market while requiring completely different
+          approaches to valuation and sale.
+        </p>
+
+        <p>
+          I live in Penngrove and founded Penngrove Real Estate as an
+          independent brokerage focused on this community and the surrounding
+          Sonoma County market. My work includes residential homes, country
+          properties, investment property, property management and commercial
+          real estate.
+        </p>
+
+        <p>
+          The goal of these resources is not simply to describe Penngrove.
+          It is to share useful information based on the kinds of properties
+          and issues that actually come up in local transactions.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="contact-block">
+
+      <h2>Thinking About Real Estate in Penngrove?</h2>
 
       <p>
-        Penngrove is a small Sonoma County community with a real estate market
-        that is very different from many of the surrounding cities. Properties
-        here can range from homes near downtown Penngrove to larger country
-        properties with acreage, workshops, barns, wells, septic systems and
-        other features that require local knowledge.
-      </p>
-
-      <p>
-        This resource was created by Aaron Loewenthal, Broker and owner of
-        Penngrove Real Estate, to provide buyers, sellers and property owners
-        with practical information about real estate in Penngrove.
-      </p>
-
-      <h2>Buying a Home in Penngrove</h2>
-
-      <p>
-        Buying in Penngrove often involves considerations that are not as
-        common with conventional subdivision homes. Depending on the property,
-        buyers may need to evaluate acreage, wells, septic systems, outbuildings,
-        access, zoning and potential future uses in addition to the house itself.
-      </p>
-
-      <h2>Selling a Home in Penngrove</h2>
-
-      <p>
-        Selling a Penngrove property requires understanding what makes the
-        property valuable to the right buyer. Location, land, usable acreage,
-        improvements, shops, additional structures and development potential
-        can all affect how a property should be positioned and marketed.
-      </p>
-
-      <h2>Country Property</h2>
-
-      <p>
-        Country properties are an important part of the Penngrove market.
-        These properties can be considerably more complicated than a typical
-        residential sale because the land and infrastructure can be just as
-        important as the residence.
-      </p>
-
-      <h2>Local Penngrove Real Estate</h2>
-
-      <p>
-        Penngrove Real Estate is an independent brokerage focused on Penngrove
-        and the surrounding Sonoma County communities. Aaron Loewenthal lives
-        locally and works with residential homes, country properties,
-        investment properties and commercial real estate.
+        Whether you are considering selling a Penngrove property, looking for
+        a home or country property, or simply want to understand what your
+        property may be worth, you can contact me directly.
       </p>
 
       <p>
         Aaron Loewenthal<br>
-        Broker, Penngrove Real Estate<br>
-        DRE 01932466<br>
+        Penngrove Real Estate<br>
+        Broker | DRE 01932466<br>
         (707) 477-6427<br>
         aaron@penngroverealestate.com
       </p>
 
+      <a class="contact-button" href="/contact.html">Contact Aaron</a>
+
     </section>
 
   </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/js/include.js"></script>
 
 </body>
 </html>
