@@ -6,126 +6,242 @@
 
   <title>Living in Penngrove CA | Local Community Guide</title>
 
-  <meta name="description" content="What is it like living in Penngrove, California? A local guide to the community, downtown, location, country setting and Penngrove lifestyle from a local resident and real estate broker.">
+  <meta name="description" content="What is it like living in Penngrove, California? Explore downtown Penngrove, local businesses, community events, parks, country living and the character of this small Sonoma County town.">
 
   <link rel="canonical" href="https://penngroverealestate.com/penngrove/living-in-penngrove.html">
   <link rel="stylesheet" href="/css/styles.css">
 
   <style>
-    .article-hero {
-      padding: 105px 24px 80px;
-      background: #f3f0e9;
+    .living-hero {
+      position: relative;
+      min-height: 72vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #222;
     }
 
-    .article-hero-inner,
-    .article-content {
-      max-width: 900px;
+    .living-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .living-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.72) 0%,
+        rgba(0,0,0,.25) 55%,
+        rgba(0,0,0,.08) 100%
+      );
+    }
+
+    .living-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 70px 28px;
+      color: #fff;
     }
 
-    .article-eyebrow {
+    .eyebrow {
       text-transform: uppercase;
-      letter-spacing: .16em;
+      letter-spacing: .17em;
       font-size: .78rem;
       margin-bottom: 18px;
     }
 
-    .article-hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.06;
+    .living-hero h1 {
+      font-size: clamp(3rem, 6vw, 5.6rem);
+      line-height: 1;
+      max-width: 850px;
+      margin: 0 0 24px;
+    }
+
+    .living-hero p {
+      font-size: 1.18rem;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .living-section {
+      padding: 85px 24px;
+    }
+
+    .living-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .living-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .living-section h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.12;
       margin: 0 0 25px;
     }
 
-    .article-lead {
-      font-size: 1.17rem;
-      line-height: 1.75;
-      max-width: 800px;
+    .living-section h3 {
+      font-size: 1.45rem;
+      margin: 30px 0 12px;
     }
 
-    .article-content {
-      padding: 75px 24px 90px;
-    }
-
-    .article-content h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin: 55px 0 20px;
-    }
-
-    .article-content h2:first-child {
-      margin-top: 0;
-    }
-
-    .article-content h3 {
-      font-size: 1.4rem;
-      margin: 32px 0 12px;
-    }
-
-    .article-content p {
-      font-size: 1.05rem;
+    .living-section p {
+      font-size: 1.06rem;
       line-height: 1.82;
       margin: 0 0 22px;
     }
 
-    .article-image {
+    .stone {
+      background: #f3f0e9;
+    }
+
+    .full-image {
       width: 100%;
-      height: auto;
+      height: min(620px, 65vw);
+      object-fit: cover;
       display: block;
-      margin: 38px 0;
     }
 
-    .local-box {
+    .image-caption {
+      max-width: 1100px;
+      margin: 10px auto 0;
+      padding: 0 24px;
+      font-size: .84rem;
+      opacity: .68;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .split img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-grid img:nth-child(2) {
+      height: 420px;
+    }
+
+    .quote-section {
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .quote-section blockquote {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    .community-callout {
       background: #f3f0e9;
-      padding: 35px;
-      margin: 40px 0;
+      padding: 42px;
+      margin: 45px 0;
     }
 
-    .local-box h3 {
+    .community-callout h3 {
       margin-top: 0;
     }
 
-    .local-box p:last-child {
-      margin-bottom: 0;
-    }
-
-    .article-links {
+    .resources {
       background: #f3f0e9;
-      padding: 35px;
-      margin: 55px 0;
+      padding: 40px;
+      margin-top: 55px;
     }
 
-    .article-links h2 {
+    .resources h2 {
       margin-top: 0;
     }
 
-    .article-links a {
+    .resources a {
       display: block;
       margin: 12px 0;
       text-decoration: underline;
       text-underline-offset: 4px;
     }
 
-    .author-box {
+    .author {
       border-top: 1px solid rgba(0,0,0,.18);
       margin-top: 60px;
-      padding-top: 35px;
+      padding-top: 38px;
     }
 
-    .author-box h2 {
+    .author h2 {
       margin-top: 0;
     }
 
-    @media (max-width: 760px) {
-      .article-hero {
-        padding: 75px 20px 60px;
+    @media (max-width: 800px) {
+      .living-hero {
+        min-height: 62vh;
       }
 
-      .article-content {
-        padding: 55px 20px 70px;
+      .living-hero-content {
+        padding: 55px 20px;
       }
 
-      .local-box,
-      .article-links {
-        padding: 25px;
+      .living-section {
+        padding: 60px 20px;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .split img {
+        height: 360px;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-grid img,
+      .photo-grid img:nth-child(2) {
+        height: 330px;
+      }
+
+      .full-image {
+        height: 430px;
+      }
+
+      .community-callout,
+      .resources {
+        padding: 27px;
       }
     }
   </style>
@@ -135,7 +251,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Living in Penngrove, California",
-    "description": "A local guide to the community, location and lifestyle of Penngrove, California.",
+    "description": "A local guide to living in Penngrove, California, including downtown, community life, local businesses and the surrounding country setting.",
     "author": {
       "@type": "Person",
       "name": "Aaron Loewenthal"
@@ -162,331 +278,522 @@
 
   <main>
 
-    <section class="article-hero">
-      <div class="article-hero-inner">
+    <!-- HERO -->
 
-        <div class="article-eyebrow">Rooted in Penngrove</div>
+    <section class="living-hero">
+
+      <img
+        src="/images/penngrove-downtown-main-street.jpg"
+        alt="Downtown Main Street in Penngrove California"
+      >
+
+      <div class="living-hero-content">
+
+        <div class="eyebrow">Rooted in Penngrove</div>
 
         <h1>Living in Penngrove, California</h1>
 
-        <p class="article-lead">
-          Penngrove is one of those places that can be easy to drive through
-          without realizing what makes it special. It is a small Sonoma County
-          community with a historic downtown, country roads, larger properties
-          and a location that keeps Petaluma, Cotati and Rohnert Park close by.
+        <p>
+          Penngrove is a small Sonoma County community surrounded by
+          rolling countryside, but what makes it special is that it still
+          feels like a town. There is a Main Street, local businesses,
+          community events and the kind of familiarity that is increasingly
+          difficult to find in Northern California.
         </p>
 
       </div>
+
     </section>
 
-    <article class="article-content">
 
-      <h2>What Is Penngrove Like?</h2>
+    <!-- INTRO -->
 
-      <p>
-        Penngrove is small. That is one of its defining characteristics and,
-        for many of us who live here, one of its greatest strengths.
-      </p>
+    <section class="living-section">
 
-      <p>
-        It does not feel like a subdivision or an extension of one of the
-        larger neighboring cities. There is a recognizable center of town,
-        local businesses, older buildings and country property extending out
-        from the community.
-      </p>
+      <div class="living-inner">
 
-      <p>
-        The result is a place that can feel rural without being isolated.
-        You can live on acreage or a quiet Penngrove road while remaining only
-        a short drive from the larger surrounding communities.
-      </p>
+        <h2>What Is It Actually Like to Live in Penngrove?</h2>
 
-      <img
-        class="article-image"
-        src="/images/penngrove-market-downtown.png"
-        alt="Downtown Penngrove California"
-        loading="lazy"
-      >
-
-      <h2>Where Is Penngrove?</h2>
-
-      <p>
-        Penngrove is located in Sonoma County between Petaluma, Cotati and
-        Rohnert Park. That location is a major part of its appeal.
-      </p>
-
-      <p>
-        Petaluma is immediately to the south, while Cotati and Rohnert Park
-        are nearby to the north. Residents can take advantage of the
-        restaurants, shopping, schools, services and employment centers in
-        those communities while still coming home to Penngrove.
-      </p>
-
-      <p>
-        Highway 101 is also nearby, making Penngrove a practical location for
-        people who need access to other parts of Sonoma County or travel south
-        toward Marin County and the Bay Area.
-      </p>
-
-      <div class="local-box">
-        <h3>Small town, central location</h3>
         <p>
-          One of the unusual things about Penngrove is the combination of a
-          genuinely small community with immediate access to much larger
-          neighboring cities. You do not have to choose between country living
-          and being reasonably close to everyday services.
+          I have lived in Penngrove for more than a decade, and one of the
+          things I like most about it is the combination of a genuinely small
+          community with easy access to everything around it.
         </p>
+
+        <p>
+          Penngrove sits between Petaluma, Cotati and Rohnert Park, but it has
+          its own identity. Downtown is only a few blocks long. Drive a couple
+          of minutes in almost any direction and you are quickly into country
+          roads, acreage and open land.
+        </p>
+
+        <p>
+          That combination is a big part of the appeal. You can live on several
+          acres and still be only minutes from town, or live closer to Main
+          Street and feel connected to the center of the community.
+        </p>
+
       </div>
 
-      <h2>Downtown Penngrove</h2>
+    </section>
 
-      <p>
-        Downtown Penngrove is compact and centered around Main Street. It is
-        not a large shopping district, and that is part of its character.
-      </p>
 
-      <p>
-        The downtown includes a mix of local businesses and historic
-        commercial buildings rather than large-scale development. It provides
-        Penngrove with an identifiable center and helps maintain the feeling
-        that this is its own community rather than simply the space between
-        Petaluma and Rohnert Park.
-      </p>
+    <!-- MARKET IMAGE -->
 
-      <p>
-        For residents living close to town, Main Street can be just minutes
-        away. Farther out, the transition to country roads and acreage happens
-        quickly.
-      </p>
+    <img
+      class="full-image"
+      src="/images/penngrove-market-downtown.JPG"
+      alt="Penngrove Market in downtown Penngrove California"
+      loading="lazy"
+    >
 
-      <h2>A Community Surrounded by Country Property</h2>
+    <div class="image-caption">
+      Downtown Penngrove
+    </div>
 
-      <p>
-        Penngrove's rural surroundings are a major part of its identity.
-        Country properties, open land, larger parcels, barns and workshops are
-        common enough to shape the character of the area.
-      </p>
 
-      <p>
-        This creates a wide range of living environments. One household may
-        live relatively close to downtown while another is on several acres
-        with a long driveway, a shop and room for animals or equipment.
-      </p>
+    <!-- DOWNTOWN -->
 
-      <p>
-        That variety is also one reason people specifically search for homes
-        in Penngrove rather than simply searching broadly across the nearby
-        cities.
-      </p>
+    <section class="living-section stone">
 
-      <h2>Living on Acreage</h2>
+      <div class="living-wide split">
 
-      <p>
-        Acreage can provide privacy, room between neighbors and flexibility
-        that is difficult to find on a conventional residential lot. It can
-        also provide space for gardens, animals, workshops, equipment or
-        simply open land.
-      </p>
+        <div>
 
-      <p>
-        Country living comes with responsibilities as well. Larger properties
-        may have private wells, septic systems, fencing, vegetation, drainage,
-        long driveways and additional buildings to maintain.
-      </p>
+          <div class="eyebrow">Downtown Penngrove</div>
 
-      <p>
-        For people who enjoy having space and do not mind taking care of it,
-        that tradeoff can be one of the best parts of living in Penngrove.
-      </p>
+          <h2>A Main Street That Still Feels Local</h2>
 
-      <h2>Homes Closer to Town</h2>
+          <p>
+            Downtown Penngrove is small enough that you can walk most of it
+            in a few minutes. That is also part of its character.
+          </p>
 
-      <p>
-        Acreage is not the only way to live in Penngrove. There are also homes
-        on more conventional parcels, including properties closer to the
-        center of the community.
-      </p>
+          <p>
+            Rather than a large commercial district, Main Street is made up
+            of independent businesses, places to eat and drink, neighborhood
+            services and buildings that reflect the history of the town.
+          </p>
 
-      <p>
-        These can be attractive to buyers who like Penngrove's character and
-        location but do not necessarily want the maintenance associated with
-        several acres.
-      </p>
+          <p>
+            It is not a polished shopping district designed for tourists.
+            It feels like the center of a community where people actually
+            live.
+          </p>
 
-      <p>
-        This mixture of residential and rural property gives Penngrove more
-        housing variety than someone might expect from such a small community.
-      </p>
+        </div>
 
-      <h2>Penngrove and Petaluma</h2>
+        <img
+          src="/images/penngrove-market-main-street.jpg"
+          alt="Penngrove Market on Main Street in Penngrove"
+          loading="lazy"
+        >
 
-      <p>
-        Penngrove and Petaluma are closely connected geographically. For many
-        Penngrove residents, Petaluma is a regular part of everyday life for
-        shopping, dining, services and activities.
-      </p>
+      </div>
 
-      <p>
-        The difference is what you come home to. Penngrove offers a smaller
-        setting and, depending on the property, considerably more space than
-        is typical in many parts of Petaluma.
-      </p>
+    </section>
 
-      <h2>Penngrove, Cotati and Rohnert Park</h2>
 
-      <p>
-        Cotati and Rohnert Park are also close enough that residents can easily
-        use businesses and services in either community.
-      </p>
+    <!-- PUB -->
 
-      <p>
-        This central location means that Penngrove does not need to contain
-        every service within its own boundaries. Much of what residents need
-        is available within a relatively short drive while Penngrove itself
-        remains small.
-      </p>
+    <section class="living-section">
 
-      <h2>Why People Look for Homes in Penngrove</h2>
+      <div class="living-wide split">
 
-      <p>
-        There is no single reason people choose Penngrove, but several themes
-        come up repeatedly.
-      </p>
+        <img
+          src="/images/penngrove-pub-main-street.jpg"
+          alt="Local pub on Main Street in Penngrove California"
+          loading="lazy"
+        >
 
-      <p>
-        Some buyers want acreage. Some want a large workshop. Others want more
-        privacy or simply prefer living in a smaller community. There are also
-        buyers who already know this part of Sonoma County and specifically
-        want to stay near Petaluma while finding more space.
-      </p>
+        <div>
 
-      <p>
-        For many, it is the combination rather than one individual feature:
-        country character, a central location and a community that still feels
-        distinct from the cities surrounding it.
-      </p>
+          <div class="eyebrow">Local Character</div>
 
-      <h2>What to Consider Before Moving to Penngrove</h2>
+          <h2>Places Where You Actually Run Into People You Know</h2>
 
-      <p>
-        Someone considering Penngrove should think about the type of property
-        and lifestyle they actually want.
-      </p>
+          <p>
+            One of the differences between Penngrove and a larger city is
+            that the local businesses become part of your routine.
+          </p>
 
-      <p>
-        If your goal is country property, consider how much acreage you really
-        want to maintain and whether you are comfortable owning systems such
-        as a private well and septic system.
-      </p>
+          <p>
+            You see neighbors around town. You recognize people at local
+            businesses. Kids grow up seeing the same faces at community
+            events.
+          </p>
 
-      <p>
-        If you want to be closer to town, your priorities may instead be lot
-        size, neighborhood, home condition and proximity to the center of
-        Penngrove.
-      </p>
+          <p>
+            That doesn't mean everyone knows everyone, but there is a level
+            of familiarity here that is one of the reasons many people enjoy
+            living in a smaller community.
+          </p>
 
-      <p>
-        Because the housing stock varies so much, it is possible for two
-        people who both say they want to live in Penngrove to actually be
-        looking for completely different properties.
-      </p>
+        </div>
 
-      <h2>Real Estate Availability Can Be Limited</h2>
+      </div>
 
-      <p>
-        Penngrove is a small market, so buyers should not expect the same
-        amount of inventory they would see when searching an entire city.
-      </p>
+    </section>
 
-      <p>
-        The search becomes even narrower when someone wants a specific
-        combination such as several usable acres, a large shop and a
-        particular location.
-      </p>
 
-      <p>
-        Buyers who are committed to Penngrove may need to be patient, stay
-        informed about new opportunities and be ready to evaluate a property
-        when the right one becomes available.
-      </p>
+    <!-- COMMUNITY QUOTE -->
 
-      <h2>Living Here and Working Here</h2>
+    <section class="quote-section stone">
 
-      <p>
-        Penngrove is not just an area I cover as a real estate broker. It is
-        where I live and where I chose to build Penngrove Real Estate.
-      </p>
+      <blockquote>
+        “Penngrove gives you country living without feeling disconnected
+        from the rest of Sonoma County.”
+      </blockquote>
 
-      <p>
-        I have lived in Penngrove for more than a decade, and my family is
-        rooted here. My brokerage focuses on Penngrove and the surrounding
-        Sonoma County market, including residential homes, country properties,
-        investment property, property management and commercial real estate.
-      </p>
+    </section>
 
-      <p>
-        Living here provides a perspective that is difficult to get from a
-        map or an online property search. The individual roads, the transition
-        between town and country property, and the relationship Penngrove has
-        with the surrounding communities all help shape what it is actually
-        like to own a home here.
-      </p>
 
-      <section class="article-links">
+    <!-- PARK -->
 
-        <h2>Explore More About Penngrove</h2>
+    <section class="living-section">
 
-        <a href="/penngrove/penngrove-real-estate-guide.html">
-          Penngrove Real Estate Market Guide
-        </a>
+      <div class="living-wide split">
 
-        <a href="/penngrove/buying-a-home-in-penngrove.html">
-          Buying a Home in Penngrove
-        </a>
+        <div>
 
-        <a href="/penngrove/penngrove-country-property.html">
-          Penngrove Country Property & Acreage
-        </a>
+          <div class="eyebrow">Around Town</div>
 
-        <a href="/penngrove/penngrove-home-values.html">
-          Penngrove Home Values
-        </a>
+          <h2>Small-Town Community Life</h2>
 
-        <a href="/penngrove/selling-a-home-in-penngrove.html">
-          Selling a Home in Penngrove
-        </a>
+          <p>
+            Penngrove is not a place with endless amenities packed into a
+            downtown district. The appeal is almost the opposite.
+          </p>
 
-        <a href="/penngrove/">
-          View All Penngrove Resources
-        </a>
+          <p>
+            There are local gathering places, community spaces and events,
+            while Petaluma, Cotati and Rohnert Park are close enough that
+            larger stores, restaurants and services are easy to reach.
+          </p>
 
-      </section>
+          <p>
+            For many residents, that is a good balance. You get the quieter
+            atmosphere of Penngrove without being isolated from the larger
+            communities around it.
+          </p>
 
-      <section class="author-box">
+        </div>
 
-        <h2>Considering a Move to Penngrove?</h2>
+        <img
+          src="/images/penngrove-park.jpg"
+          alt="Community park in Penngrove California"
+          loading="lazy"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- PARADE -->
+
+    <img
+      class="full-image"
+      src="/images/penngrove-christmas-light-parade.png"
+      alt="Penngrove Christmas light parade community event"
+      loading="lazy"
+      style="object-position:center 35%;"
+    >
+
+    <div class="image-caption">
+      Community events are a big part of small-town Penngrove.
+    </div>
+
+
+    <!-- EVENTS -->
+
+    <section class="living-section stone">
+
+      <div class="living-inner">
+
+        <div class="eyebrow">Community</div>
+
+        <h2>Penngrove Still Has Small-Town Traditions</h2>
 
         <p>
-          If you are thinking about moving to Penngrove and want to understand
-          the different types of properties available here, you can contact me
-          directly.
+          Community events are one of the times you really notice the
+          difference between living in Penngrove and simply living somewhere
+          in the middle of a larger city.
         </p>
 
         <p>
-          Aaron Loewenthal<br>
-          Penngrove Real Estate<br>
-          Broker | DRE 01932466<br>
-          (707) 477-6427<br>
-          aaron@penngroverealestate.com
+          Events bring people onto Main Street and give the town a sense of
+          identity beyond its location on a map.
         </p>
 
         <p>
-          <a href="/contact.html">Contact Aaron about living in Penngrove</a>
+          Those traditions are difficult to quantify when comparing homes,
+          but they are part of what people mean when they say they want to
+          live somewhere with a sense of community.
         </p>
 
-      </section>
+      </div>
 
-    </article>
+    </section>
+
+
+    <!-- RAILROAD -->
+
+    <section class="living-section">
+
+      <div class="living-wide split">
+
+        <img
+          src="/images/penngrove-railroad-crossing.jpg"
+          alt="Railroad crossing in Penngrove California"
+          loading="lazy"
+        >
+
+        <div>
+
+          <div class="eyebrow">A Historic Sonoma County Town</div>
+
+          <h2>Penngrove Has Its Own Identity</h2>
+
+          <p>
+            Penngrove is easy to drive through without realizing how much
+            exists beyond Main Street.
+          </p>
+
+          <p>
+            The railroad, older buildings, surrounding agricultural land and
+            country roads are all part of the town's character.
+          </p>
+
+          <p>
+            At the same time, Penngrove is not frozen in the past. People live
+            here because it offers a practical location in central Sonoma
+            County while retaining much of its small-town and rural character.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LOCATION -->
+
+    <section class="living-section stone">
+
+      <div class="living-inner">
+
+        <div class="eyebrow">Location</div>
+
+        <h2>Close to Petaluma, Cotati and Rohnert Park</h2>
+
+        <p>
+          Penngrove's location is one of its practical advantages.
+        </p>
+
+        <p>
+          Petaluma is immediately to the south, Cotati and Rohnert Park are
+          nearby, and Highway 101 provides access north toward Santa Rosa and
+          south toward Marin County.
+        </p>
+
+        <p>
+          That allows residents to use the shopping, restaurants, employment
+          centers and services of the surrounding cities while coming home to
+          a much smaller community.
+        </p>
+
+        <div class="community-callout">
+
+          <h3>Penngrove is small, but it isn't remote.</h3>
+
+          <p>
+            That distinction is important. Much of the surrounding area feels
+            rural, yet everyday services and larger Sonoma County communities
+            remain only a short drive away.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOUSING -->
+
+    <section class="living-section">
+
+      <div class="living-inner">
+
+        <div class="eyebrow">Homes & Country Living</div>
+
+        <h2>There Is More Than One Way to Live in Penngrove</h2>
+
+        <p>
+          Penngrove real estate ranges from homes closer to town to country
+          properties with acreage, workshops, barns and additional structures.
+        </p>
+
+        <p>
+          Some buyers come here specifically looking for land and privacy.
+          Others want to be closer to downtown and simply prefer Penngrove's
+          smaller scale and location.
+        </p>
+
+        <p>
+          The variety is one reason it is difficult to describe a typical
+          Penngrove home. Two properties only a short distance apart can offer
+          completely different lifestyles.
+        </p>
+
+        <h3>Living on Acreage</h3>
+
+        <p>
+          Country living can mean more space, privacy, room for animals,
+          gardening, workshops or simply having distance between you and the
+          neighboring property.
+        </p>
+
+        <p>
+          It also comes with more responsibility. Wells, septic systems,
+          fencing, drainage, private roads, vegetation and outbuildings may
+          become part of owning the property.
+        </p>
+
+        <h3>Living Closer to Town</h3>
+
+        <p>
+          Homes closer to downtown provide a different experience. The lots
+          may be smaller, but Main Street and the center of Penngrove become
+          a more immediate part of everyday life.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL DOWNTOWN GRID -->
+
+    <section class="living-section stone">
+
+      <div class="living-wide">
+
+        <div class="living-inner">
+
+          <div class="eyebrow">Rooted Here</div>
+
+          <h2>Why Penngrove Feels Different</h2>
+
+          <p>
+            There are plenty of beautiful places to live in Sonoma County.
+            What separates Penngrove for me is its scale.
+          </p>
+
+          <p>
+            It is small enough that Main Street still matters. The countryside
+            begins almost immediately outside of town. Petaluma and the rest
+            of Sonoma County are close, but Penngrove still feels separate
+            from them.
+          </p>
+
+          <p>
+            My family and I have lived here for more than a decade, and my
+            real estate office is now on Main Street. Penngrove is not just
+            an area I cover as a real estate broker. It is home.
+          </p>
+
+        </div>
+
+        <div class="photo-grid">
+
+          <img
+            src="/images/penngrove-downtown-main-street.jpg"
+            alt="Downtown Penngrove Main Street"
+            loading="lazy"
+          >
+
+          <img
+            src="/images/penngrove-market-main-street.jpg"
+            alt="Local businesses in downtown Penngrove"
+            loading="lazy"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESOURCES -->
+
+    <section class="living-section">
+
+      <div class="living-inner">
+
+        <div class="resources">
+
+          <h2>Thinking About Moving to Penngrove?</h2>
+
+          <p>
+            These guides go deeper into the different types of property and
+            the Penngrove real estate market.
+          </p>
+
+          <a href="/penngrove/penngrove-real-estate-guide.html">
+            Penngrove Real Estate Market Guide
+          </a>
+
+          <a href="/penngrove/buying-a-home-in-penngrove.html">
+            Buying a Home in Penngrove
+          </a>
+
+          <a href="/penngrove/penngrove-country-property.html">
+            Penngrove Country Property & Acreage
+          </a>
+
+          <a href="/penngrove/penngrove-home-values.html">
+            Penngrove Home Values
+          </a>
+
+          <a href="/penngrove/">
+            View All Penngrove Resources
+          </a>
+
+        </div>
+
+
+        <div class="author">
+
+          <h2>Living and Working in Penngrove</h2>
+
+          <p>
+            If you're considering moving to Penngrove and want to understand
+            the different neighborhoods, country roads and types of property
+            available here, feel free to contact me directly.
+          </p>
+
+          <p>
+            Aaron Loewenthal<br>
+            Penngrove Real Estate<br>
+            Broker | DRE 01932466<br>
+            11790 Main Street Suite C, Penngrove CA 94951<br>
+            (707) 477-6427<br>
+            aaron@penngroverealestate.com
+          </p>
+
+          <p>
+            <a href="/contact.html">Contact Aaron about living in Penngrove</a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
 
